@@ -1,7 +1,15 @@
+body {
+    margin : 0;
+    padding : 0;
+    border : 0;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    padding-left : 1em;
+    border : 0;
     overflow: hidden;
     background-color: #333;
     position: fixed;
@@ -25,6 +33,10 @@ li a:hover {
     background-color: #111;
 }
 
-.active {
+li a:target {
     background-color: #4CAF50;
+}
+
+.TopMenu {
+    position: fixed;
 }
