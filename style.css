@@ -40,3 +40,11 @@ li a:target {
 .TopMenu {
     position: fixed;
 }
+
+.wrapper {
+    position : relative;
+}
+
+.topkek {
+    position : absolute;
+}
