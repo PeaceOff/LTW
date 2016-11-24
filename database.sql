@@ -1,8 +1,25 @@
+PRAGMA FOREIGN_KEYS = ON;
+.mode columns
+.header ON
+.nullvalue NULL
+
 CREATE TABLE restaurants {
-    ID INT PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome TEXT,
-    description TEXT,
-    hora_inicio INT,
-    hora_fim INT,
-    
+    description TEXT
+}
+
+CREATE TABLE users {
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT,
+    username TEXT,
+    password TEXT
+}
+
+CREATE TABLE owners {
+    id INTEGER REFERENCES users(id) PRIMARY KEY
+}
+
+CREATE TABLE reviewers {
+    id INTEGER REFERENCES users(id) PRIMARY KEY
 }
