@@ -5,31 +5,41 @@ body {
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    padding-left : 1em;
-    border : 0;
-    overflow: hidden;
-    background-color: #333;
-    top: 0;
-
+  margin: 0;
+  background-color: #333333;
+  list-style-type: none;
 }
 
 li {
-    float: left;
+  float: left;
+  background-color: #333333;
+  text-decoration: none;
+  padding: 1em;
 }
 
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
+  padding: 1em;
 }
 
-li a:hover {
+li form input{
+  margin: 0;
+  padding: 0;
+}
+
+li form input{
+  margin: 0;
+  padding: 0;
+  border:0;
+}
+
+li audio:hover {
     background-color: #111;
+}
+
+li label{
+  color: white;
 }
 
 li a:target {
@@ -37,6 +47,7 @@ li a:target {
 }
 
 nav {
-    position: fixed;
-    width: 100%;
+  position: fixed;
+  width: 100%;
+  background-color: #333333;
 }

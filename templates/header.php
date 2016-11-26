@@ -12,5 +12,7 @@
                 <li><a id="news" href="#news">News</a></li>
                 <li><a id="contact" href="#contact">Contact</a></li>
                 <li><a id="about" href="#about">About</a></li>
+                <li><?php include('login.php') ?></li>
             </ul>
+
         </nav>
