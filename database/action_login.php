@@ -1,7 +1,7 @@
 <?php
     session_start();
-    include_once 'database/connection.php';
-    include_once 'database/users.php';
+    include_once '../database/connection.php';
+    include_once '../database/users.php';
 
     $username = $_POST['username'];
     $password = $_POST['password'];
