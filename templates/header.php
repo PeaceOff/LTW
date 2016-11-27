@@ -3,7 +3,7 @@
     <head>
         <title>RestaurantWizz</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     <body>
         <nav>
@@ -14,5 +14,4 @@
                 <li><a id="about" href="#about">About</a></li>
                 <li><?php include('login.php') ?></li>
             </ul>
-
         </nav>

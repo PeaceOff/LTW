@@ -1,8 +1,8 @@
 <?php
 
-include_once('../templates/header.php');
-include_once('../database/connect.php');
-include_once('../database/restaurants.php');
+include_once('/templates/header.php');
+include_once('/database/connect.php');
+include_once('/database/restaurants.php');
 ?>
 
 <div class="searchBar">
@@ -32,5 +32,5 @@ foreach( $result as $row) {
 
 
 <?php
-include_once('../templates/footer.php');
+include_once('/templates/footer.php');
 ?>
