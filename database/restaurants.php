@@ -16,4 +16,29 @@
     return $stmt->fetch();
   }
 
+	function getRestaurantPictures($id){
+
+		global $db;
+		$stmt = $db->prepare(' SELECT picture_id FROM restaurantPicture WHERE restaurant_id = :id ');
+		$stmt->bindParam(':id',$id,PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
+	function getReviews($id){
+		global $db;
+		$stmt = $db->prepare(' SELECT * FROM viewUserReview WHERE restaurant_id = :id ');
+		$stmt->bindParam(':id', $id ,PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
+	function getAnswers($id){
+		global $db;
+		$stmt = $db->prepare(' SELECT content, nome FROM viewUserAnswer WHERE review = :id ');
+		$stmt->bindParam(':id',$id,PDO::PARAM_INT);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
+
 ?>
