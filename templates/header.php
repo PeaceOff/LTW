@@ -8,10 +8,10 @@
     <body>
         <nav>
             <ul>
-                <li><a id="home" href="#home">Home</a></li>
+                <li><a id="home" href="../Pages/home.php">Home</a></li>
                 <li><a id="news" href="#news">News</a></li>
-                <li><a id="contact" href="../Pages/contacts.php#contact">Contact</a></li>
-                <li><a id="about" href="#about">About</a></li>
+                <li><a id="contact" href="../Pages/contacts.php">Contact</a></li>
+                <li><a id="about" href="../Pages/about.php">About</a></li>
                 <li><?php include('login.php') ?></li>
             </ul>
         </nav>
