@@ -1,9 +1,14 @@
 <?php
+    session_start();
+    include_once 'database/connection.php';
+    include_once 'database/users.php';
 
-  $usr = $_POST['username'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  echo $usr;
+    if(userExists($username,sha1($password))
+        $_SESSION['username'] = $username;
 
-  header('Location: ../Pages/home.php');
-
-?>
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    exit();
+ ?>
