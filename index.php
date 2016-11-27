@@ -1,4 +1,3 @@
 <?php
-    include_once('templates/header.php');
-    include_once('templates/footer.php');
+    header('Location: /Pages/home.php');
 ?>
