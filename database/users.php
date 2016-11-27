@@ -19,4 +19,18 @@
         $stmt->execute();
         return $stmt->fetch();
     }
+
+    function newUser($props){
+        
+        global $db;
+        $stmt = $db->prepare('INSERT INTO user (nome, id, picture_id, password, username, description) VALUES (:name,NULL,NULL,:password,:username,:description);');
+        $stmt->bindParam(':name', $props['name'], PDO::PARAM_STR);
+        $pass = hash('sha256',$props['password']);
+        $stmt->bindParam(':password', $pass, PDO::PARAM_STR);
+        $stmt->bindParam(':username', $props['username'], PDO::PARAM_STR);
+        $stmt->bindParam(':description', $props['description'], PDO::PARAM_STR);
+        $stmt->execute();
+
+        return;
+    }
  ?>
