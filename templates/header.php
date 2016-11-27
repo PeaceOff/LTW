@@ -3,6 +3,7 @@
     <head>
         <title>RestaurantWizz</title>
         <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>

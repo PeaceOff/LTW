@@ -14,6 +14,15 @@
     $stmt->bindParam(':id',$id,PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetch();
+	}
+
+	function getRestaurantBySearch($search) {
+    global $db;
+
+		$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) ');
+    $stmt->execute(array("%".$search."%"));
+
+  	return $stmt->fetchAll();
   }
 
 	function getRestaurantPictures($id){

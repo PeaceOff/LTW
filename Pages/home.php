@@ -5,34 +5,20 @@ include_once('../database/connect.php');
 include_once('../database/restaurants.php');
 
 ?>
+<script type="text/javascript" src="../Javascript/search.js"></script>
+
 
 <div class="searchBar">
-<label> Search <input type= "text" value="Restaurant"/> </label>
-<button name="SearchButton"> Search </button>
-</div>
+
+<label> Search <input type= "text" name="search" value="restaurant"/> </label>
+<input type="submit" name="SearchButton"> Search </button>
 
 
 <div id="restaurantList">
 
-<?php
-$result = getAllRestaurants();
+<ul id="restaurants"></ul>
 
-foreach( $result as $row) {
-	echo '<div class="restaurant-item">';
-	echo '<h3>' . $row['name'] . '</h3>';
-	echo '<p>' . 'Description: ' . $row['description'] . '</p>';
-  $link = "../Pages/show_restaurant.php?id=" . $row['id'];
-  echo "<a href=$link> View Restaurant Info </a>";
-	echo '</div>';
-	}
-
-?>
 </div>
-
-<?php
-	
-?>
-
 
 <?php
 include_once('../templates/footer.php');
