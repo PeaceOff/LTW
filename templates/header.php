@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
+        <?php session_start() ?>
         <nav>
             <ul>
                 <li><a id="home" href="../Pages/home.php#home">Home</a></li>

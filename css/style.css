@@ -57,3 +57,7 @@ nav li a:target{
   background-color: #385;
   color: white;
 }
+
+body nav ul li form input {
+    color: black;
+}
