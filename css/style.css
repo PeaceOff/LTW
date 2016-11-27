@@ -2,6 +2,7 @@ body {
     margin : 0;
     padding : 0;
     border : 0;
+    background-color: #0099cc;
 }
 
 ul {
@@ -47,7 +48,6 @@ li a:target {
 }
 
 nav {
-  position: fixed;
   width: 100%;
   background-color: #333333;
 }
