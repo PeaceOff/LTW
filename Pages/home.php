@@ -27,9 +27,11 @@ foreach( $result as $row) {
 	}
 
 ?>
-
 </div>
 
+<?php
+	
+?>
 
 
 <?php
