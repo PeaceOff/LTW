@@ -301,7 +301,7 @@ INSERT INTO type (id, content) VALUES (50, 's9lw');
 
 -- Table: user
 CREATE TABLE user (nome VARCHAR DEFAULT ('defaultUser'), id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, picture_id INTEGER REFERENCES picture (id) DEFAULT NULL, password VARCHAR NOT NULL, username VARCHAR NOT NULL, description VARCHAR);
-INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('8m3vaw h	', 1, NULL, 'l 6epqgv48a5t7v', '4xaa9fx0', NULL);
+INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('David', 1, NULL, '0d287772dfced30917b9dbb547a3dfc2b8ddfa82ef867191f73c64f4770face9', 'peaceoff', NULL);
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('crfb	f	a79h', 2, NULL, 'vucg4
 qr9i07', 'x3a39i1f6r 21cn ', 'sad');
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('

@@ -1,9 +1,9 @@
 <?php
-  $logged = false;
-  if($logged){
+    if(isset($_SESSION['username'])){
 ?>
 
-<label> Logged in as: Batata Frita </label>
+<label> Logged in as: <?php echo $_SESSION['username'] ?> </label>
+<a href="../database/action_logout.php">Logout</a>
 
 <?php }else{ ?>
 
