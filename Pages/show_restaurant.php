@@ -29,6 +29,10 @@ foreach( $pictures as $picture ) {
   </ul>
 </div>
 
+<?php
+    if(isset($_SESSION['username'])){
+?>
+
 <form action="">
   <label> Rate: [
     0:<input type="radio" name="Rating" value="0">
@@ -45,7 +49,9 @@ foreach( $pictures as $picture ) {
   <button class="PostButton"> Post </button>
 
 </form>
-
+<?php
+  }
+?>
 
 <?php }
 $reviews = getReviews($id);
@@ -58,7 +64,7 @@ $reviews = getReviews($id);
     <li>
       <h4> <?php echo $review['nome'] ?> </h4>
       <p> <?php echo $review['description']?> </p>
-      
+
       <ul>
 <?php $answers = getAnswers($review['id']);
 foreach($answers as $answer){ ?>
