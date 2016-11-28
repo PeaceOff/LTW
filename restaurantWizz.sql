@@ -1,5 +1,5 @@
 --
--- File generated with SQLiteStudio v3.1.1 on dom nov 27 17:44:58 2016
+-- File generated with SQLiteStudio v3.1.1 on seg nov 28 18:41:42 2016
 --
 -- Text encoding used: System
 --
@@ -8,43 +8,12 @@ BEGIN TRANSACTION;
 
 -- Table: awnser
 CREATE TABLE awnser (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, content VARCHAR, review INTEGER REFERENCES review (id), user INTEGER REFERENCES user (id));
-INSERT INTO awnser (id, content, review, user) VALUES (1, '6znrrslwtm', 1, 1);
-INSERT INTO awnser (id, content, review, user) VALUES (2, '	h88dmr46ss', 2, 2);
-INSERT INTO awnser (id, content, review, user) VALUES (3, 'qetb0ok', 3, 3);
-INSERT INTO awnser (id, content, review, user) VALUES (4, '
-u7kjn1jt', 4, 4);
-INSERT INTO awnser (id, content, review, user) VALUES (5, 'wmpxtx', 5, 5);
-INSERT INTO awnser (id, content, review, user) VALUES (6, 'mxehpxfq1
-wcqd', 6, 6);
-INSERT INTO awnser (id, content, review, user) VALUES (7, 'wl1i  g4x3wj84 ', 7, 7);
-INSERT INTO awnser (id, content, review, user) VALUES (8, 'hnm	sxhw	0masayu', 8, 8);
-INSERT INTO awnser (id, content, review, user) VALUES (9, 'agrb', 9, 9);
-INSERT INTO awnser (id, content, review, user) VALUES (10, '5pc7us', 10, 10);
-INSERT INTO awnser (id, content, review, user) VALUES (11, ' lh0u a', 11, 11);
-INSERT INTO awnser (id, content, review, user) VALUES (12, 'uv1yxqfom', 12, 12);
-INSERT INTO awnser (id, content, review, user) VALUES (13, ' opu', 13, 13);
-INSERT INTO awnser (id, content, review, user) VALUES (14, 'gn1gm', 14, 14);
-INSERT INTO awnser (id, content, review, user) VALUES (15, 'pba20wfgs', 15, 15);
-INSERT INTO awnser (id, content, review, user) VALUES (16, 'tt732dk7mxk206w23eiu', 16, 16);
-INSERT INTO awnser (id, content, review, user) VALUES (17, '	qebcy', 17, 17);
-INSERT INTO awnser (id, content, review, user) VALUES (18, '
-seozs', 18, 18);
-INSERT INTO awnser (id, content, review, user) VALUES (19, 'hopf1ec5umk5yn', 19, 19);
-INSERT INTO awnser (id, content, review, user) VALUES (20, '80dj zk95lyiz5e7hbgb', 20, 20);
-INSERT INTO awnser (id, content, review, user) VALUES (21, '3
-7etp	r1la0t52p41', 21, 21);
-INSERT INTO awnser (id, content, review, user) VALUES (22, '
-5cqkk3rek', 22, 22);
-INSERT INTO awnser (id, content, review, user) VALUES (23, 'le	b0a6jl	9x', 23, 23);
-INSERT INTO awnser (id, content, review, user) VALUES (24, '1ms0
-cdar', 24, 24);
-INSERT INTO awnser (id, content, review, user) VALUES (25, '3gjzreneif9c89 ryx5z', 25, 25);
-INSERT INTO awnser (id, content, review, user) VALUES (26, 'bgn62uv8 w8x3', 26, 26);
-INSERT INTO awnser (id, content, review, user) VALUES (27, '948jdvt', 27, 27);
-INSERT INTO awnser (id, content, review, user) VALUES (28, '619e2ihziem
-t0h5', 28, 28);
-INSERT INTO awnser (id, content, review, user) VALUES (29, 'fn7mwl3c m4', 29, 29);
-INSERT INTO awnser (id, content, review, user) VALUES (30, ' b2agm5vl	4wqpwoxne2', 30, 30);
+INSERT INTO awnser (id, content, review, user) VALUES (5, 'crrd9g0qj', 8, 5);
+INSERT INTO awnser (id, content, review, user) VALUES (6, 'a2jbz9dicr', 8, 6);
+INSERT INTO awnser (id, content, review, user) VALUES (7, '	26uy7w2h', 8, 7);
+INSERT INTO awnser (id, content, review, user) VALUES (35, 'Ahahahah Pato!', 10, 1);
+INSERT INTO awnser (id, content, review, user) VALUES (47, 'hahah', 40, 1);
+INSERT INTO awnser (id, content, review, user) VALUES (50, 'asd', 16, 1);
 
 -- Table: favorites
 CREATE TABLE favorites (id INTEGER PRIMARY KEY AUTOINCREMENT, user INTEGER REFERENCES user (id), restaurant INTEGER REFERENCES restaurant (id));
@@ -113,50 +82,50 @@ INSERT INTO picture (id) VALUES (29);
 INSERT INTO picture (id) VALUES (30);
 
 -- Table: restaurant
-CREATE TABLE restaurant (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR NOT NULL, description VARCHAR DEFAULT ('Description not available'), owner INTEGER REFERENCES user (id));
-INSERT INTO restaurant (id, name, description, owner) VALUES (1, '
-r8rp9vm7zga', 'sckd', 1);
-INSERT INTO restaurant (id, name, description, owner) VALUES (2, '0fixm	wmr
+CREATE TABLE restaurant (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR NOT NULL, description VARCHAR DEFAULT ('Description not available'), owner INTEGER REFERENCES user (id), type_id INT REFERENCES type (id));
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (1, '
+r8rp9vm7zga', 'sckd', 1, 2);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (2, '0fixm	wmr
 vt
-81e6b58', 'qnk6gq3cg5fzmji2	n', 2);
-INSERT INTO restaurant (id, name, description, owner) VALUES (3, 'x	yx7
-9', 'f4m7ryi1q3k7h6wlu4us', 3);
-INSERT INTO restaurant (id, name, description, owner) VALUES (4, 'l9aeds', 'tf7	n3o 20477oc48d', 4);
-INSERT INTO restaurant (id, name, description, owner) VALUES (5, 'ug	qdjosyf', 'l 8	zmn0s7x80jh8', 5);
-INSERT INTO restaurant (id, name, description, owner) VALUES (6, 'gp415q3wk44y', 'lrgp74gqwg768gxoeq89', 6);
-INSERT INTO restaurant (id, name, description, owner) VALUES (7, 'kq7b20zz	xfbgofnb', 'r4r26', 7);
-INSERT INTO restaurant (id, name, description, owner) VALUES (8, 'y	7o5f9e77x', '23	8 7anqrtoimxt631', 8);
-INSERT INTO restaurant (id, name, description, owner) VALUES (9, 'p06	fzxs74bb5eqhyy5x', '3wp78mm3vvwp3d', 9);
-INSERT INTO restaurant (id, name, description, owner) VALUES (10, '7ctu9bl1bkyoxfa', 'o cuko8', 10);
-INSERT INTO restaurant (id, name, description, owner) VALUES (11, '4n y', 'xqxb8wt2vm 0', 11);
-INSERT INTO restaurant (id, name, description, owner) VALUES (12, 'c76yse', '6up9kzyl	0pk5', 12);
-INSERT INTO restaurant (id, name, description, owner) VALUES (13, 'cge74x3h', '07pk
+81e6b58', 'qnk6gq3cg5fzmji2	n', 2, 1);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (3, 'x	yx7
+9', 'f4m7ryi1q3k7h6wlu4us', 3, 3);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (4, 'l9aeds', 'tf7	n3o 20477oc48d', 4, 4);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (5, 'ug	qdjosyf', 'l 8	zmn0s7x80jh8', 5, 5);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (6, 'gp415q3wk44y', 'lrgp74gqwg768gxoeq89', 6, 6);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (7, 'kq7b20zz	xfbgofnb', 'r4r26', 7, 7);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (8, 'y	7o5f9e77x', '23	8 7anqrtoimxt631', 8, 8);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (9, 'p06	fzxs74bb5eqhyy5x', '3wp78mm3vvwp3d', 9, 9);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (10, '7ctu9bl1bkyoxfa', 'o cuko8', 10, 2);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (11, '4n y', 'xqxb8wt2vm 0', 11, 2);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (12, 'c76yse', '6up9kzyl	0pk5', 12, 3);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (13, 'cge74x3h', '07pk
 gd0sr1
-4bk', 13);
-INSERT INTO restaurant (id, name, description, owner) VALUES (14, '2i1x1fh	5x', '
+4bk', 13, 3);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (14, '2i1x1fh	5x', '
 gz
 c
-xn60da1d2', 14);
-INSERT INTO restaurant (id, name, description, owner) VALUES (15, '57nfofcy8p88o1sc', 'pu1fem
-qs', 15);
-INSERT INTO restaurant (id, name, description, owner) VALUES (16, 'fksj50zklimdc4si19', '
-rs9cwnrz399pjmgxp', 16);
-INSERT INTO restaurant (id, name, description, owner) VALUES (17, '	jtmaw', '8urpc6jbzhko r6', 17);
-INSERT INTO restaurant (id, name, description, owner) VALUES (18, 'd326zivmbh', 'av7b', 18);
-INSERT INTO restaurant (id, name, description, owner) VALUES (19, 'oqpcoh', '3w	o', 19);
-INSERT INTO restaurant (id, name, description, owner) VALUES (20, 'n7qj7shqw3', 'p12eay7lnhndp4tfdozm', 20);
-INSERT INTO restaurant (id, name, description, owner) VALUES (21, 'cytshf', 'utsgn4ly7zke', 21);
-INSERT INTO restaurant (id, name, description, owner) VALUES (22, 'wsigke4wz35m4tpuj', 's8hr78o7p', 22);
-INSERT INTO restaurant (id, name, description, owner) VALUES (23, 'u5b8e0ro', 'l623', 23);
-INSERT INTO restaurant (id, name, description, owner) VALUES (24, 'i68njmfefp ', 'tk9 n', 24);
-INSERT INTO restaurant (id, name, description, owner) VALUES (25, 'lpp u
-i557hy7a9', 'dzr4ct	a044hdqoqc', 25);
-INSERT INTO restaurant (id, name, description, owner) VALUES (26, 'xox2nf56kpzm2w5', '1eult31nqhv', 26);
-INSERT INTO restaurant (id, name, description, owner) VALUES (27, 'gfvwx3qwcn97v
-twgj98', 'p 2gyz15', 27);
-INSERT INTO restaurant (id, name, description, owner) VALUES (28, '4546jk64nm71z', 'lnlqqd3', 28);
-INSERT INTO restaurant (id, name, description, owner) VALUES (29, 'tr0f', 'p0ehr', 29);
-INSERT INTO restaurant (id, name, description, owner) VALUES (30, 'qs	iq ts9', 'o29t 1t 8', 30);
+xn60da1d2', 14, 4);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (15, '57nfofcy8p88o1sc', 'pu1fem
+qs', 15, 5);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (16, 'fksj50zklimdc4si19', '
+rs9cwnrz399pjmgxp', 16, 6);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (17, '	jtmaw', '8urpc6jbzhko r6', 17, 7);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (18, 'd326zivmbh', 'av7b', 18, 8);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (19, 'oqpcoh', '3w	o', 19, 9);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (20, 'n7qj7shqw3', 'p12eay7lnhndp4tfdozm', 20, 10);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (21, 'cytshf', 'utsgn4ly7zke', 21, 11);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (22, 'wsigke4wz35m4tpuj', 's8hr78o7p', 22, 3);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (23, 'u5b8e0ro', 'l623', 23, 12);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (24, 'i68njmfefp ', 'tk9 n', 24, 4);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (25, 'lpp u
+i557hy7a9', 'dzr4ct	a044hdqoqc', 25, 6);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (26, 'xox2nf56kpzm2w5', '1eult31nqhv', 26, 5);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (27, 'gfvwx3qwcn97v
+twgj98', 'p 2gyz15', 27, 8);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (28, '4546jk64nm71z', 'lnlqqd3', 28, 2);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (29, 'tr0f', 'p0ehr', 29, 1);
+INSERT INTO restaurant (id, name, description, owner, type_id) VALUES (30, 'qs	iq ts9', 'o29t 1t 8', 30, 1);
 
 -- Table: restaurantPicture
 CREATE TABLE restaurantPicture (picture_id INTEGER REFERENCES picture (id), restaurant_id INTEGER REFERENCES restaurant (id));
@@ -193,9 +162,6 @@ INSERT INTO restaurantPicture (picture_id, restaurant_id) VALUES (30, 30);
 
 -- Table: review
 CREATE TABLE review (rating INTEGER CHECK (rating < 6 AND rating > - 1) NOT NULL, id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, description VARCHAR DEFAULT ('Review not available'), restaurant_id INTEGER REFERENCES restaurant (id) NOT NULL, reviewer_id INTEGER REFERENCES user (id) NOT NULL);
-INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (5, 1, '0lr29sv9ezt2owr ', 1, 1);
-INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (4, 2, 'vjd9j1
-mvo	', 2, 2);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (4, 3, 'n  ye0', 3, 3);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 4, ' q6ty', 4, 4);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 5, '163320w	', 5, 5);
@@ -209,8 +175,6 @@ INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES 
 e b27
 r72lvml
 tknmu', 11, 11);
-INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 12, 'agy9lun', 12, 12);
-INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (1, 13, 'ccn3l', 13, 13);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 14, 'v2x4	3', 14, 14);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (2, 15, '	4au	eg', 15, 15);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (1, 16, '021
@@ -227,11 +191,12 @@ INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES 
 1ggx', 23, 23);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 24, 'ie8w1 piw2m9d', 24, 24);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (5, 25, '371jyngfkkefj', 25, 25);
-INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (1, 26, 'uzg02spso', 26, 26);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (2, 27, 'zxznepcv9qj0dxd82', 27, 27);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (4, 28, 'p7i7ei7aqr3t7xe', 28, 28);
 INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (1, 29, '8jct21tg 5', 29, 29);
-INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (5, 30, 'cdt3rvqia	', 30, 30);
+INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (0, 36, 'LOL comida ZERO!', 10, 1);
+INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 40, 'asdasd', 1, 1);
+INSERT INTO review (rating, id, description, restaurant_id, reviewer_id) VALUES (3, 41, 'sadasd', 1, 1);
 
 -- Table: type
 CREATE TABLE type (id INTEGER PRIMARY KEY AUTOINCREMENT, content VARCHAR);
@@ -301,7 +266,7 @@ INSERT INTO type (id, content) VALUES (50, 's9lw');
 
 -- Table: user
 CREATE TABLE user (nome VARCHAR DEFAULT ('defaultUser'), id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, picture_id INTEGER REFERENCES picture (id) DEFAULT NULL, password VARCHAR NOT NULL, username VARCHAR NOT NULL, description VARCHAR);
-INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('David', 1, NULL, '0d287772dfced30917b9dbb547a3dfc2b8ddfa82ef867191f73c64f4770face9', 'peaceoff', NULL);
+INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('admin', 1, NULL, 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'a', 'Gosto de Batatas');
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('crfb	f	a79h', 2, NULL, 'vucg4
 qr9i07', 'x3a39i1f6r 21cn ', 'sad');
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('
@@ -396,6 +361,20 @@ INSERT INTO user (nome, id, picture_id, password, username, description) VALUES 
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('fewr0k4s ', 48, NULL, 'v045xx0u w', '7j88k', 'sacascafe');
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('xrhf', 49, NULL, '8hkyk26708', '05n72tonfmu3rmqqpxkv', NULL);
 INSERT INTO user (nome, id, picture_id, password, username, description) VALUES ('jj51pie79g', 50, NULL, 'cl05x1ty1x494d06ou2', 'ssql5j7y0911w7', NULL);
+
+-- Trigger: deleteComments
+CREATE TRIGGER deleteComments BEFORE DELETE ON review FOR EACH ROW BEGIN DELETE FROM awnser 
+WHERE awnser.review = OLD.id; END;
+
+-- View: viewUserAnswer
+CREATE VIEW viewUserAnswer AS SELECT awnser.id, content, review, nome, user.id as user_id
+FROM awnser, user
+WHERE awnser.user = user.id;
+
+-- View: viewUserReview
+CREATE VIEW viewUserReview AS SELECT review.id as id, review.description, restaurant_id, rating, nome, user.id as user_id 
+FROM user, review
+WHERE user.id = review.reviewer_id;
 
 COMMIT TRANSACTION;
 PRAGMA foreign_keys = on;
