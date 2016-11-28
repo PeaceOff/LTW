@@ -61,3 +61,60 @@ nav li a:target{
 body nav ul li form input {
     color: black;
 }
+
+.reviews li{
+  background-color: #FFF;
+  list-style-type: none;
+  border-radius: 0.5em;
+
+}
+
+.reviews li h6 , .reviews li h5, .reviews li h4{
+  display: inline-block;
+  margin: 0.5em;
+  margin-left: 2em;
+}
+
+.reviews li h4{
+  padding: 0.2em;
+  border-radius: 0.5em;
+  background-color: #49F;
+}
+
+
+.reviews li a{
+  display: inline-block;
+  padding: 0.1em;
+  margin-left: 1em;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  background-color: #CCC;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+.reviews li a:hover{
+  background-color: #AAA;
+}
+
+.reviews li p{
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding-left: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #DDD;
+  border-radius: 0.5em;
+}
+.reviews li h5{
+
+}
+
+
+
+.reviews ul ul li{
+  background-color: #DDD;
+  list-style-type: none;
+  border-radius: 0.5em;
+
+}
