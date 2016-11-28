@@ -6,6 +6,11 @@
     include_once('../database/users.php');
     include_once('../database/types.php');
 
+    if(!isset($_SESSION['username'])){
+      header('Location: ../Pages/home.php');
+      exit();
+    }
+
     $ownerId = getUserInfo($_SESSION['username'])['id'];
     $name = $_POST['name'];
     $description = $_POST['description'];

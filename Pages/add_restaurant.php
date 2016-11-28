@@ -1,5 +1,10 @@
 <?php
     include_once('../templates/header.php');
+
+    if(!isset($_SESSION['username'])){
+      header('Location: ../Pages/home.php');
+      exit();
+    }
 ?>
 
 <div class="restaurantForm">
