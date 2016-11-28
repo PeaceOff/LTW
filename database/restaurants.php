@@ -55,4 +55,12 @@
 		return $stmt->fetchAll();
 	}
 
+	function insertRestaurant($name,$description,$ownerId,$typeId) {
+		global $db;
+		$stmt = $db->prepare('INSERT INTO restaurant (name,description,owner,type_id) VALUES(?,?,?,?)');
+		$stmt->execute(array($name,$description,$ownerId,$typeId));
+
+		return;
+	}
+
 ?>

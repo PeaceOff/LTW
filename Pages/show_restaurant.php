@@ -28,7 +28,7 @@ foreach( $pictures as $picture ) {
 <?php } ?>
   </ul>
 </div>
-
+<?php } ?>
 <?php
     if(isset($_SESSION['username'])){
 ?>
@@ -49,9 +49,6 @@ foreach( $pictures as $picture ) {
   <button class="PostButton"> Post </button>
 
 </form>
-<?php
-  }
-?>
 
 <?php }
 $reviews = getReviews($id);
