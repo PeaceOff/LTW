@@ -21,7 +21,7 @@
     }
 
     function newUser($props){
-        
+
         global $db;
         $stmt = $db->prepare('INSERT INTO user (nome, id, picture_id, password, username, description) VALUES (:name,NULL,NULL,:password,:username,:description);');
         $stmt->bindParam(':name', $props['name'], PDO::PARAM_STR);
@@ -33,4 +33,6 @@
 
         return;
     }
+
+    
  ?>
