@@ -8,16 +8,23 @@ include_once('../database/restaurants.php');
 <script type="text/javascript" src="../Javascript/search.js"></script>
 
 
-<div class="searchBar">
 
-<label> Search <input type= "text" name="search" value="restaurant"/> </label>
-<input type="submit" name="SearchButton"> Search </button>
 
+<label>
+  Type:
+  <select name="type">
+    <option value="none">None</option>
+  </select>
+</label>
+
+<label>
+  Search <input type= "text" name="search" />
+</label>
+
+<input type="submit" name="SearchButton">
 
 <div id="restaurantList">
-
-<ul id="restaurants"></ul>
-
+  <ul id="restaurants"></ul>
 </div>
 
 <?php
