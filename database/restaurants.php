@@ -16,11 +16,16 @@
     return $stmt->fetch();
 	}
 
-	function getRestaurantBySearch($search) {
+	function getRestaurantBySearch($search,$typeId) {
     global $db;
 
-		$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) ');
-    $stmt->execute(array("%".$search."%"));
+		if($typeId != -1){
+			$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) AND type_id = ? ');
+			$stmt->execute(array("%".$search."%",$typeId));
+		}else{
+			$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?)');
+			$stmt->execute(array("%".$search."%"));
+		}
 
   	return $stmt->fetchAll();
   }
