@@ -7,7 +7,7 @@
     include_once('../database/types.php');
 
     if(!isset($_SESSION['username'])){
-      header('Location: ../Pages/home.php');
+      header('Location: ../pages/home.php');
       exit();
     }
 
@@ -29,6 +29,6 @@
 
     insertRestaurant($name,$description,$ownerId,$typeId);
 
-    header('Location: ../Pages/home.php');
+    header('Location: ../pages/home.php');
     exit();
  ?>

@@ -2,7 +2,7 @@
     include_once('../templates/header.php');
 
     if(!isset($_SESSION['username'])){
-      header('Location: ../Pages/home.php');
+      header('Location: ../pages/home.php');
       exit();
     }
 ?>

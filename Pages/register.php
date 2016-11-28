@@ -3,12 +3,12 @@
     include_once('../templates/header.php');
 
     if(isset($_SESSION['username'])){
-        header('Location: ../Pages/home.php');
+        header('Location: ../pages/home.php#hoome');
         exit();
     }
 ?>
 
-<script type="text/javascript" src="../Javascript/register.js"></script>
+<script type="text/javascript" src="../javascript/register.js"></script>
 <div id="register" class="animate form">
     <form id="registerForm" action="../database/action_register.php" method="post">
         <h1> Sign up </h1>

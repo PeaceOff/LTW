@@ -15,7 +15,7 @@ function fillTypesDropDown(){
 
   $.ajax({
     type:'GET',
-    url: '../Requests/showTypes.php',
+    url: '../requests/showTypes.php',
     success: function(types) {
       $.each(JSON.parse(types),function(i,type){
           typeDropDown.append('<option value=' + type.id + '>' + type.content + '</option>');
@@ -29,7 +29,7 @@ function updateResults(){
   var restaurantList= $('#restaurants');
   var searched = $("input[name='search']").val();
   var typeId = $("select[name='type']").val();
-  var jsonInfo = '../Requests/showResults.php?search=' + searched + '&typeId=' + typeId;
+  var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId;
 
   //clear last results
   restaurantList.empty();
@@ -40,7 +40,7 @@ function updateResults(){
     success: function(restaurants) {
 
       $.each(JSON.parse(restaurants),function(i,restaurant){
-          var link = "../Pages/show_restaurant.php?id=" + restaurant.id;
+          var link = "../pages/show_restaurant.php?id=" + restaurant.id;
           restaurantList.append('<li> Name: ' + restaurant.name + '</br>'
                                   + 'Description: ' + restaurant.description +
                                   '</br>' + 'Type Id: ' + restaurant.type_id + '</li>');

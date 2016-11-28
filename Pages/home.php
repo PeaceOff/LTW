@@ -5,7 +5,7 @@ include_once('../database/connect.php');
 include_once('../database/restaurants.php');
 
 ?>
-<script type="text/javascript" src="../Javascript/search.js"></script>
+<script type="text/javascript" src="../javascript/search.js"></script>
 
 
 

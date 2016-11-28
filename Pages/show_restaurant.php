@@ -8,7 +8,7 @@ $id=$_GET['id'];
 $result = getRestaurant($id);
 $pictures = getRestaurantPictures($id);
 ?>
-<script src="../Javascript/reply.js"> </script>
+<script src="../javascript/reply.js"> </script>
 <div class="restaurantInfo">
 
 <h3> <?php echo  $result['name'] ?> </h3>

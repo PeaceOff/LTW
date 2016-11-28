@@ -7,6 +7,6 @@
     $params = array($_POST['username'],$_POST['password'],$_POST['name'],$_POST['description']);
     newUser($params);
     $_SESSION['username'] = $_POST['username'];
-    header('Location: ../Pages/home.php');
+    header('Location: ../pages/home.php#home');
     exit();
  ?>
