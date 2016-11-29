@@ -13,15 +13,4 @@
   <input type="submit" value="Login">
   <a href="../pages/register.php">Register</a>
 </form>
-
-<script type="text/javascript">
-
-    $( "form#loginForm" ).submit(function( event ) {
-        var value = $("form#loginForm input[name='password']").val();
-        var hash = new Hashes.SHA1().hex(value);
-        $("form#loginForm input[name='password']").val(hash);
-    });
-
-</script>
-
 <?php } ?>
