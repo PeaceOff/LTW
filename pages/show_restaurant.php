@@ -9,7 +9,7 @@ $result = getRestaurant($id);
 $pictures = getRestaurantPictures($id);
 
 if(!$result){
-?><h3> Restaurant Don't Exist! </h3> <?php
+?><h3> Restaurant Doesn't Exist! </h3> <?php
 
   include_once('../templates/footer.php');
   exit();
