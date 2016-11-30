@@ -16,7 +16,7 @@
         <input name="username" required="required" type="text"/>
         </br>
         <label>Your password </label>
-        <input name="password" required="required" type="password"/>
+        <input name="password" required="required" pattern=".{8,}" title="Password must be at least 8 characters long!" type="password"/>
         </br>
         <label>Confirm Password </label>
         <input name="rpassword" required="required" type="password"/>

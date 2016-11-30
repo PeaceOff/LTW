@@ -1,5 +1,5 @@
 $(document).ready( function() {
-
+    
     $("form#registerForm input[name='rpassword']").blur(function ( event ) {
         var pass = $("form#registerForm input[name='password']").val();
         var rpass = $("form#registerForm input[name='rpassword']").val();
@@ -32,8 +32,6 @@ $(document).ready( function() {
         var rpass = $("form#registerForm input[name='rpassword']").val();
         if(pass != rpass)
             return false;
-        var hash = new Hashes.SHA1().hex(pass);
-        $("form#registerForm input[name='password']").val(hash);
     });
 
 });
