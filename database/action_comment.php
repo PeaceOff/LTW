@@ -12,7 +12,8 @@
 
   $user = $info['id'];
   $review = $_POST['id'];
-  $content = $_POST['content'];
+  $content = htmlentities($_POST['content'], ENT_QUOTES, "UTF-8");
+
   addComment($user, $review, $content);
 
 ?>

@@ -4,9 +4,16 @@
     include_once '../database/connect.php';
     include_once '../database/users.php';
 
-    $params = array($_POST['username'],$_POST['password'],$_POST['name'],$_POST['description']);
+    $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
+    $password = $_POST['password'];
+    $name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
+    $description = htmlentities($_POST['description'], ENT_QUOTES, "UTF-8");
+
+    $params = array($username,$password,$name,$description);
+
     newUser($params);
-    $_SESSION['username'] = $_POST['username'];
+
+    $_SESSION['username'] = $username;
     header('Location: ../pages/home.php#home');
     exit();
  ?>

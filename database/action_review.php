@@ -12,7 +12,7 @@
 
   $user = $info['id'];
   $restaurant = $_POST['id'];
-  $description = $_POST['message'];
+  $description = htmlentities($_POST['message'], ENT_QUOTES, "UTF-8");
   $rating = $_POST['rating'];
 
   addReview($restaurant, $user, $rating, $description);

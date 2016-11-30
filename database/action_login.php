@@ -3,7 +3,7 @@
     include_once '../database/connect.php';
     include_once '../database/users.php';
 
-    $username = $_POST['username'];
+    $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
     $password = $_POST['password'];
 
     if(userExists($username,$password)){
