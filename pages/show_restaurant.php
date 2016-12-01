@@ -80,7 +80,11 @@ $reviews = getReviews($id);
   <ul>
 <?php foreach ($reviews as $review) {?>
     <li>
-      <h4> <?php echo $review['nome'] ?> </h4>
+      <h4>
+        <a href="../pages/user_profile.php?username=<?php echo $review['username']?>" ?>
+        <?php echo $review['nome'] ?>
+        </a>
+      </h4>
       <h6> <?php echo $review['rating'] ."/5" ?> </h6>
       <p> <?php echo $review['description']?> </p>
 <?php
@@ -98,7 +102,11 @@ $reviews = getReviews($id);
 <?php $answers = getAnswers($review['id']);
 foreach($answers as $answer){?>
         <li>
-          <h5> <?php echo $answer['nome'] ?> </h5>
+          <h5>
+            <a href="../pages/user_profile.php?username=<?php echo $answer['username']?>" ?>
+              <?php echo $answer['nome'] ?>
+            </a>
+          </h5>
           <p> <?php echo $answer['content'] ?> </p>
     <?php if(isset($_SESSION['id']))
             if($_SESSION['id'] == $answer['user_id']) { ?>

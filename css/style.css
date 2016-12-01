@@ -2,7 +2,7 @@ body {
     margin : 0;
     padding : 0;
     border : 0;
-    background-color: #0099cc;
+    background-color: #234;
 }
 
 nav ul {
@@ -100,7 +100,14 @@ body nav ul li form input {
   border-color: #E82A24;
 }
 
-.reviews li a{
+#loginForm{
+  background-color: inherit;
+}
+
+
+
+
+.reviews li a.reply, .reviews li a.delete-review{
   display: inline-block;
   padding: 0.1em;
   margin-left: 1em;
@@ -113,9 +120,16 @@ body nav ul li form input {
   border-bottom-right-radius: 0.5em;
 }
 
-.reviews li a:hover{
+.reviews li a.reply:hover, .reviews li a.delete-review:hover{
   background-color: #243041;
 }
+
+.reviews a{
+  text-decoration: none;
+  cursor:pointer;
+  color: #A81A14
+}
+
 .reviews ul{
   padding-bottom: 1em;
 }
@@ -173,6 +187,9 @@ body nav ul li form input {
 #map {
   height: 30em;
   width: 30em;
+
+  background-color: #414F63;
+
 }
 
 #mapSearch{
@@ -187,4 +204,16 @@ body nav ul li form input {
 }
 #mapSearch:focus {
        border-color: #4d90fe;
+}
+
+form{
+  background-color: #414F63;
+}
+
+.image-slide{
+  background-color: #414F63;
+}
+
+.restaurantInfo{
+  background-color: #414F63;
 }

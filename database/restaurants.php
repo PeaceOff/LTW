@@ -30,6 +30,13 @@
   	return $stmt->fetchAll();
   }
 
+	function getRestaurantByOwner($ownerID) {
+		global $db;
+		$stmt = $db->prepare(' SELECT * FROM restaurant WHERE owner = ? ');
+		$stmt->execute(array($ownerID));
+		return $stmt->fetchAll();
+	}
+
 	function getRestaurantPictures($id){
 
 		global $db;
