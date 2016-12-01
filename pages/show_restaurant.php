@@ -7,6 +7,14 @@ include_once('../database/restaurants.php');
 $id=$_GET['id'];
 $result = getRestaurant($id);
 $pictures = getRestaurantPictures($id);
+
+if(!$result){
+?><h3> Restaurant Doesn't Exist! </h3> <?php
+
+  include_once('../templates/footer.php');
+  exit();
+}
+
 ?>
 <script src="../javascript/reply.js"> </script>
 <script src="../javascript/show_restaurant.js"> </script>

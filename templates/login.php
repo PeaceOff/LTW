@@ -2,7 +2,7 @@
     if(isset($_SESSION['username'])){
 ?>
 
-<label> Logged in as: <?php echo $_SESSION['username'] ?> </label>
+<label> Logged in as:<a href="../pages/user_profile.php?id=<?php echo $_SESSION['id']?>"><?php echo $_SESSION['username'] ?></a></label>
 <a href="../database/action_logout.php">Logout</a>
 
 <?php }else{ ?>

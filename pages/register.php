@@ -3,7 +3,7 @@
     include_once('../templates/header.php');
 
     if(isset($_SESSION['username'])){
-        header('Location: ../pages/home.php#hoome');
+        header('Location: ../pages/home.php#home');
         exit();
     }
 ?>
@@ -25,7 +25,7 @@
         <input name="name" required="required" type="text"/>
         </br>
         <label> About Yourself</label>
-        <input name="description" type="textarea"/>
+        <textarea name="description" type="text" maxlength="300" rows="6" cols="50" style="resize: none;"/></textarea>
         </br>
         <input type="submit" value="Register"/>
     </form>
