@@ -7,38 +7,37 @@ include_once('../database/restaurants.php');
 $id=$_GET['id'];
 $result = getRestaurant($id);
 $pictures = getRestaurantPictures($id);
-
-if(!$result){
-?><h3> Restaurant Don't Exist! </h3> <?php
-
-  include_once('../templates/footer.php');
-  exit();
-}
 ?>
 <script src="../javascript/reply.js"> </script>
-<div class="restaurantInfo">
+<script src="../javascript/show_restaurant.js"> </script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvlrloJ9F8k&libraries=places&callback=initMap">
+</script>
 
-<h3> <?php echo  $result['name'] ?> </h3>
-<p> <?php echo $result['description'] ?> </p>
-</div>
 
-<?php if(count($pictures) > 0 ){ ?>
-<div class="image-slide">
-  <ul>
 
 <?php
-foreach( $pictures as $picture ) {
-  $path = "../images/". $picture['picture_id'];
-  if(!file_exists($path))
+  echo '<div class="restaurantInfo">';
+  echo '<h3>' .  $result['name'] . '</h3>';
+  echo '<p>' . $result['description'] .'</p>';
+  echo '</div>';
+
+  if(count($pictures) > 0 ){
+   echo '<div class="image-slide">';
+   echo '<ul>';
+
+  foreach( $pictures as $picture ) {
+    $path = "../images/". $picture['picture_id'];
+    if(!file_exists($path))
     $path = '../images/error.jpg';
-?>
-    <li> <img src= <?php echo $path ?> > </li>
-<?php } ?>
-  </ul>
-</div>
-<?php } ?>
-<?php
-    if(isset($_SESSION['username'])){
+    echo '<li> <img src=' . $path . '> </li>';
+   }
+
+  echo '</ul>';
+  echo '</div>';
+ }
+
+  if(isset($_SESSION['username'])){
 ?>
 
 <form action="../database/action_review.php" class="review" method="post">
@@ -60,9 +59,13 @@ foreach( $pictures as $picture ) {
 
 </form>
 
+
+<div id="map"></div>
+
 <?php }
 $reviews = getReviews($id);
 ?>
+
 
 <div class="reviews">
 

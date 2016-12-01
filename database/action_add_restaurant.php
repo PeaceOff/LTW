@@ -15,7 +15,11 @@
     $name = $_POST['name'];
     $description = $_POST['description'];
     $typeContent = $_POST['type'];
+    $latitude = $_POST['latitude'];
+    $longitude = $_POST['longitude'];
     $type = getTypebyContent($typeContent);
+
+
 
     $typeId;
 
@@ -27,7 +31,7 @@
     }
 
 
-    insertRestaurant($name,$description,$ownerId,$typeId);
+    insertRestaurant($name,$description,$ownerId,$typeId,$latitude,$longitude);
 
     header('Location: ../pages/home.php');
     exit();

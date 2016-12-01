@@ -56,10 +56,10 @@
 	}
 
 
-	function insertRestaurant($name,$description,$ownerId,$typeId) {
+	function insertRestaurant($name,$description,$ownerId,$typeId,$latitude,$longitude) {
 		global $db;
-		$stmt = $db->prepare('INSERT INTO restaurant (name,description,owner,type_id) VALUES(?,?,?,?)');
-		$stmt->execute(array($name,$description,$ownerId,$typeId));
+		$stmt = $db->prepare('INSERT INTO restaurant (name,description,owner,type_id,latitude,longitude) VALUES(?,?,?,?,?,?)');
+		$stmt->execute(array($name,$description,$ownerId,$typeId,$latitude,$longitude));
 
 		return;
 }
