@@ -79,8 +79,6 @@ body nav ul li form input {
   margin: 0.5em;
   margin-left: 2em;
 
-
-
 }
 
 .reviews li h4 , .reviews li h5{
@@ -104,10 +102,14 @@ body nav ul li form input {
   background-color: inherit;
 }
 
+.reviews h4 a, .reviews h5 a{
+  text-decoration: none;
+  cursor:pointer;
+  color: #A81A14;
+}
 
 
-
-.reviews li a.reply, .reviews li a.delete-review{
+.reply, .delete-review, .delete-comment{
   display: inline-block;
   padding: 0.1em;
   margin-left: 1em;
@@ -120,15 +122,11 @@ body nav ul li form input {
   border-bottom-right-radius: 0.5em;
 }
 
-.reviews li a.reply:hover, .reviews li a.delete-review:hover{
+.reply:hover, .delete-review:hover, .delete-comment:hover{
   background-color: #243041;
 }
 
-.reviews a{
-  text-decoration: none;
-  cursor:pointer;
-  color: #A81A14
-}
+
 
 .reviews ul{
   padding-bottom: 1em;

@@ -22,8 +22,6 @@ if(!$result){
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvlrloJ9F8k&libraries=places&callback=initMap">
 </script>
 
-
-
 <?php
   echo '<div class="restaurantInfo">';
   echo '<h3>' .  $result['name'] . '</h3>';
@@ -43,8 +41,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
   echo '</ul>';
   echo '</div>';
- }
-
+} ?>
+<div id="map"></div>
+<?php
   if(isset($_SESSION['username'])){
 ?>
 
@@ -64,11 +63,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
     <textarea rows="4" cols="50" name="message"></textarea>
   </label>
   <button class="PostButton"> Post </button>
-
 </form>
-
-
-<div id="map"></div>
 
 <?php }
 $reviews = getReviews($id);
@@ -78,7 +73,8 @@ $reviews = getReviews($id);
 <div class="reviews">
 
   <ul>
-<?php foreach ($reviews as $review) {?>
+<?php
+foreach ($reviews as $review) {?>
     <li>
       <h4>
         <a href="../pages/user_profile.php?username=<?php echo $review['username']?>" ?>
@@ -88,36 +84,42 @@ $reviews = getReviews($id);
       <h6> <?php echo $review['rating'] ."/5" ?> </h6>
       <p> <?php echo $review['description']?> </p>
 <?php
-    if(isset($_SESSION['username'])){
+  if(isset($_SESSION['username'])){
 ?>
       <a class="reply" reviewID=<?php echo '"'.$review['id'].'"' ?> ;> Reply </a>
-  <?php if(isset($_SESSION['id']))
-          if($_SESSION['id']== $review['user_id']) { ?>
-      <a class="delete-review" reviewID=<?php echo '"'.$review['id'].'"' ?> ;> Delete </a>
-  <?php   }?>
 <?php
-    }
+  if(isset($_SESSION['id']))
+    if($_SESSION['id']== $review['user_id']) { ?>
+      <a class="delete-review" reviewID=<?php echo '"'.$review['id'].'"' ?> ;> Delete </a>
+<?php
+      }
+  }
 ?>
       <ul>
-<?php $answers = getAnswers($review['id']);
-foreach($answers as $answer){?>
+<?php
+$answers = getAnswers($review['id']);
+  foreach($answers as $answer){?>
         <li>
           <h5>
             <a href="../pages/user_profile.php?username=<?php echo $answer['username']?>" ?>
               <?php echo $answer['nome'] ?>
             </a>
           </h5>
-          <p> <?php echo $answer['content'] ?> </p>
-    <?php if(isset($_SESSION['id']))
-            if($_SESSION['id'] == $answer['user_id']) { ?>
+          <p>
+            <?php echo $answer['content'] ?>
+          </p>
+<?php
+    if(isset($_SESSION['id']))
+      if($_SESSION['id'] == $answer['user_id']) { ?>
           <a class="delete-comment" commentID=<?php echo '"'.$answer['id'].'"' ?> ;> Delete </a>
-    <?php }?>
-        </li>
 <?php }?>
+        </li>
+<?php
+  }?>
       </ul>
-
     </li>
-<?php } ?>
+<?php
+}?>
   </ul>
 
 </div>
