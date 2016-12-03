@@ -2,8 +2,13 @@ body {
     margin : 0;
     padding : 0;
     border : 0;
-    background-color: #234;
+    background-color: #88afd6;
+
+
 }
+
+
+
 
 nav ul {
   background-color: #333;
@@ -45,7 +50,7 @@ nav li a{
   border-bottom-left-radius:0.5em;
 
   border-bottom-right-radius: 0.5em;
-  transition: background-color 300ms ease-in-out;
+
 
 }
 
@@ -214,4 +219,81 @@ form{
 
 .restaurantInfo{
   background-color: #414F63;
+}
+
+
+
+.typeDropDown{
+  border: 1px solid #607d8b;
+  padding: 10px;
+}
+
+#searchBox{
+  border: 1px solid #607d8b;
+  padding: 10px;
+}
+
+#searchBtn{
+  border: 1px solid #607d8b;
+  background:  #607d8b;
+  color: white;
+  padding: 10px;
+  margin-left: -5px;
+}
+
+#searchBtn:hover{
+  background:  #0f2029;
+}
+
+
+
+
+#sugestions li a{
+    display:block;
+    text-decoration:none;
+    color:#ffffff;
+    font-size:30px;
+    background-color:#20272d;
+    padding:10px;
+}
+
+#sugestions {
+  width:465px;
+  list-style:none;
+  padding:0;
+}
+
+
+
+
+#sugestions li a:hover {
+   color:#ffffff;
+   background:#242473;
+}
+
+#sugestions li:hover {
+  width: 500px;
+  transition: width 2s ;
+}
+
+#sugestions li{
+  max-height: 0px;
+  overflow:hidden;
+}
+
+#searchBox:focus ~ #sugestions li {
+  animation-name: teste;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-play-state: running;
+  animation-fill-mode:
+}
+
+@keyframes teste {
+  0%{
+     max-height:0px;
+   }
+  100%{
+    max-height:500px;
+  }
 }

@@ -1,10 +1,23 @@
 $(document).ready( function() {
 
-    var btn = $("input[name='SearchButton']");
-    btn.click(updateResults);
+
+    $("#searchBtn").click(function() {
+      updateResults(false);
+    });
+
+    $("#searchBox").keyup(function(event) {
+      if(event.keyCode == 13)
+        $("#searchBtn").click();
+      else
+        updateResults(true);
+
+
+
+    });
 
     fillTypesDropDown();
 });
+
 
 function fillTypesDropDown(){
   var typeDropDown = $("select[name='type']");
@@ -25,13 +38,15 @@ function fillTypesDropDown(){
 
 }
 
-function updateResults(){
+function updateResults(sugestion){
+  var sugestions= $('#sugestions');
   var restaurantList= $('#restaurants');
   var searched = $("input[name='search']").val();
   var typeId = $("select[name='type']").val();
   var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId;
 
   //clear last results
+  sugestions.empty();
   restaurantList.empty();
 
   $.ajax({
@@ -41,10 +56,16 @@ function updateResults(){
 
       $.each(JSON.parse(restaurants),function(i,restaurant){
           var link = "../pages/show_restaurant.php?id=" + restaurant.id;
+
+          if(sugestion){
+            sugestions.append('<li><a href="#">' + restaurant.name + '</a></li>');
+          }
+          else{
           restaurantList.append('<li> Name: ' + restaurant.name + '</br>'
                                   + 'Description: ' + restaurant.description +
                                   '</br>' + 'Type Id: ' + restaurant.type_id + '</li>');
           restaurantList.append('<a href=' + link + '> View Restaurant Info </a>');
+        }
       });
     }
   });

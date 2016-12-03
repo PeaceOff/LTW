@@ -41,9 +41,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
   echo '</ul>';
   echo '</div>';
-} ?>
-<div id="map"></div>
-<?php
+}
+
+  echo '<div id="map" lat="' .  $result['latitude'] . '" lng="' . $result['longitude'] . '"></div>';
+
   if(isset($_SESSION['username'])){
 ?>
 
