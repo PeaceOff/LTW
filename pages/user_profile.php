@@ -32,7 +32,7 @@ if($info == null){ ?>
 if($owner){?>
 
 <a href="../pages/edit_profile.php?username=<?php echo $_SESSION['username']?>"> Edit Profile </a>
-<a href="../pages/add_restaurant.php"> Add Restaurant </a>
+<a href="../pages/manage_restaurant.php"> Add Restaurant </a>
 
 <?php
 }?>
@@ -57,7 +57,7 @@ foreach($restaurants as $restaurant){ ?>
           </a>
 <?php
   if($owner){?>
-    <a href="../pages/add_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
+    <a href="../pages/manage_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
       Edit Restaurant
     </a>
     <a href="../database/action_delete_restaurant.php?id=<?php echo $restaurant['id'] ?>" >

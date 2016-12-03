@@ -67,9 +67,29 @@
 		global $db;
 		$stmt = $db->prepare('INSERT INTO restaurant (name,description,owner,type_id,latitude,longitude) VALUES(?,?,?,?,?,?)');
 		$stmt->execute(array($name,$description,$ownerId,$typeId,$latitude,$longitude));
-
 		return;
-}
+	}
+
+	function updateRestaurant($restaurtant_id,$name,$description,$ownerId,$typeId,$latitude,$longitude) {
+		global $db;
+		$stmt = $db->prepare('UPDATE restaurant
+													SET name = :name ,
+													description = :description ,
+													owner = :owner,
+													type_id = :type ,
+													latitude = :lat ,
+													longitude = :long
+													WHERE id = :rest_id');
+		$stmt->bindParam(':name', $name, PDO::PARAM_STR);
+		$stmt->bindParam(':description', $description, PDO::PARAM_STR);
+		$stmt->bindParam(':owner', $ownerId, PDO::PARAM_INT);
+		$stmt->bindParam(':type', $typeId, PDO::PARAM_INT);
+		$stmt->bindParam(':lat', $latitude, PDO::PARAM_STR);
+		$stmt->bindParam(':long', $longitude, PDO::PARAM_STR);
+		$stmt->bindParam(':rest_id', $restaurtant_id, PDO::PARAM_INT);
+		$stmt->execute();
+	}
+
 	function addReview($restaurant, $user_id, $rating, $comment){
 		global $db;
 		$stmt = $db->prepare('INSERT INTO review(rating, description, restaurant_id, reviewer_id)
