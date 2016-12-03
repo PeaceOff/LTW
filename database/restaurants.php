@@ -110,4 +110,14 @@
 		$stmt->execute();
 	}
 
+	function deleteRestaurant($id){
+		global $db;
+		$stmt = $db->prepare('DELETE FROM restaurant
+													WHERE id = :id');
+		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+		$stmt->execute();
+	}
+
+
+
 ?>
