@@ -12,11 +12,11 @@
     }
 
     $ownerId = getUserInfo($_SESSION['username'])['id'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-    $typeContent = $_POST['type'];
-    $latitude = $_POST['latitude'];
-    $longitude = $_POST['longitude'];
+    $name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
+    $description = htmlentities($_POST['description'], ENT_QUOTES, "UTF-8");
+    $typeContent = htmlentities($_POST['type'], ENT_QUOTES, "UTF-8");
+    $latitude = htmlentities($_POST['latitude'], ENT_QUOTES, "UTF-8");
+    $longitude = htmlentities($_POST['longitude'], ENT_QUOTES, "UTF-8");
     $type = getTypebyContent($typeContent);
 
 
