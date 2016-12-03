@@ -12,7 +12,6 @@ $(document).ready( function() {
             datatype : "text",
             success : function(data){
                 var elem = $("form#loginForm input[name='password']")[0];
-                console.log(data);
                 if(data == "true"){
                     $( "form#loginForm input[name='password']" ).blur();
                     passou = true;
@@ -33,6 +32,7 @@ $(document).ready( function() {
 
     $( "form#loginForm input[name='username']" ).blur(function( event ) {
         var user = $("form#loginForm input[name='username']").val();
+        user = user.toLowerCase();
         $.ajax({
             type : "POST",
             url : "../database/action_user_exists.php",

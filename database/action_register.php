@@ -5,6 +5,7 @@
     include_once '../database/users.php';
 
     $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
+    $username = strtolower($username);
 
     if(isUser($username)){
         header('Location: ../pages/home.php#home');
@@ -17,7 +18,7 @@
         header('Location: ../pages/register.php');
         exit();
     }
-    
+
     $name = htmlentities($_POST['name'], ENT_QUOTES, "UTF-8");
     $description = htmlentities($_POST['description'], ENT_QUOTES, "UTF-8");
     $description = trim($description);
@@ -30,6 +31,7 @@
     $_SESSION['username'] = $info['username'];
     $_SESSION['id'] = $info['id'];
     $_SESSION['description'] = $info['description'];
+    $_SESSION['name'] = $info['nome'];
     header('Location: ../pages/home.php#home');
     exit();
  ?>

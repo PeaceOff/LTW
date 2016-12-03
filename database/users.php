@@ -27,7 +27,7 @@
         $stmt->execute();
         $result = $stmt->fetch();
 
-        return $result['username'];
+        return strtolower($result['username']);
     }
 
     function getUserInfo($user) {
@@ -55,14 +55,11 @@
         return;
     }
 
-    function updateUser($username,$password,$newpass,$rnewpass,$name,$description){
+    function updateUser($username,$newpass,$name,$description){
 
-        if($newpass != $rnewpass || !userExists($username,$password,$password)){
-            return;
-        }
         global $db;
-        $user = strtolower($username);
-        $stmt = $db->prepare('UPDATE user SET password = :pass, name = :name, description = :description WHERE username = :user');
+        $username = strtolower($username);
+        $stmt = $db->prepare('UPDATE USER SET password = :pass, nome = :name, description = :description WHERE username = :user');
         $newpass =  password_hash($newpass , PASSWORD_DEFAULT);
         $stmt->bindParam(':pass',$newpass,PDO::PARAM_STR);
         $stmt->bindParam(':name',$name,PDO::PARAM_STR);
@@ -70,7 +67,7 @@
         $stmt->bindParam(':user',$username,PDO::PARAM_STR);
         $stmt->execute();
 
-        return;
+        return true;
     }
 
  ?>

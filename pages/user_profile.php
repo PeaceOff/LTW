@@ -1,16 +1,15 @@
 <?php
-include_once('../templates/header.php');
-include_once('../database/users.php');
-include_once('../database/restaurants.php');
-include_once('../database/connect.php');
+    include_once('../templates/header.php');
+    include_once('../database/users.php');
+    include_once('../database/restaurants.php');
+    include_once('../database/connect.php');
 
-$username = $_GET['username'];
-$info = getUserInfo($username);
-$owner = false;
-
-
-if($info == null){ ?>
-  <h3> User don't exist! </h3>
+    $username = $_GET['username'];
+    $info = getUserInfo($username);
+    $owner = false;
+    if($info == null){
+?>
+  <h3> User doesn't exist! </h3>
 
 <?php
   include_once('../templates/footer.php');
@@ -28,17 +27,16 @@ if($info == null){ ?>
 <?php echo $info['nome']; ?>
 </h3>
 
+<p> <?php echo $info['description'] ?> </p>
+
 <?php
 if($owner){?>
 
-<a href="../pages/edit_profile.php?username=<?php echo $_SESSION['username']?>"> Edit Profile </a>
 <a href="../pages/manage_restaurant.php"> Add Restaurant </a>
 
 <?php
 }?>
 
-
-<p> <?php echo $info['description'] ?> </p>
 </div>
 
 <?php
@@ -72,9 +70,14 @@ foreach($restaurants as $restaurant){ ?>
     </ul>
   </div>
 <?php
-}?>
+    }
+    if(isset($_SESSION['username']))
+    if($username == $_SESSION['username']){
+?>
 
+<a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit</a>
 
 <?php
-include_once('../templates/footer.php');
+    }
+    include_once('../templates/footer.php');
 ?>
