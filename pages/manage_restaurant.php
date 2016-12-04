@@ -121,10 +121,10 @@ if(!$add){ ?>
       </select>
     </label>
     <label> Open
-      <input type="time" name="sch_open" placeholder="hrs:mins" class="inputs time" value="08:30" required>
+      <input type="time" name="sch_open" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" placeholder="hrs:mins" class="inputs time" value="08:30" required>
     </label>
     <label> Close
-      <input type="time" name="sch_close" placeholder="hrs:mins" class="inputs time" value="20:30" required>
+      <input type="time" name="sch_close" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]" placeholder="hrs:mins" class="inputs time" value="20:30" required>
     </label>
     <input type="hidden" name="restaurant_id" value="<?php echo $restaurant['id'] ?>" />
     <input type="submit" value="Update/Add"/>

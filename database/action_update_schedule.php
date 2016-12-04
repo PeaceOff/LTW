@@ -13,6 +13,7 @@
   $sch_type = htmlentities($_POST['sch_type'], ENT_QUOTES, "UTF-8");
   $sch_open = htmlentities($_POST['sch_open'], ENT_QUOTES, "UTF-8");
   $sch_close = htmlentities($_POST['sch_close'], ENT_QUOTES, "UTF-8");
+
   $schedule = getSchedule2($restaurant_id,$sch_type);
 
   if($schedule){
