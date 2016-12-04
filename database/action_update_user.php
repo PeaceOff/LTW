@@ -9,7 +9,7 @@
         exit();
     }
 
-    $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
+    $username = htmlentities($_SESSION['username'], ENT_QUOTES, "UTF-8");
     $username = strtolower($username);
 
     $password = $_POST['password'];
@@ -23,7 +23,7 @@
     $description = htmlentities($_POST['description'], ENT_QUOTES, "UTF-8");
     $description = trim($description);
 
-    if(updateUser($username,$npassword,$name,$description)){
+    if(updateUser($_SESSION['id'],$username,$npassword,$name,$description)){
         $_SESSION['description'] = $description;
         $_SESSION['name'] = $name;
         header('Location: ../pages/home.php#home');
