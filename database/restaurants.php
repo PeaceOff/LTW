@@ -71,35 +71,38 @@
 		$stmt->execute(array($name,$description,$ownerId,$latitude,$longitude));
 
 		$restaurantId= $db->lastInsertId();
+		removeTypesFromRestaurant($restaurantId);
+		updateRestaurantTypes($types,$restaurantId);
+	}
+
+	function updateRestaurantTypes($types, $restaurant_id){
+		global $db;
 		foreach ($types as $type) {
 			$stmt = $db->prepare('INSERT INTO restaurantType (id_restaurant,id_type) VALUES(?,?)');
 			$typeSecure= htmlentities($type, ENT_QUOTES, "UTF-8");
 			$type_id =getTypebyContent($typeSecure)['id'];
-			$stmt->execute(array($restaurantId,$type_id));
+			$stmt->execute(array($restaurant_id,$type_id));
 		}
-
-		return;
 	}
 
-
-	function updateRestaurant($restaurtant_id,$name,$description,$ownerId,$typeId,$latitude,$longitude) {
+	function updateRestaurant($restaurant_id,$name,$description,$ownerId,$types,$latitude,$longitude) {
 		global $db;
 		$stmt = $db->prepare('UPDATE restaurant
 													SET name = :name ,
 													description = :description ,
 													owner = :owner,
-													type_id = :type ,
 													latitude = :lat ,
 													longitude = :long
 													WHERE id = :rest_id');
 		$stmt->bindParam(':name', $name, PDO::PARAM_STR);
 		$stmt->bindParam(':description', $description, PDO::PARAM_STR);
 		$stmt->bindParam(':owner', $ownerId, PDO::PARAM_INT);
-		$stmt->bindParam(':type', $typeId, PDO::PARAM_INT);
 		$stmt->bindParam(':lat', $latitude, PDO::PARAM_STR);
 		$stmt->bindParam(':long', $longitude, PDO::PARAM_STR);
-		$stmt->bindParam(':rest_id', $restaurtant_id, PDO::PARAM_INT);
+		$stmt->bindParam(':rest_id', $restaurant_id, PDO::PARAM_INT);
 		$stmt->execute();
+		removeTypesFromRestaurant($restaurant_id);
+		updateRestaurantTypes($types, $restaurant_id);
 	}
 
 	function addReview($restaurant, $user_id, $rating, $comment){

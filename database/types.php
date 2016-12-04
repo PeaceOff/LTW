@@ -7,11 +7,11 @@
     return $stmt->fetchAll();
   }
 
-  function getTypebyID($id) {
+  function getTypesbyID($id) {
     global $db;
-    $stmt = $db->prepare('SELECT * FROM type WHERE id = :id');
+    $stmt = $db->prepare('SELECT type_id, content FROM viewRestauranType WHERE restaurant_id = :id');
     $stmt->execute(array($id));
-    return $stmt->fetch()['content'];
+    return $stmt->fetchAll();
   }
 
   function getTypebyContent($content) {
@@ -19,6 +19,12 @@
     $stmt = $db->prepare('SELECT * FROM type WHERE content = ?');
     $stmt->execute(array($content));
     return $stmt->fetch();
+  }
+
+  function removeTypesFromRestaurant($restaurant_id) {
+    global $db;
+    $stmt = $db->prepare('DELETE FROM restaurantType WHERE id_restaurant = ?');
+    $stmt->execute(array($restaurant_id));
   }
 
   function insertType($content) {
