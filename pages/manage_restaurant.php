@@ -41,13 +41,24 @@
     <label>Description </label>
     <input name="description" required="required" type="text" value="<?php echo $description ?>"/>
     </br>
-    <label>Type </label>
-    <input name="type" required="required" type="text" value="<?php echo $type ?>"/>
-    </br>
+    <label>Type </br>
+
+    <?php
+      $types = getAllTypes();
+      foreach ($types as $t) {
+        echo '<label><input type="checkbox"  name="types[]" value="' . $t['content'] .  '">' . $t['content'] . '</label><br>';
+      }
+    ?>
+    </label>
+
+
+
     <input type="hidden" name="latitude"  value="<?php echo $latitude ?>">
     <input type="hidden" name="longitude" value="<?php echo $longitude ?>">
-
+    <input type="hidden" >
     <input type="submit" value="<?php echo $btnValue ?>"/>
+
+
 </form>
 
 

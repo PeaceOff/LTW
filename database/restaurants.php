@@ -1,5 +1,6 @@
 <?php
 
+	include_once('../database/types.php');
 
 	function getAllRestaurants() {
 		global $db;
@@ -63,12 +64,23 @@
 	}
 
 
-	function insertRestaurant($name,$description,$ownerId,$typeId,$latitude,$longitude) {
+	function insertRestaurant($name,$description,$ownerId,$types,$latitude,$longitude) {
 		global $db;
-		$stmt = $db->prepare('INSERT INTO restaurant (name,description,owner,type_id,latitude,longitude) VALUES(?,?,?,?,?,?)');
-		$stmt->execute(array($name,$description,$ownerId,$typeId,$latitude,$longitude));
+
+		$stmt = $db->prepare('INSERT INTO restaurant (name,description,owner,latitude,longitude) VALUES(?,?,?,?,?)');
+		$stmt->execute(array($name,$description,$ownerId,$latitude,$longitude));
+
+		$restaurantId= $db->lastInsertId();
+		foreach ($types as $type) {
+			$stmt = $db->prepare('INSERT INTO restaurantType (id_restaurant,id_type) VALUES(?,?)');
+			$typeSecure= htmlentities($type, ENT_QUOTES, "UTF-8");
+			$type_id =getTypebyContent($typeSecure)['id'];
+			$stmt->execute(array($restaurantId,$type_id));
+		}
+
 		return;
 	}
+
 
 	function updateRestaurant($restaurtant_id,$name,$description,$ownerId,$typeId,$latitude,$longitude) {
 		global $db;
