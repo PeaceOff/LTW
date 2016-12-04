@@ -46,14 +46,13 @@ function updateResults(sugestion){
   var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId;
 
   //clear last results
-  sugestions.empty();
   restaurantList.empty();
 
   $.ajax({
     type:'GET',
     url:jsonInfo,
     success: function(restaurants) {
-
+      sugestions.empty();
       $.each(JSON.parse(restaurants),function(i,restaurant){
           var link;
 
@@ -66,7 +65,7 @@ function updateResults(sugestion){
 
           if(sugestion){
             sugestions.append('<li><a href=' + link + '>' + restaurant.name + '</a></li>');
-            
+
           }
           else{
           restaurantList.append('<li> Name: ' + restaurant.name + '</br>'
