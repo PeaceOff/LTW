@@ -1,4 +1,7 @@
 <?php
+
+    include_once('../database/password.php');
+
     function userExists($user,$pass,$rpass){
 
         if($pass != $rpass){
