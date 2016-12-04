@@ -53,7 +53,7 @@ function addRestaurantImage($restaurantId){
   return $pictureId;
 }
 
-function deleteImage($image_id){
+function deletePhisicalImage($image_id){
   $originalFilePath= '../images/original/' . $image_id . '.jpg';
   $mediumFilePath= '../images/medium/' . $image_id . '.jpg';
   $iconFilePath= '../images/icon/' . $image_id . '.jpg';
@@ -61,6 +61,10 @@ function deleteImage($image_id){
   unlink($originalFilePath);
   unlink($mediumFilePath);
   unlink($iconFilePath);
+}
+
+function deleteImage($image_id){
+  deletePhisicalImage($image_id);
 
   global $db;
 
@@ -78,6 +82,22 @@ function addUserImage(){
   $stmt->execute();
 
   return $db->lastInsertId();
+}
+
+function updateUserImage($old_image_id,$new_image,$user_id){
+  deletePhisicalImage($old_image_id);
+  global $db;
+
+  $stmt = $db->prepare('DELETE FROM picture WHERE id = ?');
+  $stmt->execute(array($old_image_id));
+
+  $pictureId = addImage(-1,$new_image);
+
+  $stmt = $db->prepare('UPDATE user SET picture_id = ? WHERE id = ? ');
+  $stmt->execute(array($pictureId,$user_id));
+
+  return $pictureId;
+
 }
 
 

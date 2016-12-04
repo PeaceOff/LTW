@@ -33,9 +33,28 @@
         <label> About Yourself</label>
         <textarea name="description" type="text" maxlength="300" rows="6" cols="50" style="resize: none;"/><?php echo $_SESSION['description'] ?></textarea>
         </br>
+
         <input type="submit" value="Edit"/>
     </form>
 </div>
+
+
+<form id="add_image" action="../database/action_update_user_image.php" method="post"  enctype="multipart/form-data">
+  <?php
+    if($_SESSION['picture_id'] != null){
+      $path = "../images/medium/". $_SESSION['picture_id'] . '.jpg';
+
+      if(!file_exists($path))
+        $path = '../images/error.jpg';
+    ?>
+
+    <img src="<?php echo $path ?>"/> </br>
+
+  <?php } ?>
+    <input type="file" name="image" > </br>
+    <input type="submit" value="Update Image"/>
+</form>
+
 <?php
     include_once('../templates/footer.php');
 ?>

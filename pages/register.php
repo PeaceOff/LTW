@@ -27,7 +27,6 @@
         <label> About Yourself</label>
         <textarea name="description" type="text" maxlength="300" rows="6" cols="50" style="resize: none;"/></textarea>
         </br>
-        <label>Image: <input type="file" name="image"> </br> </label>
         <input type="submit" value="Register"/>
     </form>
 </div>
