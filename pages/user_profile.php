@@ -30,6 +30,19 @@
 <p> <?php echo $info['description'] ?> </p>
 
 <?php
+  if($info['picture_id'] != null){
+    $path = "../images/medium/". $info['picture_id'] . '.jpg';
+
+    if(!file_exists($path))
+      $path = '../images/error.jpg';
+  ?>
+
+  <img src="<?php echo $path ?>"/> </br>
+
+<?php } ?>
+
+
+<?php
 if($owner){?>
 
 <a href="../pages/manage_restaurant.php"> Add Restaurant </a>

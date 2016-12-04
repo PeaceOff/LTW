@@ -3,6 +3,7 @@
 
     include_once '../database/connect.php';
     include_once '../database/users.php';
+    include_once '../database/images.php';
 
     $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
     $username = strtolower($username);
@@ -23,7 +24,9 @@
     $description = htmlentities($_POST['description'], ENT_QUOTES, "UTF-8");
     $description = trim($description);
 
-    $params = array($username,$password,$name,$description);
+    $imageId = addImage(-1,$_FILES['image']['tmp_name']);
+
+    $params = array($username,$password,$name,$description,$imageId);
 
     newUser($params);
 
@@ -32,6 +35,7 @@
     $_SESSION['id'] = $info['id'];
     $_SESSION['description'] = $info['description'];
     $_SESSION['name'] = $info['nome'];
+    $_SESSION['picture_id'] = $info['picture_id'];
     header('Location: ../pages/home.php#home');
     exit();
  ?>

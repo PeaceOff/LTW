@@ -2,7 +2,10 @@
 
 function addImage($restaurant_id,$file){
 
-  $imageId = addRestaurantImage($restaurant_id);
+  if($restaurant_id == -1)//it´s a user image
+    $imageId = addUserImage();
+  else
+    $imageId = addRestaurantImage($restaurant_id);
 
   $originalFilePath= '../images/original/' . $imageId . '.jpg';
   move_uploaded_file($file,$originalFilePath);
@@ -32,6 +35,8 @@ function addImage($restaurant_id,$file){
   $medium = imagecreatetruecolor($mediumwidth, $mediumheight);
   imagecopyresized($medium, $original, 0, 0, 0, 0, $mediumwidth, $mediumheight, $width, $height);
   imagejpeg($medium, $mediumFilePath);
+
+  return $imageId;
 
 }
 function addRestaurantImage($restaurantId){
@@ -64,10 +69,16 @@ function deleteImage($image_id){
 
   $stmt = $db->prepare('DELETE FROM restaurantPicture WHERE picture_id = ?');
   $stmt->execute(array($image_id));
-
-
 }
 
+function addUserImage(){
+  global $db;
+
+  $stmt = $db->prepare('INSERT INTO picture DEFAULT VALUES');
+  $stmt->execute();
+
+  return $db->lastInsertId();
+}
 
 
 ?>

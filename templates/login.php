@@ -1,8 +1,14 @@
 <?php
     if(isset($_SESSION['username'])){
-?>
+      if($_SESSION['picture_id'] != null){
+        $path = "../images/icon/". $_SESSION['picture_id'] . '.jpg';
 
-<label> Logged in as:<a href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"><?php echo $_SESSION['username'] ?></a></label>
+        if(!file_exists($path))
+          $path = '../images/error.jpg';
+?>
+<a href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"> <img src="<?php echo $path ?>"/> </a>
+<?php } ?>
+<label> Logged in as: <?php echo $_SESSION['username'] ?> </label>
 <a href="../database/action_logout.php">Logout</a>
 
 <?php }else{ ?>
