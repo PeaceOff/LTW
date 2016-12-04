@@ -2,7 +2,7 @@
 
   function getAllTypes() {
     global $db;
-    $stmt = $db->prepare('SELECT * FROM type');
+    $stmt = $db->prepare('SELECT * FROM type ORDER BY content ASC');
     $stmt->execute();
     return $stmt->fetchAll();
   }
