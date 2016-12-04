@@ -3,6 +3,8 @@
 include_once('../templates/header.php');
 include_once('../database/connect.php');
 include_once('../database/restaurants.php');
+include_once('../database/schedule.php');
+include_once('../database/types.php');
 
 $id=$_GET['id'];
 $result = getRestaurant($id);
@@ -22,29 +24,96 @@ if(!$result){
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvlrloJ9F8k&libraries=places&callback=initMap">
 </script>
 
+
+<div class="restaurantInfo">
+  <h3>
+    <?php echo $result['name'] ?>
+  </h3>
+
+  <ul> Type:
+
 <?php
-  echo '<div class="restaurantInfo">';
-  echo '<h3>' .  $result['name'] . '</h3>';
-  echo '<p>' . $result['description'] .'</p>';
-  echo '</div>';
+$restaurantTypes = getTypesbyID($id);
+foreach($restaurantTypes as $rest_type){?>
 
-  if(count($pictures) > 0 ){
-   echo '<div class="image-slide">';
-   echo '<ul>';
+  <li>
+    <?php echo $rest_type['content'] ?>
+  </li>
 
+<?php
+}?>
+
+  </ul>
+
+  <p>
+    <?php echo $result['description']?>
+  </p>
+</div>
+
+<?php
+if(count($pictures) > 0 ){ ?>
+
+<div class="image-slide">
+  <ul>
+
+<?php
   foreach( $pictures as $picture ) {
     $path = "../images/". $picture['picture_id'];
     if(!file_exists($path))
-    $path = '../images/error.jpg';
-    echo '<li> <img src=' . $path . '> </li>';
-   }
+    $path = '../images/error.jpg'; ?>
 
-  echo '</ul>';
-  echo '</div>';
-}
+    <li>
+      <img src="<?php echo $path ?>"/>
+    </li>';
 
-  echo '<div id="map" lat="' .  $result['latitude'] . '" lng="' . $result['longitude'] . '"></div>';
+<?php
+  }?>
 
+  </ul>
+</div>
+
+<?php
+}else{?>
+
+  <div class="image-slide">
+    <ul>
+      <li>
+        <img src="../images/error.jpg"/>
+      </li>
+    </ul>
+  </div>
+
+<?php
+}?>
+
+<div id="map" lat="<?php echo $result['latitude'] ?>" lng="<?php echo $result['longitude'] ?>"></div>
+
+<div id="schedules">
+  <h3> Schedules: </h3>
+  <ul>
+
+<?php
+  $schedules = getSchedules($id);
+  foreach($schedules as $schedule){?>
+
+    <li>
+      <h3>
+        <?php echo $schedule['name'] ?>
+      </h3>
+      <div> Open:
+        <?php echo $schedule['begin'] ?>
+      </div>
+      <div> Close:
+        <?php echo $schedule['end'] ?>
+      </div>
+    </li>
+
+<?php
+  }?>
+
+</div>
+
+<?php
   if(isset($_SESSION['username'])){
 ?>
 
