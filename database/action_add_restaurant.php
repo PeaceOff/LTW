@@ -5,6 +5,7 @@
     include_once('../database/restaurants.php');
     include_once('../database/users.php');
     include_once('../database/types.php');
+    include_once('../database/schedule.php');
 
     if(!isset($_SESSION['username'])){
       header('Location: ../pages/home.php');
@@ -24,8 +25,20 @@
     $longitude = htmlentities($_POST['longitude'], ENT_QUOTES, "UTF-8");
 
 
-    insertRestaurant($name,$description,$ownerId,$types,$latitude,$longitude);
+    $restaurant_id = insertRestaurant($name,$description,$ownerId,$types,$latitude,$longitude);
 
-    header('Location: ../pages/home.php');
+    $sch_type = htmlentities($_POST['sch_type'], ENT_QUOTES, "UTF-8");
+    $sch_open = htmlentities($_POST['sch_open'], ENT_QUOTES, "UTF-8");
+    $sch_close = htmlentities($_POST['sch_close'], ENT_QUOTES, "UTF-8");
+
+    if($sch_type != "week"){
+      header('Location: ../pages/home#home.php');
+      exit();
+    }
+    $sch_type=9;
+
+    addSchedule($restaurant_id, $sch_type, $sch_open, $sch_close);
+
+    //header('Location: ../pages/home#home.php');
     exit();
  ?>

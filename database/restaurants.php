@@ -73,6 +73,7 @@
 		$restaurantId= $db->lastInsertId();
 		removeTypesFromRestaurant($restaurantId);
 		updateRestaurantTypes($types,$restaurantId);
+		return $restaurantId;
 	}
 
 	function updateRestaurantTypes($types, $restaurant_id){
