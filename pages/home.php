@@ -23,9 +23,9 @@ include_once('../database/restaurants.php');
   </select>
 </label>
 
-
+Search 
 <label class="labelSearch">
-  Search <input id="searchBox" autocomplete="off" type= "text" name="search" placeholder="search ..."/>
+  <input id="searchBox" autocomplete="off" type= "text" name="search" placeholder="search ..."/>
   <input id="searchBtn" type="button" value="submit">
 
   <ul id = "sugestions">
