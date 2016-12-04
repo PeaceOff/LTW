@@ -21,7 +21,7 @@
     global $db;
 
 		if($typeId != -1){
-			$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) AND type_id = ? ');
+			$stmt = $db->prepare(' SELECT * FROM viewRestauranType WHERE upper(name) LIKE upper(?) AND type_id = ? ');
 			$stmt->execute(array("%".$search."%",$typeId));
 		}else{
 			$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?)');
