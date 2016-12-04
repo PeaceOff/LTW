@@ -7,7 +7,7 @@
     include_once('../database/types.php');
 
     if(!isset($_SESSION['username'])){
-      header('Location: ../pages/home.php');
+      header('Location: ../pages/home.php#home');
       exit();
     }
 
@@ -16,12 +16,12 @@
     $restaurant = getRestaurant($restaurant_id);
 
     if(!$restaurant){
-      header('Location: ../pages/home.php');
+      header('Location: ../pages/home.php#home');
       exit();
     }
 
     if($restaurant['owner'] != $_SESSION['id']){
-      header('Location: ../pages/home.php');
+      header('Location: ../pages/home.php#home');
       exit();
     }
 

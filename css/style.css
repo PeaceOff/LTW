@@ -264,16 +264,13 @@ form{
 }
 
 
-
-
 #sugestions li a:hover {
    color:#ffffff;
    background:#242473;
 }
 
 #sugestions li:hover {
-  width: 500px;
-  transition: width 2s ;
+    width:500px;
 }
 
 #sugestions li{
@@ -282,14 +279,15 @@ form{
 }
 
 #searchBox:focus ~ #sugestions li {
-  animation-name: teste;
+  animation-name: expand;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-play-state: running;
-  animation-fill-mode:
+  animation-fill-mode: forwards;
 }
 
-@keyframes teste {
+
+@keyframes expand {
   0%{
      max-height:0px;
    }

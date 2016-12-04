@@ -55,10 +55,18 @@ function updateResults(sugestion){
     success: function(restaurants) {
 
       $.each(JSON.parse(restaurants),function(i,restaurant){
-          var link = "../pages/show_restaurant.php?id=" + restaurant.id;
+          var link;
+
+          if(typeId == -1)
+              link = "../pages/show_restaurant.php?id=" + restaurant.id;
+          else
+              link = "../pages/show_restaurant.php?id=" + restaurant.restaurant_id;
+
+
 
           if(sugestion){
-            sugestions.append('<li><a href="#">' + restaurant.name + '</a></li>');
+            sugestions.append('<li><a href=' + link + '>' + restaurant.name + '</a></li>');
+            
           }
           else{
           restaurantList.append('<li> Name: ' + restaurant.name + '</br>'

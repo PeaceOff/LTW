@@ -55,16 +55,20 @@
         return;
     }
 
-    function updateUser($username,$newpass,$name,$description){
+    function updateUser($id,$username,$newpass,$name,$description){
 
         global $db;
         $username = strtolower($username);
-        $stmt = $db->prepare('UPDATE USER SET password = :pass, nome = :name, description = :description WHERE username = :user');
+        $stmt = $db->prepare('UPDATE user SET password = :pass, nome = :name, description = :description WHERE username = :user AND id = :id ;');
+        if(!$stmt){
+            return false;
+        }
         $newpass =  password_hash($newpass , PASSWORD_DEFAULT);
         $stmt->bindParam(':pass',$newpass,PDO::PARAM_STR);
         $stmt->bindParam(':name',$name,PDO::PARAM_STR);
         $stmt->bindParam(':description',$description,PDO::PARAM_STR);
         $stmt->bindParam(':user',$username,PDO::PARAM_STR);
+        $stmt->bindParam(':id',$id,PDO::PARAM_INT);
         $stmt->execute();
 
         return true;
