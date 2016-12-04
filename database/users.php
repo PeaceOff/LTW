@@ -46,8 +46,9 @@
     function newUser($props){
 
         global $db;
-        $stmt = $db->prepare('INSERT INTO user (nome, id, picture_id, password, username, description) VALUES (:name,NULL,NULL,:password,:username,:description);');
+        $stmt = $db->prepare('INSERT INTO user (nome, id, picture_id, password, username, description) VALUES (:name,NULL,:picture_id,:password,:username,:description);');
         $stmt->bindParam(':name', $props[2], PDO::PARAM_STR);
+        $stmt->bindParam(':picture_id',$props[4],PDO::PARAM_INT);
         $pass = password_hash($props[1] , PASSWORD_DEFAULT);
         $stmt->bindParam(':password', $pass, PDO::PARAM_STR);
         $user = strtolower($props[0]);

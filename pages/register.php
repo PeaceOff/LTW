@@ -9,8 +9,8 @@
 ?>
 
 <script type="text/javascript" src="../javascript/register.js"></script>
-<div id="register" class="animate form">
-    <form id="registerForm" action="../database/action_register.php" method="post">
+<div id="register" class="animate form" >
+    <form id="registerForm" action="../database/action_register.php" method="post" enctype="multipart/form-data">
         <h1> Sign up </h1>
         <label>Your username</label>
         <input name="username" required="required" type="text"/>
@@ -27,9 +27,12 @@
         <label> About Yourself</label>
         <textarea name="description" type="text" maxlength="300" rows="6" cols="50" style="resize: none;"/></textarea>
         </br>
+        <label>Image: <input type="file" name="image"> </br> </label>
         <input type="submit" value="Register"/>
     </form>
 </div>
+
+
 <?php
     include_once('../templates/footer.php');
  ?>

@@ -13,6 +13,7 @@
         $_SESSION['id'] = $info['id'];
         $_SESSION['description'] = $info['description'];
         $_SESSION['name'] = $info['nome'];
+        $_SESSION['picture_id'] = $info['picture_id'];
     }
 
     header('Location: ' . $_SERVER['HTTP_REFERER']);
