@@ -46,9 +46,6 @@
     </br>
 
 
-    <label>Image: <input type="file" name="image"> </br> </label>
-
-
 
 <?php
 foreach ($types as $t) {
@@ -71,6 +68,7 @@ foreach ($types as $t) {
     </label>
 <?php
 if($add){?>
+    <label>Image: <input type="file" name="image"> </br> </label>
 
     <label> Weekly Schedule
       <input type="hidden" name="sch_type" value="week"/>
@@ -118,8 +116,7 @@ if(!$add){ ?>
           <?php echo $schedule_type['name'] ?>
         </option>
 
-<?php
-  }?>
+<?php } ?>
 
       </select>
     </label>
@@ -163,6 +160,35 @@ if(!$add){ ?>
 
   </ul>
 </div>
+
+<div id="images">
+    <h2> Delete/Add images </h2>
+
+
+<?php
+      $pictures = getRestaurantPictures($restaurant['id']);
+      foreach( $pictures as $picture ) {
+        $path = "../images/medium/". $picture['picture_id'] . '.jpg';
+        if(!file_exists($path))
+          $path = '../images/error.jpg'; ?>
+
+        <form id="delete_image" action="../database/action_delete_image.php" method="post">
+          <img src="<?php echo $path ?>"/>
+          <input type="hidden" name="image_id" value="<?php echo $picture['picture_id'] ?>" />
+          <input type="submit" value="Remove"/>
+        </form>
+
+<?php  } ?>
+
+    <form id="add_image" action="../database/action_add_image.php" method="post"  enctype="multipart/form-data">
+        <label>Image: <input type="file" name="image"> </br> </label>
+        <input type="hidden" name="restaurant_id" value="<?php echo $restaurant['id'] ?>" />
+        <input type="submit" value="Add Image"/>
+    </form>
+
+
+</div>
+
 
 <?php
 } ?>
