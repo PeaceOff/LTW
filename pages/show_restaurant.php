@@ -58,13 +58,13 @@ if(count($pictures) > 0 ){ ?>
 
 <?php
   foreach( $pictures as $picture ) {
-    $path = "../images/". $picture['picture_id'];
+    $path = "../images/medium/". $picture['picture_id'] . '.jpg';
     if(!file_exists($path))
     $path = '../images/error.jpg'; ?>
 
     <li>
       <img src="<?php echo $path ?>"/>
-    </li>';
+    </li>
 
 <?php
   }?>

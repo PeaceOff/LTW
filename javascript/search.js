@@ -61,8 +61,6 @@ function updateResults(sugestion){
           else
               link = "../pages/show_restaurant.php?id=" + restaurant.restaurant_id;
 
-
-
           if(sugestion){
             sugestions.append('<li><a href=' + link + '>' + restaurant.name + '</a></li>');
 

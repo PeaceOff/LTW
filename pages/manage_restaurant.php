@@ -36,7 +36,7 @@
 ?>
 
 
-<form name="RestaurantEdit" id="restaurantForm" action="<?php echo $redirect ?>" method="post">
+<form name="RestaurantEdit" id="restaurantForm" action="<?php echo $redirect ?>" method="post" enctype="multipart/form-data">
     <h1> <?php echo $intro ?></h1>
     <label>Restaurant name</label>
     <input name="name" required="required" type="text" value="<?php echo $name ?>"/>
@@ -44,7 +44,11 @@
     <label>Description </label>
     <input name="description" required="required" type="text" value="<?php echo $description ?>"/>
     </br>
-    <label>Type </br>
+
+
+    <label>Image: <input type="file" name="image"> </br> </label>
+
+
 
 <?php
 foreach ($types as $t) {

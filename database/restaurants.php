@@ -73,7 +73,9 @@
 		$restaurantId= $db->lastInsertId();
 		removeTypesFromRestaurant($restaurantId);
 		updateRestaurantTypes($types,$restaurantId);
+
 		return $restaurantId;
+
 	}
 
 	function updateRestaurantTypes($types, $restaurant_id){
@@ -153,6 +155,21 @@
 		$stmt->bindParam(':id', $id, PDO::PARAM_INT);
 		$stmt->execute();
 	}
+
+	function addRestaurantImage($restaurantId){
+		global $db;
+
+		$stmt = $db->prepare('INSERT INTO picture DEFAULT VALUES');
+		$stmt->execute();
+		
+		$pictureId=$db->lastInsertId();
+
+		$stmt = $db->prepare('INSERT INTO restaurantPicture (picture_id,restaurant_id) VALUES(?,?)');
+		$stmt->execute(array($pictureId,$restaurantId));
+
+		return $pictureId;
+	}
+
 
 
 
