@@ -1,3 +1,9 @@
+
+<div class="portrait">
+  <h1> RestaurantWizz </h1>
+  <script type="text/javascript" src="../javascript/portrait.js"> </script>
+</div>
+
 <?php
 
 include_once('../templates/header.php');
@@ -23,7 +29,7 @@ include_once('../database/restaurants.php');
   </select>
 </label>
 
-Search 
+Search
 <label class="labelSearch">
   <input id="searchBox" autocomplete="off" type= "text" name="search" placeholder="search ..."/>
   <input id="searchBtn" type="button" value="submit">
