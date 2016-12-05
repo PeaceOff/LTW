@@ -1,8 +1,9 @@
 $(document).ready( function() {
 
+  $("#searchForm").submit(function( event ) {
 
-    $("#searchBtn").click(function() {
       updateResults(false);
+      return false;
     });
 
     $("#searchBox").keyup(function(event) {
@@ -10,33 +11,12 @@ $(document).ready( function() {
         $("#searchBtn").click();
       else
         updateResults(true);
-
-
-
     });
 
-    fillTypesDropDown();
+    
 });
 
 
-function fillTypesDropDown(){
-  var typeDropDown = $("select[name='type']");
-
-  //clear last results
-  typeDropDown.empty();
-  typeDropDown.append('<option value=-1> All types </option>');
-
-  $.ajax({
-    type:'GET',
-    url: '../requests/showTypes.php',
-    success: function(types) {
-      $.each(JSON.parse(types),function(i,type){
-          typeDropDown.append('<option value=' + type.id + '>' + type.content + '</option>');
-     });
-    }
-  });
-
-}
 
 function updateResults(sugestion){
   var sugestions= $('#sugestions');
@@ -72,7 +52,8 @@ function updateResults(sugestion){
           restaurantList.append('<a href=' + link + '> View Restaurant Info </a>');
         }
       });
-    }
+    },
+      async : false
   });
 
 }
