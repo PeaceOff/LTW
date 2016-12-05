@@ -36,6 +36,7 @@ nav li:first-child{
 
 nav li:last-child{
   float: right;
+  position: relative;
 }
 
 nav li {
@@ -55,12 +56,12 @@ nav li label input{
 
 nav li label{
   padding: 0em;
-
+  vertical-align: top;
   color: white;
 }
 
 nav li a{
-  vertical-align: middle;
+  vertical-align: top;
   color: white;
   text-decoration: none;
   padding: inherit;
@@ -71,8 +72,15 @@ nav li a{
 
   border-bottom-right-radius: 0.5em;
   height: 2em;
-
 }
+
+nav li .usrImg{
+  margin: 0px;
+  position: absolute;
+  left: -4em;
+  top: -0.5em;
+}
+
 
 nav li a:hover{
   background-color: #222;
