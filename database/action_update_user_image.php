@@ -13,9 +13,10 @@
 
   $user_id=$_SESSION['id'];
   $old_picture_id=$_SESSION['picture_id'];
-  $new_image=$_FILES['image']['tmp_name'];
-
-  $_SESSION['picture_id'] =   updateUserImage($old_picture_id,$new_image,$user_id);
+  if($_FILES['image']['size'] != 0){
+    $new_image=$_FILES['image']['tmp_name'];
+    $_SESSION['picture_id'] =   updateUserImage($old_picture_id,$new_image,$user_id);
+  }
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
