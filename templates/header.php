@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
         <script type="text/javascript" src="../javascript/login.js"></script>
+        <script type="text/javascript" src="../javascript/jquery.flexslider-min.js"></script>
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/flexslider.css">
     </head>
     <body>
         <?php session_start() ?>

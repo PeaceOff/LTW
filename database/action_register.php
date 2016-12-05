@@ -24,7 +24,10 @@
     $description = htmlentities($_POST['description'], ENT_QUOTES, "UTF-8");
     $description = trim($description);
 
-    $imageId = addImage(-1,$_FILES['image']['tmp_name']);
+    if($_FILES['image']['size'] == 0)
+      $imageId = -1;
+    else
+      $imageId = addImage(-1,$_FILES['image']['tmp_name']);
 
     $params = array($username,$password,$name,$description,$imageId);
 
