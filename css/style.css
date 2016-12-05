@@ -1,17 +1,29 @@
+html{
+  background: #191613;
+}
+
 body {
-    margin : 0;
+    margin : auto;
     padding : 0;
+    max-width: 80em;
     border : 0;
-    background-color: #88afd6;
+    background-color: #f7ddcf;
+}
 
-
+.page{
+  display: flex;
+  justify-content: center;
 }
 
 
-
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 nav ul {
-  background-color: #333;
+  background-color: #27211d;
   display: block;
   margin: 0;
   width: 100%;
@@ -22,9 +34,16 @@ nav li:first-child{
   margin-left: 1em;
 }
 
+nav li:last-child{
+  float: right;
+}
+
 nav li {
+  float: left;
+  vertical-align: top;
   display: inline-block;
   padding: 1em 0em;
+  height: 2em;
   list-style-type: none;
 }
 
@@ -36,11 +55,12 @@ nav li label input{
 
 nav li label{
   padding: 0em;
-  height: inherit;
+
   color: white;
 }
 
 nav li a{
+  vertical-align: middle;
   color: white;
   text-decoration: none;
   padding: inherit;
@@ -50,7 +70,7 @@ nav li a{
   border-bottom-left-radius:0.5em;
 
   border-bottom-right-radius: 0.5em;
-
+  height: 2em;
 
 }
 
@@ -59,7 +79,7 @@ nav li a:hover{
 }
 
 nav li a:target{
-  background-color: #385;
+  background-color: #364d29;
   color: white;
 }
 
@@ -226,25 +246,66 @@ form{
 .typeDropDown{
   border: 1px solid #607d8b;
   padding: 10px;
+  height: 3em;
+  width: 9em;
+}
+
+*{
+  font-family: Roboto;
+}
+
+#searchArea select{
+  border: 0px solid #607d8b;
+  padding: 10px;
+  background-color: #d4a068;
+  color: #27211d;
+}
+
+#searchArea select:hover{
+  border: 0px solid #607d8b;
+  padding: 10px;
+  background-color: #edd8c3;
+
+}
+
+#searchArea{
+  background-color: #27211d;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
 }
 
 #searchBox{
-  border: 1px solid #607d8b;
+  border: 0px solid #607d8b;
   padding: 10px;
+  height: 3em;
+  width: 20em;
+  background-color: #ddcbc5;
+  color: #27211d;
+}
+
+#searchBox:before{
+  content: "Search";
 }
 
 #searchBtn{
-  border: 1px solid #607d8b;
-  background:  #607d8b;
+  border: 0px solid #b16d57;
+  background:  #cd8b5d;
+  height: 3em;
   color: white;
   padding: 10px;
   margin-left: -5px;
+  vertical-align: top;
+  value: "Search";
 }
 
 #searchBtn:hover{
-  background:  #0f2029;
+  background:  #d6a25f;
 }
-
+#sugestions{
+  padding: 0px;
+  margin: 0px;
+}
 
 
 
@@ -254,7 +315,7 @@ form{
     color: inherit;
     font-size:15px;
     text-align: center;
-    background-color:#20272d;
+    background-color:#cd8b5d;
     padding:10px;
 }
 
@@ -265,11 +326,13 @@ form{
 #sugestions {
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 2.4em;
   right: 0;
-
+  background-color: #cd8b5d;
   list-style:none;
   padding:0;
+  min-width: 100%;
+  min-height: 0.2em;
 }
 
 
@@ -279,7 +342,7 @@ form{
 }
 
 #sugestions li:hover {
-  background-color: #444;
+  background-color: inherit;
    animation-name: scale;
    animation-duration: 0.2s;
    animation-timing-function: ease-in-out;
@@ -291,17 +354,9 @@ form{
 #sugestions li{
   max-height: 500px;
   overflow:hidden;
-  background-color: #444;
   opacity: 1;
   color: white;
 }
-
-#sugestions{
-  background-color: #222;
-  min-width: 100%;
-  min-height: 0.2em;
-}
-
 #searchBox:focus ~ #sugestions{
   visibility: visible;
   animation-name: pop;
@@ -351,7 +406,7 @@ form{
     opacity: 0.9;
   }
   100%{
-    background-color: #CCC;
+    background-color: #ebdcd7;
     color: #222;
   }
 }
@@ -366,7 +421,7 @@ form{
 
 .portrait{
   background-image: url(https://static.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg);
-  height: 100vh;
+  height: 10em;
   background-size:cover;
   display: flex;
   flex-direction: column;

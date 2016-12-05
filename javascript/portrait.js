@@ -1,11 +1,5 @@
 var first = true;
 
-document.addEventListener("DOMContentLoaded", function(){
-
-  disableScroll();
-  window.scrollTo(0, 0);
-});
-
 function disableScroll() {
   if (window.addEventListener) // older FF
       window.addEventListener('DOMMouseScroll', preventDefault, false);
@@ -31,11 +25,6 @@ function preventDefault(e) {
       e.preventDefault();
   e.returnValue = false;
 
-  if(e.deltaY > 0){
-    enableScroll();
-    window.scrollTo(0, 0);
-    $(".portrait").addClass("deselect");
-  }
 }
 
 function preventDefaultForScrollKeys(e) {
