@@ -15,6 +15,46 @@ body {
   justify-content: center;
 }
 
+#registerForm{
+    max-width: 500px;
+    padding: 5px 10px 15px 10px;
+    margin : auto;
+    text-align: center;
+    background-color: #63d1ed;
+}
+
+#registerForm h1 {
+    border-style: solid;
+    border-color: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0F0;
+    background-color: #FF8500;
+    color : #FFF;
+}
+
+#registerForm label{
+    display: block;
+    margin: 15px 0px 7px 0px;
+}
+
+#registerForm input:not(.special) {
+    width : 15em;
+    text-align: center;
+}
+
+#registerForm input[type=submit],
+#registerForm input[type=button]{
+    border: none;
+    padding: 10px 15px 10px 15px;
+    background: #FF8500;
+    color: #fff;
+    border-radius: 3px;
+}
+#registerForm input[type=submit]:hover,
+#registerForm input[type=button]:hover{
+    box-shadow: 0 0 15px #222;
+    background: #EC7D02;
+    color: #000;
 
 nav{
   display: flex;
