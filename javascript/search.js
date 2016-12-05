@@ -43,7 +43,7 @@ function updateResults(sugestion){
   var restaurantList= $('#restaurants');
   var searched = $("input[name='search']").val();
   var typeId = $("select[name='type']").val();
-  var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId;
+  var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId + '&sugestion=' + sugestion;
 
   //clear last results
   restaurantList.empty();

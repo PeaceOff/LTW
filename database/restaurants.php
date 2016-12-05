@@ -17,14 +17,22 @@
     return $stmt->fetch();
 	}
 
-	function getRestaurantBySearch($search,$typeId) {
+	function getRestaurantBySearch($search,$typeId,$sugestion) {
     global $db;
 
 		if($typeId != -1){
-			$stmt = $db->prepare(' SELECT * FROM viewRestauranType WHERE upper(name) LIKE upper(?) AND type_id = ? ORDER BY name ASC ');
+			if($sugestion)
+				$stmt = $db->prepare(' SELECT * FROM viewRestauranType WHERE upper(name) LIKE upper(?) AND type_id = ? ORDER BY name ASC LIMIT 5');
+			else
+				$stmt = $db->prepare(' SELECT * FROM viewRestauranType WHERE upper(name) LIKE upper(?) AND type_id = ? ORDER BY name ASC');
+
 			$stmt->execute(array("%".$search."%",$typeId));
 		}else{
-			$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) ORDER BY name ASC ');
+			if($sugestion)
+				$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) ORDER BY name ASC LIMIT 5');
+			else
+				$stmt = $db->prepare(' SELECT * FROM restaurant WHERE upper(name) LIKE upper(?) ORDER BY name ASC ');
+
 			$stmt->execute(array("%".$search."%"));
 		}
 
