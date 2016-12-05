@@ -53,14 +53,15 @@ foreach($restaurantTypes as $rest_type){?>
 <?php
 if(count($pictures) > 0 ){ ?>
 
-<div class="image-slide">
-  <ul>
+<div class="flexslider">
+  <ul  class="slides">
 
 <?php
   foreach( $pictures as $picture ) {
     $path = "../images/medium/". $picture['picture_id'] . '.jpg';
+
     if(!file_exists($path))
-    $path = '../images/error.jpg'; ?>
+      $path = '../images/error.jpg'; ?>
 
     <li>
       <img src="<?php echo $path ?>"/>
@@ -75,8 +76,8 @@ if(count($pictures) > 0 ){ ?>
 <?php
 }else{?>
 
-  <div class="image-slide">
-    <ul>
+  <div class="flexslider">
+    <ul class="slides">
       <li>
         <img src="../images/error.jpg"/>
       </li>
