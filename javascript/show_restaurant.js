@@ -12,6 +12,8 @@ function initMap() {
 
   var latitude = parseFloat($('#map').attr('lat'));
   var longitude = parseFloat($('#map').attr('lng'));
+  var name = $('#restaurant_name').text();
+  var description = $('#restaurant_description').text();
 
 
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -20,7 +22,9 @@ function initMap() {
   });
 
   var contentString =
-   '<p><b>Restaurant</b>' + 'restaurant description </p>';
+   '<p><b>Restaurant ' + name + '</b> </br>' +
+   description + '</p>' +
+   '<img src="../images/icon/restaurantIcon.jpg"/>';
 
   var infowindow = new google.maps.InfoWindow({
   content: contentString

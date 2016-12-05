@@ -26,7 +26,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
 
 <div class="restaurantInfo">
-  <h3>
+  <h3 id="restaurant_name">
     <?php echo $result['name'] ?>
   </h3>
 
@@ -45,7 +45,7 @@ foreach($restaurantTypes as $rest_type){?>
 
   </ul>
 
-  <p>
+  <p id = "restaurant_description">
     <?php echo $result['description']?>
   </p>
 </div>
