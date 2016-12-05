@@ -19,6 +19,8 @@ body {
     max-width: 500px;
     padding: 5px 10px 15px 10px;
     margin : auto;
+    margin-top : 10px;
+    margin-bottom: 10px;
     text-align: center;
     background-color: #63d1ed;
 }
