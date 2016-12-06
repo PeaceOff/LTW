@@ -45,13 +45,11 @@ include_once('../database/types.php');
 </div>
 
 
-<div class="page">
-  <div id="restaurantList">
-    <ul id="restaurants">
-  
+
+    <ul class="restaurantList">
+
     </ul>
-  </div>
-</div>
+
 
 
 

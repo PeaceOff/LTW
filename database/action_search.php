@@ -14,9 +14,8 @@ $results = getRestaurantBySearch($search,$typeId,false);
 
 ?>
 
-<div class="page">
-  <div id="restaurantList">
-    <ul id="restaurants">
+
+    <ul class="restaurantList">
 
 <?php
 foreach ($results as $result) {
@@ -34,8 +33,7 @@ foreach ($results as $result) {
 
 
     </ul>
-  </div>
-</div>
+
 
 
 
