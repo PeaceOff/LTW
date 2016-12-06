@@ -468,3 +468,43 @@ form{
     height: 10em;
   }
 }
+.restaurantList{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.restaurantList li{
+
+  padding: 1em;
+  width:50em;
+	height:4em;
+  list-style:none;
+	border:0.2em solid #e63737;
+  background: #806961;
+  margin: 2em;
+}
+
+.restaurantList li p:first-child{
+   font-weight: bold;
+   font-size: 1.5em;
+}
+
+.restaurantList img{
+  
+   float:right;
+}
+
+.restaurantList a{
+   text-decoration: none;
+}
+
+.restaurantList a:link{
+   color: white;
+}
+
+.restaurantList a:visited{
+   color: white;
+}

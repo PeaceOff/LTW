@@ -23,8 +23,7 @@ function initMap() {
 
   var contentString =
    '<p><b>Restaurant ' + name + '</b> </br>' +
-   description + '</p>' +
-   '<img src="../images/icon/restaurantIcon.jpg"/>';
+   description + '</p>';
 
   var infowindow = new google.maps.InfoWindow({
   content: contentString
@@ -32,8 +31,9 @@ function initMap() {
 
   var marker = new google.maps.Marker({
   position: {lat: latitude, lng: longitude},
+  icon : "../images/icon/restaurantIcon.png",
   map: map,
-  title: 'RestaurantName'
+  title: name
   });
   marker.addListener('click', function() {
   infowindow.open(map, marker);
