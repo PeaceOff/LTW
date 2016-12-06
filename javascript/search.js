@@ -25,21 +25,20 @@ function updateResults(sugestion){
   var typeId = $("select[name='type']").val();
   var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId + '&sugestion=' + sugestion;
 
-  //clear last results
-  restaurantList.empty();
 
   $.ajax({
     type:'GET',
     url:jsonInfo,
     success: function(restaurants) {
       sugestions.empty();
+      if(!sugestion)
+        restaurantList.empty();
+
       $.each(JSON.parse(restaurants),function(i,restaurant){
           var restaurantId;
 
-          if(typeId == -1)
-              restaurantId = restaurant.id;
-          else
-              restaurantId = restaurant.restaurant_id;
+          restaurantId = restaurant.id;
+
 
           var link="../pages/show_restaurant.php?id=" + restaurantId;
 
@@ -48,9 +47,8 @@ function updateResults(sugestion){
 
           }
           else{
-          restaurantList.append('<li> <p> Restaurant ' + restaurant.name + '</p>'
-                                + '<a href=' + link + '> View Restaurant Info </a>'
-                                +  '<img src="' + restaurant.picture_path + '"/>' + '</li>');
+          restaurantList.append('<a href=' +  link + '>' + '<li> <p> Restaurant ' + restaurant.name
+                                +  '</p><img src="' + restaurant.picture_path + '"/>' + '</li> </a>');
 
         }
       });

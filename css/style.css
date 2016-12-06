@@ -8,8 +8,7 @@ body {
     padding : 0;
     border : 0;
     min-height: 100vh;
-
-    background: #F00;
+background: url(http://www.webdesigndev.com/wp-content/uploads/2015/02/Subtle-Light-Tile-Pattern-Vol2.jpg);
 }
 
 .page{
@@ -493,28 +492,40 @@ form{
 
 
 .restaurantList li{
-
+  background-color: rgba(255,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 1em;
   width:50em;
-	height:4em;
+	height:3em;
   list-style:none;
 	border:0.2em solid #e63737;
-  background: #806961;
-  margin: 2em;
+
 }
 
-.restaurantList li p:first-child{
+.restaurantList li p{
+   flex: none;
    font-weight: bold;
    font-size: 1.5em;
 }
 
 .restaurantList img{
-
-   float:right;
+ flex: none;
 }
 
+
 .restaurantList a{
-   text-decoration: none;
+    text-decoration: none;
+    margin: 1em;
+}
+
+.restaurantList a:hover{
+  background-color: rgba(255,128,0,0.5);
+  animation: zoomIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .restaurantList a:link{
@@ -523,4 +534,17 @@ form{
 
 .restaurantList a:visited{
    color: white;
+}
+
+
+@keyframes zoomIn {
+  0%,100%{
+    transform: scale(1);
+  }
+
+  50%{
+    transform: scale(1.1);
+    background: rgba(255,0,0,1.0);
+  }
+
 }

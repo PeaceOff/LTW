@@ -9,7 +9,7 @@
 
   function getTypesbyID($id) {
     global $db;
-    $stmt = $db->prepare('SELECT type_id, content FROM viewRestauranType WHERE restaurant_id = :id');
+    $stmt = $db->prepare('SELECT type_id, content FROM viewRestauranType WHERE id = :id');
     $stmt->execute(array($id));
     return $stmt->fetchAll();
   }
