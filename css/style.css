@@ -1,11 +1,10 @@
 html{
-  background: #191613;
-  min-height: 100vh;
+  background: #111;
 }
 
 body {
     position: relative;
-    margin : auto;
+    margin : 0;
     padding : 0;
     border : 0;
     min-height: 100vh;
@@ -18,16 +17,10 @@ body {
   justify-content: center;
 }
 
-.footer::before{
-  height: 100em;
-  width: 100em;
-  background-color: blue;
-}
-
 .footer{
   clear: both;
   position: absolute;
-  bottom: 0;
+  bottom: -4em;
   left: 0;
   right: 0;
 
@@ -516,7 +509,7 @@ form{
 }
 
 .restaurantList img{
-  
+
    float:right;
 }
 
