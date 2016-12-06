@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../javascript/edit.js"></script>
 <div id="user_info" class="animate form">
     <form id="userProfileForm" action="../database/action_update_user.php" method="post">
-        <h1> Edit your profile WIN BIG! @russianHacks.com </h1>
+        <h2> Edit your profile WIN BIG! @russianHacks.com </h2>
         <label>Your username is </label>
         <input name="username" type="text" value="<?php echo $_SESSION['username']?>" disabled/>
         </br>
