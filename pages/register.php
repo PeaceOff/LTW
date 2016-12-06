@@ -25,9 +25,9 @@
         <input name="name" required="required" type="text"/>
         </br>
         <label> About Yourself</label>
-        <textarea name="description" type="text" maxlength="300" rows="6" cols="50" style="resize: none;"/></textarea>
+        <textarea name="description" type="text" maxlength="300" rows="6" cols="50"/></textarea>
         </br>
-        <label>Upload a picture :</label>
+        <label>Upload a picture</label>
         <input class="special" type="file" name="image">
         </br>
         </br>
