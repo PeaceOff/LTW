@@ -103,7 +103,7 @@ nav ul li:last-child .special{
 }
 
 nav ul li:last-child .special,
-#registerBtn {
+.registerBtn {
     vertical-align: middle;
     margin : auto;
     border: none;
@@ -113,6 +113,14 @@ nav ul li:last-child .special,
     border-radius: 3px;
     text-shadow: 0 0 5px #222;
     cursor: pointer;
+}
+
+nav ul li:last-child .special:hover,
+.registerBtn:hover{
+    animation : zoomLogin;
+    animation-duration : 0.2;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 #userProfileForm form:first-child {
@@ -126,6 +134,15 @@ nav ul li:last-child .special,
     }
     100% {
         transform : scale(1.1);
+    }
+}
+
+@keyframes zoomLogin {
+    0% {
+        transform : scale(1);
+    }
+    100% {
+        transform : scale(1.05);
     }
 }
 

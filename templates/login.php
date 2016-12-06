@@ -9,7 +9,7 @@
 <a class="usrImg" href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"> <img src="<?php echo $path ?>"/> </a>
 <?php } ?>
 <label>Logged in as:<a id="loggedUser" href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"><?php echo $_SESSION['username'] ?></a></label>
-<a class="special" href="../database/action_logout.php">Logout</a>
+<a class="registerBtn" href="../database/action_logout.php">Logout</a>
 
 <?php }else{ ?>
 
@@ -17,6 +17,6 @@
   <input type="text" placeholder="Username" name="username">
   <input type="password" placeholder="Password" name="password">
   <input class="special" type="submit" value="Login">
-  <a id="registerBtn" href="../pages/register.php">Register</a>
+  <a class="registerBtn" href="../pages/register.php">Register</a>
 </form>
 <?php } ?>
