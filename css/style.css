@@ -1,13 +1,16 @@
 html{
   background: #191613;
+  min-height: 100vh;
 }
 
 body {
+    position: relative;
     margin : auto;
     padding : 0;
-    max-width: 80em;
     border : 0;
-    background-color: #f7ddcf;
+    min-height: 100vh;
+
+    background: #F00;
 }
 
 .page{
@@ -15,14 +18,31 @@ body {
   justify-content: center;
 }
 
+.footer::before{
+  height: 100em;
+  width: 100em;
+  background-color: blue;
+}
+
+.footer{
+  clear: both;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
 nav{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #363232;
 }
 
 nav ul {
-  background-color: #27211d;
+  max-width: 80em;
+
   display: block;
   margin: 0;
   width: 100%;
@@ -98,6 +118,7 @@ nav li a:target{
 body nav ul li form input {
     color: black;
 }
+
 
 .reviews ul{
   margin: 0.5em;
@@ -227,6 +248,10 @@ body nav ul li form input {
 
 }
 
+#searchform{
+  background-color: inherit;
+}
+
 #mapSearch{
        background-color: #fff;
        font-family: Roboto;
@@ -288,11 +313,11 @@ form{
 }
 
 #searchBox{
-  border: 0px solid #607d8b;
+  border: 0px solid #e1d4a8;
   padding: 10px;
   height: 3em;
   width: 20em;
-  background-color: #ddcbc5;
+  background-color: #fff0c0;
   color: #27211d;
 }
 
@@ -448,9 +473,7 @@ form{
   animation-fill-mode: forwards;
 }
 
-#restaurantList{
-  min-height: 100vh;
-}
+
 .portrait h1{
   color: white;
   font-size: 5em;
