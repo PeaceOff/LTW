@@ -1,8 +1,11 @@
 
 <div class="portrait">
-  <h1> RestaurantWizz </h1>
-
+  <div class="background"> </div>
+  <h1 class="intro"> RestaurantWizz </h1>
 </div>
+
+
+
 
 <?php
 
