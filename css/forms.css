@@ -7,7 +7,8 @@ IVORY BLACK : #1D2731;
 
 /*****REGISTER FORM*****/
 #registerForm ,
-#contactForm {
+#contactForm,
+#userProfileForm {
     max-width: 500px;
     padding: 5px 10px 15px 10px;
     margin : auto;
@@ -23,7 +24,8 @@ IVORY BLACK : #1D2731;
 }
 
 #registerForm h2,
-#contactForm h2 {
+#contactForm h2,
+#userProfileForm h2{
     border : 5px
     border-style : solid;
     border-color: #1D2731;
@@ -46,14 +48,16 @@ IVORY BLACK : #1D2731;
 }
 
 #registerForm input:not(.special),
-#contactForm input:not(.special) {
+#contactForm input:not(.special),
+#userProfileForm input:not(.special) {
     width : 50%;
     text-align: center;
     margin : 0.2em;
 }
 
 #registerForm input[type=submit],
-#contactForm input[type=submit] {
+#contactForm input[type=submit],
+#userProfileForm input[type=submit] {
     margin-top : 1em;
     border: none;
     padding: 10px 15px 10px 15px;
@@ -63,7 +67,8 @@ IVORY BLACK : #1D2731;
     text-shadow: 0 0 5px #222;
 }
 #registerForm input[type=submit]:hover,
-#contactForm input[type=submit]:hover{
+#contactForm input[type=submit]:hover,
+#userProfileForm input[type=submit]:hover {
     box-shadow: 0 0 15px #222;
     background: #DEB816;
     color: #1D2731;
@@ -74,7 +79,8 @@ IVORY BLACK : #1D2731;
 }
 
 #registerForm textarea,
-#contactForm textarea {
+#contactForm textarea,
+#userProfileForm textarea {
     resize : none;
     position: relative;
     width : 90%;
@@ -92,7 +98,10 @@ nav #loginNav {
     max-width: 25%;
 }
 
-#loginForm .special,
+nav ul li:last-child .special{
+    font-size: 0.9em;
+}
+
 nav ul li:last-child .special,
 #registerBtn {
     vertical-align: middle;
@@ -103,7 +112,13 @@ nav ul li:last-child .special,
     color: #fff;
     border-radius: 3px;
     text-shadow: 0 0 5px #222;
+    cursor: pointer;
 }
+
+#userProfileForm form:first-child {
+    padding-bottom: 1em;
+}
+
 
 @keyframes zoomZoom {
     0% {
@@ -112,6 +127,13 @@ nav ul li:last-child .special,
     100% {
         transform : scale(1.1);
     }
+}
+
+a#loggedUser {
+    text-align: center;
+    vertical-align: middle;
+    padding : 0.1em;
+    margin : 0.1em;
 }
 /*COLORS
 PRUSSIAN BLUE : #0B3C5D

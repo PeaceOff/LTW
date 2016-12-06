@@ -8,7 +8,7 @@
 ?>
 <a class="usrImg" href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"> <img src="<?php echo $path ?>"/> </a>
 <?php } ?>
-<label>Logged in as: <a href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"><?php echo $_SESSION['username'] ?></a></label>
+<label>Logged in as:<a id="loggedUser" href="../pages/user_profile.php?username=<?php echo $_SESSION['username']?>"><?php echo $_SESSION['username'] ?></a></label>
 <a class="special" href="../database/action_logout.php">Logout</a>
 
 <?php }else{ ?>
