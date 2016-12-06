@@ -2,13 +2,13 @@
 include_once('../templates/header.php');
 ?>
 
-<div class="form-style-6">
-    <h1>Contact Us</h1>
+<div id="contactContainer">
     <form id="contactForm" action="../database/action_go_home.php" method="post">
-        <input type="text" name="field1" placeholder="Your Name" value="<?php if(isset($_SESSION['username'])) echo $_SESSION['name']; ?>" required/>
-        <input type="email" name="field2" placeholder="Email Address" required/>
-        <textarea name="field3" placeholder="Type your Message" required></textarea>
-        <input type="submit" value="Send" />
+        <h1>Contact Us</h1>
+        <input type="text" name="name" placeholder="Your Name *" value="<?php if(isset($_SESSION['username'])) echo $_SESSION['name']; ?>" required/>
+        <input type="email" name="email" placeholder="Email Address *" required/>
+        <textarea name="description" type="text" placeholder="If you have any questions and/or bugs to the report or you just wanna say hi, send us a message! *" maxlength="300" rows="6" cols="50"/></textarea>
+        <input class="especial" type="submit" value="Send" />
     </form>
 </div>
 
