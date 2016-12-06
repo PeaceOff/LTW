@@ -162,7 +162,8 @@ body nav ul li form input {
 
 #loginForm a, #loginForm input.special{
   background-color: #821;
-  height: inherit;
+  border-style: none;
+  height: 20px;
   margin: 0;
   padding: 0;
   font-size: 1em;
@@ -504,17 +505,21 @@ body nav ul li form input {
 }
 
 
+.restaurantList{
+  margin: 0;
+}
+
 .restaurantList li{
-  background-color: rgba(255,0,0,0.2);
+  background: rgba(10,10,10,0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: 0.5em;
   width:50em;
 	height:3em;
   list-style:none;
-	border:0.2em solid #e63737;
-
+	border:0.2em solid #222;
+  margin: 0;
 }
 
 .restaurantList li p{
@@ -530,13 +535,14 @@ body nav ul li form input {
 
 .restaurantList a{
     text-decoration: none;
-    margin: 1em;
+    margin: 0.1em;
 }
 
 .restaurantList a:hover{
-  background-color: rgba(255,128,0,0.5);
+
+  background: rgba(10,10,10,0.0);
   animation: zoomIn;
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -551,13 +557,16 @@ body nav ul li form input {
 
 
 @keyframes zoomIn {
-  0%,100%{
-    transform: scale(1);
+  0%, 100%{
+    transform: translateY(0em);
   }
-
   50%{
-    transform: scale(1.1);
-    background: rgba(255,0,0,1.0);
+    transform: translateY(-0.1em);
+  }
+  100%{
+    background: rgba(255,255,255,1.0);
+    color: #000;
+
   }
 
 }
