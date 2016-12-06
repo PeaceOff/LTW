@@ -27,10 +27,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
 <div class="restaurantInfo">
   <h3 id="restaurant_name">
-    <?php echo $result['name'] ?>
+    <?php echo '<h1>' . $result['name'] . '</h1>'?>
   </h3>
 
-  <ul> Type:
+<h2> Type(s):</h2>
+  <ul>
 
 <?php
 $restaurantTypes = getTypesbyID($id);
@@ -44,11 +45,15 @@ foreach($restaurantTypes as $rest_type){?>
 }?>
 
   </ul>
-
+<h2> Description:</h2>
   <p id = "restaurant_description">
     <?php echo $result['description']?>
   </p>
-</div>
+
+
+<h2> Gallery and Localization:</h2>
+
+<div class="restaurantIteraction">
 
 <?php
 if(count($pictures) > 0 ){ ?>
@@ -86,8 +91,11 @@ if(count($pictures) > 0 ){ ?>
 
 <?php
 }?>
+</label>
 
 <div id="map" lat="<?php echo $result['latitude'] ?>" lng="<?php echo $result['longitude'] ?>"></div>
+
+</div>
 
 <div id="schedules">
   <h3> Schedules: </h3>
@@ -140,7 +148,7 @@ if(count($pictures) > 0 ){ ?>
 $reviews = getReviews($id);
 ?>
 
-
+<h2> Reviews: </h2>
 <div class="reviews">
 
   <ul>
@@ -194,5 +202,5 @@ $answers = getAnswers($review['id']);
   </ul>
 
 </div>
-
+</div>
 <?php include_once('../templates/footer.php'); ?>

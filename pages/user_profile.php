@@ -24,10 +24,12 @@
 <div class="userInfo">
 <h3>
 
-<?php echo $info['nome']; ?>
+<?php echo '<h1>' . 'Welcome ' . $info['nome'] . ' </h1>' ?>
 </h3>
 
+<h2> About yourself </h2>
 <p> <?php echo $info['description'] ?> </p>
+
 
 <?php
   if($info['picture_id'] != null){
@@ -50,7 +52,7 @@ if($owner){?>
 <?php
 }?>
 
-</div>
+
 
 <?php
 $restaurants = getRestaurantByOwner($info['id']);
@@ -89,6 +91,8 @@ foreach($restaurants as $restaurant){ ?>
 ?>
 
 <a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit</a>
+</div>
+
 
 <?php
     }

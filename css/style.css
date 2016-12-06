@@ -232,13 +232,7 @@ body nav ul li form input {
   border-color: #354152;
 }
 
-#map {
-  height: 20em;
-  width: 20em;
 
-  background-color: #414F63;
-
-}
 
 #searchform{
   background-color: inherit;
@@ -262,9 +256,7 @@ body nav ul li form input {
   background-color: #414F63;
 }
 
-.restaurantInfo{
-  background-color: #414F63;
-}
+
 
 
 
@@ -436,13 +428,7 @@ body nav ul li form input {
   }
 }
 
-.image-slide{
-  display: inline-block;
-}
 
-#map{
-  display: inline-block;
-}
 
 .portrait{
   background-image: url(https://static.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg);
@@ -543,4 +529,34 @@ body nav ul li form input {
     background: rgba(255,0,0,1.0);
   }
 
+}
+/*show restaurant*/
+
+#map {
+  width: 45em;
+  height: 30em;
+
+}
+
+.restaurantIteraction{
+  display: flex;
+}
+
+.restaurantIteraction label{
+  font-size: 3em;
+}
+
+h1{
+  text-align: center;
+  font-style: oblique;
+  font-size:5em;
+}
+
+
+/*Personal Page*/
+.userInfo{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
