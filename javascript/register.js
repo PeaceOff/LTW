@@ -1,5 +1,5 @@
 $(document).ready( function() {
-    
+
     $("form#registerForm input[name='rpassword']").blur(function ( event ) {
         var pass = $("form#registerForm input[name='password']").val();
         var rpass = $("form#registerForm input[name='rpassword']").val();
@@ -12,6 +12,7 @@ $(document).ready( function() {
 
     $("form#registerForm input[name='username']").blur(function ( event ) {
         var user = $("form#registerForm input[name='username']").val();
+        user = user.toLowerCase();
         $.ajax({
             type : "POST",
             url : "../database/action_user_exists.php",

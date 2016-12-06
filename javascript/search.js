@@ -1,52 +1,59 @@
 $(document).ready( function() {
 
-    var btn = $("input[name='SearchButton']");
-    btn.click(updateResults);
+  $("#searchForm").submit(function( event ) {
 
-    fillTypesDropDown();
+      updateResults(false);
+      return false;
+    });
+
+    $("#searchBox").keyup(function(event) {
+      if(event.keyCode == 13)
+        $("#searchBtn").click();
+      else
+        updateResults(true);
+    });
+
+
 });
 
-function fillTypesDropDown(){
-  var typeDropDown = $("select[name='type']");
 
-  //clear last results
-  typeDropDown.empty();
-  typeDropDown.append('<option value=-1> All types </option>');
 
-  $.ajax({
-    type:'GET',
-    url: '../requests/showTypes.php',
-    success: function(types) {
-      $.each(JSON.parse(types),function(i,type){
-          typeDropDown.append('<option value=' + type.id + '>' + type.content + '</option>');
-     });
-    }
-  });
-
-}
-
-function updateResults(){
-  var restaurantList= $('#restaurants');
+function updateResults(sugestion){
+  var sugestions= $('#sugestions');
+  var restaurantList= $('.restaurantList');
   var searched = $("input[name='search']").val();
   var typeId = $("select[name='type']").val();
-  var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId;
+  var jsonInfo = '../requests/showResults.php?search=' + searched + '&typeId=' + typeId + '&sugestion=' + sugestion;
 
-  //clear last results
-  restaurantList.empty();
 
   $.ajax({
     type:'GET',
     url:jsonInfo,
     success: function(restaurants) {
+      sugestions.empty();
+      if(!sugestion)
+        restaurantList.empty();
 
       $.each(JSON.parse(restaurants),function(i,restaurant){
-          var link = "../pages/show_restaurant.php?id=" + restaurant.id;
-          restaurantList.append('<li> Name: ' + restaurant.name + '</br>'
-                                  + 'Description: ' + restaurant.description +
-                                  '</br>' + 'Type Id: ' + restaurant.type_id + '</li>');
-          restaurantList.append('<a href=' + link + '> View Restaurant Info </a>');
+          var restaurantId;
+
+          restaurantId = restaurant.id;
+
+
+          var link="../pages/show_restaurant.php?id=" + restaurantId;
+
+          if(sugestion){
+            sugestions.append('<li><a href=' + link + '>' + restaurant.name + '</a></li>');
+
+          }
+          else{
+          restaurantList.append('<a href=' +  link + '>' + '<li> <p> Restaurant ' + restaurant.name
+                                +  '</p><img src="' + restaurant.picture_path + '"/>' + '</li> </a>');
+
+        }
       });
-    }
+    },
+      async : false
   });
 
 }
