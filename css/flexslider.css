@@ -275,11 +275,11 @@ html[xmlns] .flexslider .slides {
 }
 
 .flexslider {
-    width: 500px;
-    height: 400px;
+  width: 45em;
+  height: 30em;
 }
 
 .flexslider .slides img {
-    width: 500px;
-    height: 400px;
+    width: 45em;
+    height: 30em;
 }
