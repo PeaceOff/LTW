@@ -19,6 +19,6 @@
                 <li><a id="news" href="../pages/news.php#news">News</a></li>
                 <li><a id="contact" href="../pages/contacts.php#contact">Contact</a></li>
                 <li><a id="about" href="../pages/about.php#about">About</a></li>
-                <li><?php include('login.php') ?></li>
+                <li id="loginNav"><?php include('login.php') ?></li>
             </ul>
         </nav>

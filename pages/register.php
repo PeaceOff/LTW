@@ -12,24 +12,15 @@
 <div id="register" class="animate form" >
     <form id="registerForm" action="../database/action_register.php" method="post" enctype="multipart/form-data">
         <h1>Sign up it's free!</h1>
-        <label>Your username</label>
-        <input name="username" required="required" type="text"/>
+        <input name="username" required="required" placeholder="Username *" type="text"/>
+        <input name="password" required="required" placeholder="Password *" pattern=".{8,}" title="Password must be at least 8 characters long!" type="password"/>
+        <input name="rpassword" placeholder="Confirm Password *" required="required" type="password"/>
+        <input name="name" required="required" placeholder="Your Name *" type="text"/>
+        <textarea name="description" type="text" placeholder="Tell us a bit about yourself!" maxlength="300" rows="6" cols="50"/></textarea>
         </br>
-        <label>Your password </label>
-        <input name="password" required="required" pattern=".{8,}" title="Password must be at least 8 characters long!" type="password"/>
-        </br>
-        <label>Confirm Password </label>
-        <input name="rpassword" required="required" type="password"/>
-        </br>
-        <label> Your Name</label>
-        <input name="name" required="required" type="text"/>
-        </br>
-        <label> About Yourself</label>
-        <textarea name="description" type="text" maxlength="300" rows="6" cols="50"/></textarea>
         </br>
         <label>Upload a picture</label>
         <input class="special" type="file" name="image">
-        </br>
         </br>
         <input class="special" type="submit" value="Register"/>
     </form>
