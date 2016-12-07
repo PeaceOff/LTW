@@ -12,7 +12,7 @@
 <div id="register" class="animate form" >
     <form id="registerForm" action="../database/action_register.php" method="post" enctype="multipart/form-data">
         <h2>Sign up it's free!</h2>
-        <input name="username" required="required" maxlength="4" placeholder="Username *" type="text"/>
+        <input name="username" required="required" pattern="[a-zA-Z0-1]{4,}" placeholder="Username *" type="text"/>
         <input name="password" required="required" placeholder="Password *" pattern=".{8,}" title="Password must be at least 8 characters long!" type="password"/>
         <input name="rpassword" placeholder="Confirm Password *" required="required" type="password"/>
         <input name="name" required="required" placeholder="Your Name *" type="text"/>

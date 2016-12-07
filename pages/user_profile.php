@@ -23,11 +23,21 @@
 
 <div class="userInfo">
 <h3>
+<?php
+  if($owner)
+   echo '<h1>' . 'Welcome ' . $info['nome'] . ' </h1>';
+  else
+   echo '<h1>' . $info['nome']  . ' Profile </h1>'
+?>
 
-<?php echo '<h1>' . 'Welcome ' . $info['nome'] . ' </h1>' ?>
 </h3>
 
-<h2> About yourself </h2>
+<?php
+  if($owner)
+    echo "<h2> About yourself </h2>";
+  else
+    echo "<h2> About " . $info['nome'] . "</h2>";
+?>
 <p> <?php echo $info['description'] ?> </p>
 
 
@@ -38,14 +48,22 @@
     if(!file_exists($path))
       $path = '../images/error.jpg';
   ?>
-
   <img src="<?php echo $path ?>"/> </br>
-  
-<a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
-<?php } ?>
+
+<?php }
+  if($owner){
+?>
+  <a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
+<?php
+  }?>
 
 <div class="userRestaurants">
-<h2>Restaurant(s)</h2>
+
+<?php
+  if($owner)
+   echo '<h2>Restaurant(s)</h2>';
+?>
+
 <?php
 
 if($owner){?>
@@ -62,44 +80,49 @@ $restaurants = getRestaurantByOwner($info['id']);
 if($restaurants)
 if(count($restaurants) > 0){ ?>
 
+<?php
+  if($owner)
+   echo '<h2>Manage your Restaurant(s)</h2>';
+  else
+   echo '<h2>'. $info['nome'] . ' Restaurant(s)</h2>';
+?>
 
-<h2>Manage your Restaurant(s)</h2>
 <?php
 foreach($restaurants as $restaurant){ ?>
     <ul>
       <li>
+    <?php
+      if($owner){?>
           <a href="../pages/show_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
             <?php echo $restaurant['name'] ?>
           </a>
 
+          <a href="../pages/manage_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
+            Edit Restaurant
+          </a>
+
+          <a href="../database/action_delete_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
+            Delete Restaurant
+          </a>
+
 <?php
-  if($owner){?>
-
-      <a href="../pages/manage_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
-        Edit Restaurant
-      </a>
-
-
-
-      <a href="../database/action_delete_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
-        Delete Restaurant
-      </a>
-    </li>
-<?php
-  }?>
-
+      }else{?>
+          <a id="ProfileRestaurant" href="../pages/show_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
+            <?php echo $restaurant['name'] ?>
+          </a>
+  <?php
+    }?>
+      </li>
 
     </ul>
 <?php
 }?>
 
-  </div>
 <?php
-    }
-    if(isset($_SESSION['username']))
-    if($username == $_SESSION['username']){
+  }
 ?>
 
+  </div>
 </div>
 
 
@@ -107,6 +130,5 @@ foreach($restaurants as $restaurant){ ?>
 
 
 <?php
-    }
     include_once('../templates/footer.php');
 ?>

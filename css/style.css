@@ -28,6 +28,10 @@ body {
 
 }
 
+#restaurantsOwned a {
+    text-align: center;
+}
+
 nav{
   display: flex;
   justify-content: center;
@@ -658,4 +662,8 @@ h1{
 
 .reviews{
   width: 90em;
+}
+
+#ProfileRestaurant{
+    width: 50em;
 }

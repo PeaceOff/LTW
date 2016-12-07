@@ -26,10 +26,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
 
 <div class="restaurantInfo">
+
   <div class="page">
-    <h3 id="restaurant_name">
-      <?php echo '<h1>' . $result['name'] . '</h1>'?>
-    </h3>
+    <h1 id="restaurant_name">
+      <?php echo $result['name']?>
+    </h1>
   </div>
   <div class="page">
     <h2> Type(s):</h2>
