@@ -26,9 +26,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
 
 <div class="restaurantInfo">
-  <h3 id="restaurant_name">
-    <?php echo '<h1>' . $result['name'] . '</h1>'?>
-  </h3>
+    <?php echo '<h1 id="restaurant_name">' . $result['name'] . '</h1>'?>
+
 
 <h2> Type(s):</h2>
   <ul>

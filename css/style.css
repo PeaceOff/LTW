@@ -613,12 +613,13 @@ h1{
    color: white;
 }
 
-.rating{
-
-}
 
 .userRestaurants{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#ProfileRestaurant{
+    width: 50em;
 }
