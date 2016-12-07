@@ -9,5 +9,4 @@ $(window).scroll(function(){
     'transform' : 'translate(0px, '+ scroll/2 + 'px )'
 
   });
-\
 });
