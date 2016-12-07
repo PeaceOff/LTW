@@ -9,8 +9,9 @@ body {
     margin : 0;
     padding : 0;
     border : 0;
-    min-height: 50em;
-background: url("../images/footer_lodyas.png");
+    min-height: 150vh;
+
+    background: url("../images/footer_lodyas.png");
 }
 
 .page{
@@ -295,6 +296,7 @@ body nav ul li form input {
   border: 1px solid #111;
   padding: 10px;
   height: 3em;
+  margin: 0;
   width: 20em;
   background-color: #333;
   border-left-style: none;
@@ -607,7 +609,9 @@ h1{
    color: white;
 }
 
+.rating{
 
+}
 
 .userRestaurants{
   display: flex;

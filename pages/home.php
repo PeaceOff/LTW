@@ -1,12 +1,4 @@
 
-<div class="portrait">
-  <div class="background"> </div>
-  <h1 class="intro"> RestaurantWizz </h1>
-</div>
-
-
-
-
 <?php
 
 include_once('../templates/header.php');
@@ -18,7 +10,6 @@ include_once('../database/types.php');
 
 ?>
 
-<script type="text/javascript" src="../javascript/portrait.js"> </script>
 <script type="text/javascript" src="../javascript/search.js"></script>
 
 

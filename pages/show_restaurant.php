@@ -128,7 +128,7 @@ if(count($pictures) > 0 ){ ?>
 
 <form action="../database/action_review.php" class="review" method="post">
   <input type="hidden" name="id" value= <?php echo '"'.$id.'"' ?> > </input>
-  <label>Rate: [
+  <label class="rating">Rate: [
     0:<input type="radio" name="rating" value="0"></input>
     1:<input type="radio" name="rating" value="1"></input>
     2:<input type="radio" name="rating" value="2"></input>
