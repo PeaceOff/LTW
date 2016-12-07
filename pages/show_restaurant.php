@@ -123,7 +123,7 @@ if(count($pictures) > 0 ){ ?>
 </div>
 
 <?php
-  if(isset($_SESSION['username'])){
+  if(isset($_SESSION['username']) && $_SESSION['id'] != $result['owner']){
 ?>
 
 <form action="../database/action_review.php" class="review" method="post">
