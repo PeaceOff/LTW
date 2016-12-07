@@ -525,7 +525,7 @@ h1{
   width:50em;
 	height:3em;
   list-style:none;
-	border:0.2em solid #222;
+	border:1px solid #000;
   margin: 0;
 }
 
