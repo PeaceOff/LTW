@@ -39,11 +39,11 @@
       $path = '../images/error.jpg';
   ?>
 
-  <img src="<?php echo $path ?>"/> </br>
-  
-<a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
+    <img src="<?php echo $path ?>"/>
+</br>
 <?php } ?>
 
+<a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
 <div class="userRestaurants">
 <h2>Restaurant(s)</h2>
 <?php

@@ -103,7 +103,7 @@ nav ul li:last-child .special{
 }
 
 nav ul li:last-child .special,
-.registerBtn {
+.logoutBtn {
     vertical-align: middle;
     margin : auto;
     border: none;
@@ -116,7 +116,7 @@ nav ul li:last-child .special,
 }
 
 nav ul li:last-child .special:hover,
-.registerBtn:hover{
+.logoutBtn:hover{
     animation : zoomLogin;
     animation-duration : 0.2;
     animation-timing-function: ease-in-out;
