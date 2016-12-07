@@ -16,6 +16,7 @@
       <div class="portrait">
         <div class="background"> </div>
         <h1 class="intro"> RestaurantWizz </h1>
+        <div class="foreground"> </div>
       </div>
 
       <?php session_start() ?>

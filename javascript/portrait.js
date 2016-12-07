@@ -10,4 +10,10 @@ $(window).scroll(function(){
 
   });
 
+  $(".foreground").css({
+
+    'transform' : 'translate(0px, -'+ scroll/8 + 'px )'
+
+  });
+
 });
