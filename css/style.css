@@ -609,12 +609,53 @@ h1{
    color: white;
 }
 
-.rating{
-
-}
-
 .userRestaurants{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.rating {
+    overflow: hidden;
+    display: inline-block;
+}
+.rating-input {
+    float: right;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0 0 0 -40px;
+    opacity: 0;
+}
+.rating-star {
+    position: relative;
+    float: right;
+    display: block;
+    width: 40px;
+    height: 40px;
+    pointer-events: auto;
+    background: url("../images/rating.png") 40px 0px;
+    background-size: 80px 40px;
+    pointer-events: none;
+}
+
+
+.rating-input:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background-position: 0px 0;
+}
+
+.galleryAndLocation{
+  display: flex;
+  justify-content: space-between;
+  width: 90em;
+}
+
+.pages form.review{
+  display: block;
+  background-color: red;
+}
+
+.reviews{
+  width: 90em;
 }

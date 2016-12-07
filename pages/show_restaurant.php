@@ -26,129 +26,152 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
 
 <div class="restaurantInfo">
-  <h3 id="restaurant_name">
-    <?php echo '<h1>' . $result['name'] . '</h1>'?>
-  </h3>
+  <div class="page">
+    <h3 id="restaurant_name">
+      <?php echo '<h1>' . $result['name'] . '</h1>'?>
+    </h3>
+  </div>
+  <div class="page">
+    <h2> Type(s):</h2>
 
-<h2> Type(s):</h2>
-  <ul>
+    <ul>
 
 <?php
 $restaurantTypes = getTypesbyID($id);
 foreach($restaurantTypes as $rest_type){?>
 
-  <li>
-    <?php echo $rest_type['content'] ?>
-  </li>
+      <li>
+        <?php echo $rest_type['content'] ?>
+      </li>
 
 <?php
 }?>
 
-  </ul>
-<h2> Description:</h2>
+    </ul>
+  </div>
+
+<div class="page">
+  <h2> Description:</h2>
   <p id = "restaurant_description">
     <?php echo $result['description']?>
   </p>
 
-
-<h2> Gallery and Localization:</h2>
-
-<div class="restaurantIteraction">
+</div>
+<div class="page">
+  <div class="galleryAndLocation">
+    <h2> Gallery</h2>
+    <h2> Location </h2>
+  </div>
+</div>
+<div class="page">
+  <div class="restaurantIteraction">
 
 <?php
 if(count($pictures) > 0 ){ ?>
 
-<div class="flexslider">
-  <ul  class="slides">
+    <div class="flexslider">
+      <ul  class="slides">
 
-<?php
-  foreach( $pictures as $picture ) {
-    $path = "../images/medium/". $picture['picture_id'] . '.jpg';
+    <?php
+      foreach( $pictures as $picture ) {
+        $path = "../images/medium/". $picture['picture_id'] . '.jpg';
 
-    if(!file_exists($path))
-      $path = '../images/error.jpg'; ?>
+        if(!file_exists($path))
+          $path = '../images/error.jpg'; ?>
 
-    <li>
-      <img src="<?php echo $path ?>"/>
-    </li>
+        <li>
+          <img src="<?php echo $path ?>"/>
+        </li>
 
-<?php
-  }?>
+    <?php
+      }?>
 
-  </ul>
-</div>
+      </ul>
+    </div>
 
 <?php
 }else{?>
 
-  <div class="flexslider">
-    <ul class="slides">
-      <li>
-        <img src="../images/error.jpg"/>
-      </li>
-    </ul>
-  </div>
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="../images/error.jpg"/>
+        </li>
+      </ul>
+    </div>
 
 <?php
 }?>
-</label>
+  </label>
 
-<div id="map" lat="<?php echo $result['latitude'] ?>" lng="<?php echo $result['longitude'] ?>"></div>
+  <div id="map" lat="<?php echo $result['latitude'] ?>" lng="<?php echo $result['longitude'] ?>"></div>
 
+  </div>
 </div>
 
-<div id="schedules">
-  <h3> Schedules: </h3>
-  <ul>
+<div class="page">
+  <div id="schedules">
+    <h3> Schedules: </h3>
+    <ul>
 
-<?php
-  $schedules = getSchedules($id);
-  foreach($schedules as $schedule){?>
+  <?php
+    $schedules = getSchedules($id);
+    foreach($schedules as $schedule){?>
 
-    <li>
-      <h3>
-        <?php echo $schedule['name'] ?>
-      </h3>
-      <div> Open:
-        <?php echo $schedule['begin'] ?>
-      </div>
-      <div> Close:
-        <?php echo $schedule['end'] ?>
-      </div>
-    </li>
+      <li>
+        <h3>
+          <?php echo $schedule['name'] ?>
+        </h3>
+        <div> Open:
+          <?php echo $schedule['begin'] ?>
+        </div>
+        <div> Close:
+          <?php echo $schedule['end'] ?>
+        </div>
+      </li>
 
-<?php
-  }?>
+  <?php
+    }?>
 
+  </div>
 </div>
 
 <?php
   if(isset($_SESSION['username']) && $_SESSION['id'] != $result['owner']){
 ?>
-
-<form action="../database/action_review.php" class="review" method="post">
-  <input type="hidden" name="id" value= <?php echo '"'.$id.'"' ?> > </input>
-  <label class="rating">Rate: [
-    0:<input type="radio" name="rating" value="0"></input>
-    1:<input type="radio" name="rating" value="1"></input>
-    2:<input type="radio" name="rating" value="2"></input>
-    3:<input type="radio" name="rating" value="3" checked></input>
-    4:<input type="radio" name="rating" value="4"></input>
-    5:<input type="radio" name="rating" value="5"></input> ]
-  </label>
-  <br>
-  <label>
-    Review:
-    <textarea rows="4" cols="50" name="message"></textarea>
-  </label>
-  <button class="PostButton"> Post </button>
-</form>
+<div class="page">
+  <form action="../database/action_review.php" class="review" method="post">
+    <input type="hidden" name="id" value= <?php echo '"'.$id.'"' ?> > </input>
+    <span class="rating">
+      <input class="rating-input" type="radio" name="rating" value="0"/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="1"/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="2"/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="3" checked/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="4"/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="5"/>
+      <label class="rating-star"> </label>
+    </span>
+    <br>
+    <label>
+      Review:
+      <textarea rows="4" cols="50" name="message"></textarea>
+    </label>
+    <button class="PostButton"> Post </button>
+  </form>
+</div>
 
 <?php }
 $reviews = getReviews($id);
 ?>
-
+<div class="page">
 <h2> Reviews: </h2>
+</div>
+<div class="page">
 <div class="reviews">
 
   <ul>
@@ -201,6 +224,7 @@ $answers = getAnswers($review['id']);
 }?>
   </ul>
 
+</div>
 </div>
 </div>
 <?php include_once('../templates/footer.php'); ?>
