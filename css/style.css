@@ -14,19 +14,6 @@ body {
     background: url("../images/footer_lodyas.png");
 }
 
-.foreground{
-  background: url(http://www.pngall.com/wp-content/uploads/2016/04/Fork-Transparent.png);
-  background-repeat: no-repeat;
-  position: absolute;
-  background-position: bottom right;
-  background-size: 20em;
-  left: 45%;
-  width: 600px;
-  height: 600px;
-
-
-}
-
 .page{
   display: flex;
   justify-content: center;
