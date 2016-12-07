@@ -281,76 +281,53 @@ h1{
   background-color: #414F63;
 }
 
+#searchArea{
+  margin-top: 2em;
+  margin-bottom: 2em;
+  transform: scale(1.1);
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+}
 
+#searchArea label{
+  display: flex;
+}
 
+#searchArea * *{
+  vertical-align: top;
+  padding: 0;
+  border: 0px solid;
+  margin: 0;
+  height: 30px;
+}
 
-
-.typeDropDown{
-
-  border: 1px solid #607d8b;
-  background-color: rgba(10,10,10,0.4);
-  padding: 10px;
-  min-height: 20px;
-  width: 9em;
+#searchBtn{
+  color: white;
 }
 
 *{
   font-family: Roboto;
 }
-#searchArea label{
-  background-color: rgba(255,0,0,0);
-}
 
 #searchArea select{
+
+  background:  rgba(10,10,10,0.4);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: #000 solid 1px;
-  padding: 10px;
-  border-right-style: none;
-
   color: #FFF;
 }
 
 #searchArea select:hover{
-  padding: 10px;
   background-color: rgba(255,255,255,0.7);
   color: black;
 
 }
 
-#searchArea{
-
-  margin-top: 2em;
-  display: flex;
-  justify-content: center;
-}
-
-#searchBox{
-  border: 1px solid #111;
-  padding: 10px;
-  min-height: 20px;
-  margin: 0;
-
-  max-width: 200px;
-  background-color: rgba(10,10,10, 0.1);
-  border-left-style: none;
-  border-right-style: none;
-  color: #FFF;
-}
-
-
-
 #searchBtn{
-  border: 1px solid #111;
   background:  rgba(10,10,10,0.4);
   border-left-style: none;
-  min-height: 20px;
-  color: white;
-  padding: 10px;
-  margin-left: -5px;
-  vertical-align: top;
-  content: "Search";
 }
 
 #searchBtn:hover{
@@ -366,6 +343,7 @@ h1{
     color: inherit;
     font-size:15px;
     text-align: center;
+
     padding:10px;
 }
 
@@ -376,16 +354,11 @@ h1{
 #sugestions {
   position: absolute;
   left: 0;
-  top: 41px;
   right: 0;
-
-  padding: 0px;
-  margin: 0px;
-  background-color: rgba(10,10,10,0.4);
-  list-style:none;
-  padding:0;
-  min-width: 100%;
-  min-height: 0.5em;
+  top: 100%;
+  background-color: rgba(10, 10, 10, 0.4);
+  display: block;
+  height: auto;
 }
 
 
@@ -405,7 +378,6 @@ h1{
 }
 
 #sugestions li{
-  max-height: 500px;
   overflow:hidden;
   opacity: 1;
   color: white;

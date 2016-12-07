@@ -4,7 +4,7 @@
         <title>RestaurantWizz</title>
         <meta charset="UTF-8">
         <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/14/%D9%85%D8%B7%D8%A7%D8%B9%D9%85.png">
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"> </script>
         <script type="text/javascript" src="../javascript/login.js"></script>
         <script type="text/javascript" src="../javascript/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="../javascript/portrait.js"> </script>
