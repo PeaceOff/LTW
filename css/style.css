@@ -133,9 +133,11 @@ body nav ul li form input {
 }
 
 h1{
+  color: #111;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 8em;
+  font-weight: bold;
   text-align: center;
-  font-style: oblique;
-  font-size:5em;
 }
 
 
@@ -670,17 +672,30 @@ h1{
     width: 50em;
 }
 
+
 .schedules ul{
   justify-content: center;
   display: flex;
   list-style: none;
   margin: 2em;
-  width: 80em;
+  width: 90em;
   background: #af9e0a;
   border-radius: 2em;
 }
 
-.schedules li{
+
+.schedules li,
+.restaurantInfo #restaurant_description,
+.restaurantInfo #restaurant_types{
+  margin: 1em;
+  font-size: 1em;
+  background: #af9e0a;
   padding: 1em;
-  font-size: 1.5em;
+  border-radius: 2em;
+  max-width: 50em;
+  word-wrap: break-word;
+}
+
+.schedules{
+  text-align: center;
 }

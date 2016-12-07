@@ -33,9 +33,10 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
     </h1>
   </div>
   <div class="page">
-    <h2> Type(s):</h2>
+    <div id="restaurant_types">
+    <h2> Restaurant Type(s):</h2>
 
-    <ul>
+    <ul >
 
 <?php
 $restaurantTypes = getTypesbyID($id);
@@ -50,13 +51,15 @@ foreach($restaurantTypes as $rest_type){?>
 
     </ul>
   </div>
+  </div>
 
 <div class="page">
+  <div id = "restaurant_description">
   <h2> Description:</h2>
-  <p id = "restaurant_description">
+  <p >
     <?php echo $result['description']?>
   </p>
-
+</div>
 </div>
 <div class="page">
   <div class="galleryAndLocation">
