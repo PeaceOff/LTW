@@ -14,6 +14,7 @@ body {
     background: url("../images/footer_lodyas.png");
 }
 
+
 .page{
   display: flex;
   justify-content: center;
@@ -261,12 +262,6 @@ h1{
   border-color: #354152;
 }
 
-
-
-#searchform{
-  background-color: inherit;
-}
-
 #mapSearch{
        background-color: #fff;
        font-family: Roboto;
@@ -290,16 +285,20 @@ h1{
 
 
 .typeDropDown{
+
   border: 1px solid #607d8b;
+  background-color: rgba(10,10,10,0.4);
   padding: 10px;
-  height: 3em;
+  min-height: 20px;
   width: 9em;
 }
 
 *{
   font-family: Roboto;
 }
-
+#searchArea label{
+  background-color: rgba(255,0,0,0);
+}
 
 #searchArea select{
   -webkit-appearance: none;
@@ -307,19 +306,20 @@ h1{
   appearance: none;
   border: #000 solid 1px;
   padding: 10px;
-  background-color: #222;
   border-right-style: none;
+
   color: #FFF;
 }
 
 #searchArea select:hover{
   padding: 10px;
-  background-color: #282828;
+  background-color: rgba(255,255,255,0.7);
+  color: black;
 
 }
 
 #searchArea{
-  background-color: #27211d;
+
   margin-top: 2em;
   display: flex;
   justify-content: center;
@@ -328,33 +328,33 @@ h1{
 #searchBox{
   border: 1px solid #111;
   padding: 10px;
-  height: 3em;
+  min-height: 20px;
   margin: 0;
-  width: 20em;
-  background-color: #333;
+
+  max-width: 200px;
+  background-color: rgba(10,10,10, 0.1);
   border-left-style: none;
   border-right-style: none;
   color: #FFF;
 }
 
-#searchBox:before{
-  content: "Search";
-}
+
 
 #searchBtn{
   border: 1px solid #111;
-  background:  #222;
+  background:  rgba(10,10,10,0.4);
   border-left-style: none;
-  height: 3em;
+  min-height: 20px;
   color: white;
   padding: 10px;
   margin-left: -5px;
   vertical-align: top;
-  value: "Search";
+  content: "Search";
 }
 
 #searchBtn:hover{
-  background:  #282828;
+  background:  rgba(255,255,255,0.7);
+  color: black;
 }
 
 
@@ -375,12 +375,12 @@ h1{
 #sugestions {
   position: absolute;
   left: 0;
-  top: 2.3em;
+  top: 41px;
   right: 0;
 
   padding: 0px;
   margin: 0px;
-  background-color:#222;
+  background-color: rgba(10,10,10,0.4);
   list-style:none;
   padding:0;
   min-width: 100%;
