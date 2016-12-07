@@ -480,6 +480,7 @@ body nav ul li form input {
   margin: 0;
 }
 
+.userRestaurants li,
 .restaurantList li{
   background: rgba(10,10,10,0.3);
   display: flex;
@@ -505,6 +506,7 @@ body nav ul li form input {
 
 
 .restaurantList a{
+
     text-decoration: none;
     margin: 0.1em;
 }
@@ -532,7 +534,7 @@ body nav ul li form input {
     transform: translateY(0em);
   }
   50%{
-    transform: translateY(-0.1em);
+    transform: translateY(-0.2em);
   }
   100%{
     background: rgba(255,255,255,1.0);
@@ -570,4 +572,45 @@ h1{
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.userInfo a,
+.userRestaurants a{
+  text-align: center;
+  background: rgba(217, 179, 16,0.5);
+  border: solid;
+  border-radius: 10px;
+  padding: 1.2em;
+  text-decoration: none;
+}
+
+.userRestaurants li a{
+  width: 15em;
+}
+
+.userRestaurants li a:first-child{
+  background: #595000;
+
+}
+
+.userInfo a:hover{
+  background: rgba(10,10,10,0.0);
+  animation: zoomIn;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.userInfo a{
+   color: white;
+}
+
+.userInfo a{
+   color: white;
+}
+
+
+
+.userRestaurants{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

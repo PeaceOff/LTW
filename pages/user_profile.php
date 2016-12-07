@@ -40,11 +40,14 @@
   ?>
 
   <img src="<?php echo $path ?>"/> </br>
-
+  
+<a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
 <?php } ?>
 
-
+<div class="userRestaurants">
+<h2>Restaurant(s)</h2>
 <?php
+
 if($owner){?>
 
 <a href="../pages/manage_restaurant.php"> Add Restaurant </a>
@@ -58,31 +61,38 @@ if($owner){?>
 $restaurants = getRestaurantByOwner($info['id']);
 if($restaurants)
 if(count($restaurants) > 0){ ?>
-  <div class="restaurantList">
-    <h4>User's Restaurant(s)</h4>
-    <ul>
+
+
+<h2>Manage your Restaurant(s)</h2>
 <?php
 foreach($restaurants as $restaurant){ ?>
+    <ul>
       <li>
-        <h5>
           <a href="../pages/show_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
             <?php echo $restaurant['name'] ?>
           </a>
+
 <?php
   if($owner){?>
-    <a href="../pages/manage_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
-      Edit Restaurant
-    </a>
-    <a href="../database/action_delete_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
-      Delete Restaurant
-    </a>
+
+      <a href="../pages/manage_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
+        Edit Restaurant
+      </a>
+
+
+
+      <a href="../database/action_delete_restaurant.php?id=<?php echo $restaurant['id'] ?>" >
+        Delete Restaurant
+      </a>
+    </li>
 <?php
   }?>
-        </h5>
-      </li>
+
+
+    </ul>
 <?php
 }?>
-    </ul>
+
   </div>
 <?php
     }
@@ -90,8 +100,10 @@ foreach($restaurants as $restaurant){ ?>
     if($username == $_SESSION['username']){
 ?>
 
-<a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit</a>
 </div>
+
+
+
 
 
 <?php
