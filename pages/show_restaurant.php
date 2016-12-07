@@ -111,14 +111,17 @@ if(count($pictures) > 0 ){ ?>
 </div>
 
 <div class="page">
-  <div id="schedules">
-    <h3> Schedules: </h3>
-    <ul>
+<div class="schedules">
+  <h2> Schedules: </h2>
+  <ul>
 
-  <?php
-    $schedules = getSchedules($id);
-    foreach($schedules as $schedule){?>
+<?php
+  $schedules = getSchedules($id);
 
+  if(count($schedules) == 0)
+    echo "<h3> There are no schedules available for this restaurant at the moment</h3>";
+
+  foreach($schedules as $schedule){?>
       <li>
         <h3>
           <?php echo $schedule['name'] ?>
@@ -137,9 +140,22 @@ if(count($pictures) > 0 ){ ?>
   </div>
 </div>
 
+
 <?php
+  $reviews = getReviews($id);
+
   if(isset($_SESSION['username']) && $_SESSION['id'] != $result['owner']){
+
+  $alreadyMadeReview=false;
+  foreach ($reviews as $review) {
+    if($review['user_id'] == $_SESSION['id']){
+      $alreadyMadeReview=true;
+      break;
+    }
+  }
+  if(!$alreadyMadeReview){
 ?>
+
 <div class="page">
   <form action="../database/action_review.php" class="review" method="post">
     <input type="hidden" name="id" value= <?php echo '"'.$id.'"' ?> > </input>
@@ -166,14 +182,18 @@ if(count($pictures) > 0 ){ ?>
   </form>
 </div>
 
-<?php }
-$reviews = getReviews($id);
+
+
+<?php }}
 ?>
 <div class="page">
 <h2> Reviews: </h2>
 </div>
+
 <div class="page">
 <div class="reviews">
+
+
 
   <ul>
 <?php
@@ -193,7 +213,7 @@ foreach ($reviews as $review) {?>
 <?php
   if(isset($_SESSION['id']))
     if($_SESSION['id']== $review['user_id']) { ?>
-      <a class="delete-review" reviewID=<?php echo '"'.$review['id'].'"' ?> ;> Delete </a>
+      <a class="delete-review" reviewID=<?php echo '"' . $review['id'] . '"' ?> ;> Delete </a>
 <?php
       }
   }
@@ -228,4 +248,6 @@ $answers = getAnswers($review['id']);
 </div>
 </div>
 </div>
+
+
 <?php include_once('../templates/footer.php'); ?>

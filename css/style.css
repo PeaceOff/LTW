@@ -127,10 +127,40 @@ body nav ul li form input {
     color: black;
 }
 
+/*Restaurant Page*/
+
+#map {
+  width: 45em;
+  height: 30em;
+
+}
+
+.restaurantIteraction{
+  display: flex;
+}
+
+.restaurantIteraction label{
+  font-size: 3em;
+}
+
+h1{
+  text-align: center;
+  font-style: oblique;
+  font-size:5em;
+}
+
+
+
+.reviews button{
+  width: 30em;
+  margin: 1em;
+  background-color: #D9B310;
+
+}
 
 .reviews ul{
   margin: 0.5em;
-  padding: 0em;
+  padding: 0;
 }
 
 .reviews li{
@@ -174,10 +204,8 @@ body nav ul li form input {
 
 .reply, .delete-review, .delete-comment{
   display: inline-block;
-  padding: 0.1em;
-  margin-left: 1em;
-  margin-top: 0em;
-  margin-bottom: 1em;
+  padding: 0.6em;
+  margin:0.6em;
   color: #EEE;
   font-weight: bold;
   background-color: #354152;
@@ -186,6 +214,7 @@ body nav ul li form input {
 }
 
 .reply:hover, .delete-review:hover, .delete-comment:hover{
+  padding: 0.6em;
   background-color: #243041;
 }
 
@@ -562,27 +591,6 @@ body nav ul li form input {
   }
 
 }
-/*show restaurant*/
-
-#map {
-  width: 45em;
-  height: 30em;
-
-}
-
-.restaurantIteraction{
-  display: flex;
-}
-
-.restaurantIteraction label{
-  font-size: 3em;
-}
-
-h1{
-  text-align: center;
-  font-style: oblique;
-  font-size:5em;
-}
 
 
 /*Personal Page*/
@@ -592,6 +600,12 @@ h1{
   flex-direction: column;
   align-items: center;
 }
+
+
+
+
+
+.reviews button,
 .userInfo a,
 .userRestaurants a{
   text-align: center;
@@ -607,17 +621,18 @@ h1{
 }
 
 .userRestaurants li a:first-child{
-  background: #595000;
+  background: #7c7005;
 
 }
 
+.reviews button:hover,
 .userInfo a:hover{
-  background: rgba(10,10,10,0.0);
   animation: zoomIn;
   animation-duration: 0.2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
+
 .userInfo a{
    color: white;
 }
@@ -679,4 +694,19 @@ h1{
 
 #ProfileRestaurant{
     width: 50em;
+}
+
+.schedules ul{
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  margin: 2em;
+  width: 80em;
+  background: #af9e0a;
+  border-radius: 2em;
+}
+
+.schedules li{
+  padding: 1em;
+  font-size: 1.5em;
 }
