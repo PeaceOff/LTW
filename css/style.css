@@ -144,7 +144,6 @@ h1{
   width: 30em;
   margin: 1em;
   background-color: #D9B310;
-
 }
 
 .reviews ul{
@@ -155,7 +154,11 @@ h1{
 .reviews li{
   background-color: #414F63;
   list-style-type: none;
-  border-radius: 0.5em;
+
+  border-top: 5px solid #CCC;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  background-color: rgba(230,230,230,1);
 
 }
 
@@ -174,40 +177,60 @@ h1{
   border-bottom-right-radius: 0.0em;
   border-top-left-radius: 0.0em;
   background-color: #FF7226;
-  border-color: #FF3F33;
+
+  background-color: #47F;
+  border-color: #157;
   border-bottom-style: solid;
-  color: #881811;
+  color: #000;
 }
 
 .reviews li h5{
-  background-color: #FF4E27;
-  border-color: #E82A24;
+  background-color: #444
+  border-color: #999;
 }
 
 .reviews h4 a, .reviews h5 a{
   text-decoration: none;
   cursor:pointer;
-  color: #A81A14;
+  color: #000;
 }
 
 
 .reply, .delete-review, .delete-comment{
   display: inline-block;
   padding: 0.6em;
-  margin:0.6em;
-  color: #EEE;
+  margin: 0em;
+  margin-left: 0.5em;
+  color: #111;
   font-weight: bold;
-  background-color: #354152;
-  border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
+  background-color: inherit;
+  border-radius: 0.5em;
+  transform-origin: top;
 }
 
 .reply:hover, .delete-review:hover, .delete-comment:hover{
   padding: 0.6em;
-  background-color: #243041;
+  animation: slide 0.1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
+@keyframes slide{
+  0%, 100%{
+    transform: translateY(0);
 
+  }
+  0%{
+    opacity: 0;
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    opacity: 1;
+    background-color: #888;
+    color: #FFF;
+  }
+}
 
 .reviews ul{
   padding-bottom: 1em;
@@ -219,23 +242,20 @@ h1{
   margin-top: 0;
   margin-bottom: 0;
   border-top-style: none;
-  background-color: #354152;
-  color: #EEE;
-  border-radius: 0.1em;
+  color: #111;
   padding: 0.5em;
 }
 .reviews ul ul{
   margin-left: 2em;
+
 }
 
 .reviews ul ul li:first-child{
-  border-color: #354152;
-  border-top-style: solid;
+  //border-top: 1px solid #111;
 }
 
 .reviews ul ul li:last-child{
-  border-color: #354152;
-  border-bottom-style: solid;
+//  border-bottom: 1px solid #111;
 }
 
 .reviews form{
@@ -250,17 +270,11 @@ h1{
 }
 
 .reviews ul ul li{
-  border-color: #354152;
-  border-top-style: dotted;
-  border-right: 0.3em;
-  border-right-style: solid;
-  border-left: 0.3em;
-  border-left-style: solid;
-  list-style-type: none;
-  border-radius: 0em;
+  border-top: 5px solid #CCC;
   padding-bottom: 0.5em;
-  background: #252D38;
-  border-color: #354152;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: -10px 10px 10px #CCC;
+  border-radius: 0;
 }
 
 #mapSearch{
