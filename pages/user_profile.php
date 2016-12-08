@@ -25,9 +25,9 @@
 <h3>
 <?php
   if($owner)
-   echo '<h1>' . 'Welcome ' . $info['nome'] . ' </h1>';
+   echo '<h1 class="title"><span>' . 'Welcome ' . $info['nome'] . ' </span></h1>';
   else
-   echo '<h1>' . $info['nome']  . ' Profile </h1>'
+   echo '<h1 class="title"><span>' . $info['nome']  . ' Profile </span></h1>'
 ?>
 
 </h3>

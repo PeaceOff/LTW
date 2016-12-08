@@ -28,8 +28,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 <div class="restaurantInfo">
 
   <div class="page">
-    <h1 id="restaurant_name">
-      <?php echo $result['name']?>
+    <h1 class="title">
+      <?php echo "<span>" . $result['name'] . "</span>" ?>
     </h1>
   </div>
   <div class="page">
@@ -40,6 +40,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
 
 <?php
 $restaurantTypes = getTypesbyID($id);
+if(count($restaurantTypes) == 0 )
+  echo "<p> This restaurant doesn't have types at the moment </p>";
 foreach($restaurantTypes as $rest_type){?>
 
       <li>
@@ -127,7 +129,7 @@ if(count($pictures) > 0 ){ ?>
   foreach($schedules as $schedule){?>
       <li>
         <h3>
-          <?php echo $schedule['name'] ?>
+          <?php echo ucfirst($schedule['name']) ?>
         </h3>
         <div> Open:
           <?php echo $schedule['begin'] ?>

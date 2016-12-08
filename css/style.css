@@ -135,7 +135,7 @@ body nav ul li form input {
 h1{
   color: #111;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 8em;
+  font-size: 4em;
   font-weight: bold;
   text-align: center;
 }
@@ -518,6 +518,11 @@ h1{
   margin: 0;
 }
 
+.userRestaurants li{
+  background:none;
+  border: hidden;
+}
+
 .restaurantList li p{
    flex: none;
    font-weight: bold;
@@ -688,7 +693,6 @@ h1{
 .restaurantInfo #restaurant_description,
 .restaurantInfo #restaurant_types{
   margin: 1em;
-  font-size: 1em;
   background: #af9e0a;
   padding: 1em;
   border-radius: 2em;
@@ -698,4 +702,35 @@ h1{
 
 .schedules{
   text-align: center;
+}
+
+
+.title {
+  line-height: 0.5;
+  text-align: center;
+}
+
+.title span{
+  display: inline-block;
+  position: relative;
+}
+
+.title  span:before,
+.title  span:after {
+  content: "";
+  position: absolute;
+  height: 0.3em;;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  top: 0;
+  width: 10em;
+}
+
+.title  span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.title  span:after {
+  left: 100%;
+  margin-left: 15px;
 }
