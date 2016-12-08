@@ -144,8 +144,16 @@ h1{
 
 .reviews button{
   width: 30em;
-  margin: 1em;
+  margin: 0em;
+  margin-bottom: 1em;
+  border-style: none;
   background-color: #D9B310;
+}
+
+.reviews textarea{
+  width: inherit;
+  margin: 0;
+  width: 100%;
 }
 
 .reviews ul{
@@ -237,6 +245,11 @@ h1{
 .reviews ul{
   padding-bottom: 1em;
 }
+
+.reviews ul li{
+  margin-bottom: 0.5em;
+}
+
 .reviews li p{
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -261,7 +274,10 @@ h1{
 }
 
 .reviews form{
+  margin-left: 0em;
   margin-left: 2em;
+  margin-right: 2em;
+  width: inherit;
 }
 
 .reviews form textarea{
@@ -590,11 +606,22 @@ h1{
 .userInfo a,
 .userRestaurants a{
   text-align: center;
-  background: rgba(200, 179, 16,0.5);
+  background: rgba(10, 10, 10,0.5);
   border: solid;
-  border-radius: 10px;
-  padding: 1.2em;
+  border-radius: 1px;
+  margin-top: 0;
   text-decoration: none;
+}
+
+.reviews button{
+  border: 0px solid #222;
+  background-color: inherit;
+  border-radius: 10px;
+  width: 4em;
+  height: 2em;
+  font-size: 15px;
+  font-weight: bold;
+
 }
 
 .userRestaurants li a{
@@ -609,8 +636,8 @@ h1{
 #makeReview button:hover,
 .reviews button:hover,
 .userInfo a:hover{
-  animation: zoomIn;
-  animation-duration: 0.2s;
+  animation: slide;
+  animation-duration: 0.1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
