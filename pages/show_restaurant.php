@@ -161,7 +161,9 @@ if(count($pictures) > 0 ){ ?>
   if(!$alreadyMadeReview){
 ?>
 
-<div class="page">
+
+<div id="makeReview">
+  <h2>Make a review</h2>
   <form action="../database/action_review.php" class="review" method="post">
     <input type="hidden" name="id" value= <?php echo '"'.$id.'"' ?> > </input>
     <span class="rating">
@@ -179,20 +181,18 @@ if(count($pictures) > 0 ){ ?>
       <label class="rating-star"> </label>
     </span>
     <br>
-    <label>
-      Review:
       <textarea rows="4" cols="50" name="message"></textarea>
-    </label>
     <button class="PostButton"> Post </button>
   </form>
 </div>
 
 
 
+
 <?php }}
 ?>
 <div class="page">
-<h2> Reviews: </h2>
+<h2> Current Reviews: </h2>
 </div>
 
 <div class="page">

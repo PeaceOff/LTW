@@ -32,14 +32,16 @@
 
 </h3>
 
+<div  class="user_description">
 <?php
+
   if($owner)
     echo "<h2> About yourself </h2>";
   else
     echo "<h2> About " . $info['nome'] . "</h2>";
 ?>
 <p> <?php echo $info['description'] ?> </p>
-
+</div>
 
 <?php
   if($info['picture_id'] != null){

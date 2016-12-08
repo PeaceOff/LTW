@@ -300,7 +300,7 @@ h1{
 #searchArea{
   margin-top: 2em;
   margin-bottom: 2em;
-  transform: scale(1.1);
+  transform: scale(1.6);
   border: 1px solid #000;
   display: flex;
   justify-content: center;
@@ -585,12 +585,12 @@ h1{
 
 
 
-
+#makeReview button,
 .reviews button,
 .userInfo a,
 .userRestaurants a{
   text-align: center;
-  background: rgba(217, 179, 16,0.5);
+  background: rgba(200, 179, 16,0.5);
   border: solid;
   border-radius: 10px;
   padding: 1.2em;
@@ -606,6 +606,7 @@ h1{
 
 }
 
+#makeReview button:hover,
 .reviews button:hover,
 .userInfo a:hover{
   animation: zoomIn;
@@ -688,7 +689,7 @@ h1{
   border-radius: 2em;
 }
 
-
+.user_description,
 .schedules li,
 .restaurantInfo #restaurant_description,
 .restaurantInfo #restaurant_types{
@@ -733,4 +734,25 @@ h1{
 .title  span:after {
   left: 100%;
   margin-left: 15px;
+}
+
+#makeReview {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#makeReview textarea{
+  border-radius: 1em;
+  font-size: 2em;
+  padding: 1em;
+}
+
+
+#makeReview button{
+  justify-content: center;
+  display: block;
+  width: 50em;
+  margin:auto;
 }
