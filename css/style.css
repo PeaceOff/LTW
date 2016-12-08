@@ -15,6 +15,25 @@ body {
     background: url("../images/footer_lodyas.png");
 }
 
+/*TESTING*/
+#banner {
+	overflow: hidden;
+}
+
+#nav_bar {
+	border: 0;
+	border-radius: 0px;
+	margin-bottom: 0;
+}
+
+.navbar-fixed {
+    top: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+}
+/*TESTING*/
+
 #aboutDiv {
     align-self: center;
     max-width: 700px;

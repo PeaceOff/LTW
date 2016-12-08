@@ -8,19 +8,22 @@
         <script type="text/javascript" src="../javascript/login.js"></script>
         <script type="text/javascript" src="../javascript/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="../javascript/portrait.js"> </script>
+        <script type="text/javascript" src="../javascript/nav.js"> </script>
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/flexslider.css">
         <link rel="stylesheet" href="../css/forms.css">
     </head>
     <body>
+    <div id="banner">
       <div class="portrait">
         <div class="background"> </div>
         <h1 class="intro"> RestaurantWizz </h1>
         <div class="foreground"> </div>
       </div>
+  </div>
 
       <?php session_start() ?>
-      <nav>
+      <nav id="nav_bar">
           <ul>
               <li><a id="home" href="../pages/home.php#home">Home</a></li>
               <li><a id="contact" href="../pages/contacts.php#contact">Contact</a></li>
