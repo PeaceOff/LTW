@@ -887,6 +887,7 @@ h1{
   .schedules ul{
     flex-direction: column;
     width: 20em;
+    margin: auto;
   }
 
   #makeReview textarea{
@@ -907,11 +908,13 @@ h1{
   }
 
   .schedules ul{
+    text-align: center;
     width: 50em;
+    margin: auto;
   }
 
   .schedules li{
-    margin: 0em;
+    margin: 0.1em;
   }
 
 }
