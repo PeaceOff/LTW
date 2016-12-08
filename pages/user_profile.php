@@ -55,7 +55,8 @@
 <?php }
   if($owner){
 ?>
-  <a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
+    </br>
+    <a href="../pages/edit_profile.php?id=<?php echo $_SESSION['id']?>">Edit Personal Info</a>
 <?php
   }?>
 

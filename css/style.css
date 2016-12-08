@@ -15,6 +15,16 @@ body {
     background: url("../images/footer_lodyas.png");
 }
 
+#aboutDiv {
+    align-self: center;
+    max-width: 700px;
+    align-items: center;
+    margin : auto;
+}
+
+#aboutDiv {
+    text-align: justify;
+}
 
 .page{
   display: flex;
