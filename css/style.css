@@ -618,8 +618,9 @@ h1{
   text-align: center;
   background: rgba(10, 10, 10,0.5);
   border: solid;
-  border-radius: 1px;
+  border-radius: 1em;
   margin-top: 0;
+  padding: 1.2em;
   text-decoration: none;
 }
 
@@ -639,7 +640,7 @@ h1{
 }
 
 .userRestaurants li a:first-child{
-  background: #7c7005;
+  background: #a28506;
 
 }
 
@@ -891,7 +892,7 @@ h1{
   .schedules li,
   .restaurantInfo #restaurant_description,
   .restaurantInfo #restaurant_types{
-        max-width: 20em;
+        width: 20em;
   }
 
   .schedules ul{
@@ -907,6 +908,20 @@ h1{
   #makeReview button{
       width: 30em;
   }
+
+  .userRestaurants li a{
+    width: 7em;
+    height: 3em;
+  }
+
+  .userRestaurants li{
+    width:21em;
+  }
+
+  .restaurantList li{
+    width:25em;
+  }
+
 
 }
 
@@ -927,4 +942,7 @@ h1{
     margin: 0.1em;
   }
 
+  .restaurantInfo #restaurant_description{
+      width:40em;
+  }
 }
