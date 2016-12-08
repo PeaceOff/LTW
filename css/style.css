@@ -705,23 +705,83 @@ h1{
     width: 50em;
 }
 
-
+.schedules ul h3{
+  color: white;
+}
 .schedules ul{
   justify-content: center;
   display: flex;
   list-style: none;
   margin: 2em;
-  width: 90em;
-  background: #af9e0a;
+
+  color: whie;
   border-radius: 2em;
 }
 
-.user_description,
-.schedules li,
-.restaurantInfo #restaurant_description,
+.schedules li h3{
+  color: #07F;
+  border-bottom: 2px solid #07F;
+}
+
 .restaurantInfo #restaurant_types{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(10,10,10,0.5);
+  color: white;
+}
+
+
+#restaurant_types ul{
+  clear: both;
+
+  display: block;
+}
+
+#restaurant_types ul li{
+  clear: both;
+  list-style-type: none;
+  display: inline-block;
+}
+
+#restaurant_types ul li:first-child::before{
+  content: "";
+}
+
+#restaurant_types ul li::before{
+  content: "•";
+}
+.restaurantInfo #restaurant_description p{
+  color: white;
   margin: 1em;
-  background: #af9e0a;
+}
+
+
+.restaurantInfo #restaurant_description h2{
+  color: #07F;
+  margin-top: 0;
+  text-align: center;
+
+  background-color: #CCC;
+  border-bottom: 5px solid #07F;
+
+}
+
+.restaurantInfo #restaurant_description{
+  overflow: hidden;
+  margin-top: 2em;
+  width: 80em;
+  word-wrap: break-word;
+  background-color: rgba(10,10,10,0.5);
+  border-radius: 0.2em;
+}
+
+.user_description,
+.schedules li{
+  margin: 1em;
+  background: #DDD;
   padding: 1em;
   border-radius: 2em;
   max-width: 50em;
@@ -730,6 +790,8 @@ h1{
 
 .schedules{
   text-align: center;
+  background: rgba(10,10,10,0.5);
+  width: 100%;
 }
 
 
@@ -768,16 +830,32 @@ h1{
   justify-content: center;
   display: flex;
   flex-direction: column;
+  background-color: rgba(10, 10, 10, 0.5);
+  width: 100%;
+}
+
+.page h2, .restaurantInfo .title, #makeReview h2, .schedules h2{
+  color: white;
 }
 
 #makeReview textarea{
-  border-radius: 1em;
-  font-size: 2em;
+  border-radius: 5px;
+  font-size: 15px;
   padding: 1em;
+  resize: none;
+  width: auto;
 }
 
 
 #makeReview button{
+  background: rgba(0,0,0,0);
+  color: white;
+  border-radius: 20px;
+  border-style: none;
+  font-size: 15px;
+  font-weight: bold;
+  max-width: 4em;
+  height: 2em;
   justify-content: center;
   display: block;
   width: 50em;

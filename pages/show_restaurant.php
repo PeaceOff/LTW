@@ -34,7 +34,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
   </div>
   <div class="page">
     <div id="restaurant_types">
-    <h2> Restaurant Type(s):</h2>
+
 
     <ul >
 
@@ -161,7 +161,7 @@ if(count($pictures) > 0 ){ ?>
   if(!$alreadyMadeReview){
 ?>
 
-
+<div class="page">
 <div id="makeReview">
   <h2>Make a review</h2>
   <form action="../database/action_review.php" class="review" method="post">
@@ -185,7 +185,7 @@ if(count($pictures) > 0 ){ ?>
     <button class="PostButton"> Post </button>
   </form>
 </div>
-
+</div>
 
 
 
