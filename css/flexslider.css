@@ -283,3 +283,33 @@ html[xmlns] .flexslider .slides {
     width: 45em;
     height: 30em;
 }
+
+@media screen and (max-width: 900px){
+
+  .flexslider  {
+    width: 15em;
+    height: 12em;
+  }
+
+  .flexslider .slides img  {
+    width: 15em;
+    height: 12em;
+  }
+
+}
+
+
+
+@media screen and (max-width: 1500px) and (min-width: 900px){
+
+  .flexslider  {
+    width: 30em;
+    height: 25em;
+  }
+
+  .flexslider .slides img  {
+    width: 30em;
+    height: 25em;
+  }
+
+}
