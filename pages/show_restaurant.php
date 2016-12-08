@@ -167,17 +167,17 @@ if(count($pictures) > 0 ){ ?>
   <form action="../database/action_review.php" class="review" method="post">
     <input type="hidden" name="id" value= <?php echo '"'.$id.'"' ?> > </input>
     <span class="rating">
-      <input class="rating-input" type="radio" name="rating" value="0"/>
-      <label class="rating-star"> </label>
-      <input class="rating-input" type="radio" name="rating" value="1"/>
-      <label class="rating-star"> </label>
-      <input class="rating-input" type="radio" name="rating" value="2"/>
-      <label class="rating-star"> </label>
-      <input class="rating-input" type="radio" name="rating" value="3" checked/>
+      <input class="rating-input" type="radio" name="rating" value="5"/>
       <label class="rating-star"> </label>
       <input class="rating-input" type="radio" name="rating" value="4"/>
       <label class="rating-star"> </label>
-      <input class="rating-input" type="radio" name="rating" value="5"/>
+      <input class="rating-input" type="radio" name="rating" value="3"/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="2" checked/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="1"/>
+      <label class="rating-star"> </label>
+      <input class="rating-input" type="radio" name="rating" value="0"/>
       <label class="rating-star"> </label>
     </span>
     <br>
