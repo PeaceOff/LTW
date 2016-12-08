@@ -215,17 +215,16 @@ h1{
   border-radius: 0.5em;
   border-bottom-right-radius: 0.0em;
   border-top-left-radius: 0.0em;
-  background-color: #FF7226;
+  background-color: #FF9400;
 
-  background-color: #47F;
-  border-color: #157;
+  border-color: #995900;
   border-bottom-style: solid;
   color: #000;
 }
 
 .reviews li h5{
-  background-color: #444
-  border-color: #999;
+  background-color: #FF9400;
+  border-color: #995900;
 }
 
 .reviews h4 a, .reviews h5 a{
@@ -749,8 +748,8 @@ h1{
 }
 
 .schedules li h3{
-  color: #07F;
-  border-bottom: 2px solid #07F;
+  color: #FF9400;
+  border-bottom: 2px solid #FF9400;
 }
 
 .restaurantInfo #restaurant_types{
@@ -790,12 +789,12 @@ h1{
 
 
 .restaurantInfo #restaurant_description h2{
-  color: #07F;
+  color: #FF9400;
   margin-top: 0;
   text-align: center;
-
   background-color: #CCC;
-  border-bottom: 5px solid #07F;
+  border-bottom: 5px solid #FF9400;
+  background: #DDD;
 
 }
 
@@ -804,8 +803,15 @@ h1{
   margin-top: 2em;
   width: 80em;
   word-wrap: break-word;
-  background-color: rgba(10,10,10,0.5);
+  background-color: #AAA;
   border-radius: 0.2em;
+}
+
+.user_description h2{
+  margin: 0;
+  margin-bottom: 1em;
+  border-bottom: 5px solid #FF9400;
+  color: #FF9400;
 }
 
 .user_description,
@@ -813,7 +819,7 @@ h1{
   margin: 1em;
   background: #DDD;
   padding: 1em;
-  border-radius: 2em;
+  border-radius: 0.5em;
   max-width: 50em;
   word-wrap: break-word;
 }
@@ -828,6 +834,7 @@ h1{
 .title {
   line-height: 0.5;
   text-align: center;
+  color: white;
 }
 
 .title span{

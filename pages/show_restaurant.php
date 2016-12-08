@@ -57,7 +57,7 @@ foreach($restaurantTypes as $rest_type){?>
 
 <div class="page">
   <div id = "restaurant_description">
-  <h2> Description:</h2>
+  <h2> Description</h2>
   <p >
     <?php echo $result['description']?>
   </p>
