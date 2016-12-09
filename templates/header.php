@@ -23,11 +23,13 @@
   </div>
 
       <?php session_start() ?>
-      <nav id="nav_bar">
-          <ul>
-              <li><a id="home" href="../pages/home.php#home">Home</a></li>
-              <li><a id="contact" href="../pages/contacts.php#contact">Contact</a></li>
-              <li><a id="about" href="../pages/about.php#about">About</a></li>
-              <li id="loginNav"><?php include('login.php') ?></li>
-          </ul>
-      </nav>
+        <div id="navWrapper">
+            <nav id="nav_bar">
+              <ul>
+                  <li><a id="home" href="../pages/home.php#home">Home</a></li>
+                  <li><a id="contact" href="../pages/contacts.php#contact">Contact</a></li>
+                  <li><a id="about" href="../pages/about.php#about">About</a></li>
+                  <li id="loginNav"><?php include('login.php') ?></li>
+              </ul>
+            </nav>
+        </div>

@@ -17,9 +17,14 @@ body {
 
 /*TESTING*/
 #banner {
-    
+
 	overflow: hidden;
 
+}
+
+#navWrapper {
+    width : 100%;
+    height : 3em;
 }
 
 #nav_bar {

@@ -13,7 +13,7 @@ include_once('../templates/header.php');
     </p>
 <h2>What we do</h2>
 <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mauris neque, congue at convallis nec, faucibus at erat. In imperdiet magna nec erat fringilla luctus. Proin semper dui ac iaculis porta. Morbi vel dictum arcu. Praesent vehicula eleifend mattis. Praesent scelerisque est vel augue auctor volutpat. Cras posuere, erat in luctus maximus, ipsum tellus facilisis turpis, eget congue enim tortor at tortor. Nulla facilisi. Donec ultricies enim ac scelerisque eleifend. Morbi eget elementum nibh. Sed consectetur massa in neque aliquam feugiat quis sit amet ex. In id tellus sollicitudin, malesuada ante id, scelerisque ligula. Pellentesque scelerisque, est eget viverra ornare, purus tortor malesuada erat, et posuere nisi augue vel mauris. Donec ac vulputate turpis, dignissim blandit est.
+    Nunca é demais lembrar o peso e o significado destes problemas, uma vez que a crescente influência da mídia obstaculiza a apreciação da importância das direções preferenciais no sentido do progresso. É importante questionar o quanto a competitividade nas transações comerciais representa uma abertura para a melhoria das posturas dos órgãos dirigentes com relação às suas atribuições. Por conseguinte, a determinação clara de objetivos não pode mais se dissociar dos métodos utilizados na avaliação de resultados. Do mesmo modo, a valorização de fatores subjetivos deve passar por modificações independentemente do orçamento setorial. Podemos já vislumbrar o modo pelo qual a estrutura atual da organização prepara-nos para enfrentar situações atípicas decorrentes do remanejamento dos quadros funcionais.
 </p>
 </div>
 <?php
