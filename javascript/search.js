@@ -53,7 +53,7 @@ function updateResults(sugestion){
         }
       });
     },
-      async : false
+      async : true
   });
 
 }
