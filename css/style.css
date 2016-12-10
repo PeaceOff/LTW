@@ -1,4 +1,4 @@
-html{
+.html{
   background: #111;
 
   background: url("../images/footer_lodyas.png");
@@ -20,11 +20,6 @@ body {
 
 	overflow: hidden;
 
-}
-
-#navWrapper {
-    width : 100%;
-    height : 3em;
 }
 
 #nav_bar {
@@ -857,7 +852,7 @@ h1{
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   top: 0;
-  width: 10em;
+  width: 8em;
 }
 
 .title  span:before {
@@ -930,8 +925,11 @@ h1{
 
   .schedules ul{
     flex-direction: column;
-    width: 20em;
     margin: auto;
+  }
+  .schedules li{
+    margin: auto;
+    margin-bottom: 20px;
   }
 
   #makeReview textarea{
@@ -955,6 +953,10 @@ h1{
     width:25em;
   }
 
+  .title  span:before,
+  .title  span:after {
+      width: 4em;
+  }
 
 }
 
@@ -967,15 +969,26 @@ h1{
 
   .schedules ul{
     text-align: center;
-    width: 50em;
     margin: auto;
+    margin-bottom:2em;
   }
 
   .schedules li{
-    margin: 0.1em;
+    width: 6.8em;
+    font-size: 0.7em;
+    margin: 0.2em;
   }
 
   .restaurantInfo #restaurant_description{
       width:40em;
+  }
+
+  h1{
+    font-size: 3em;
+  }
+
+  .title  span:before,
+  .title  span:after {
+      width: 5em;
   }
 }
