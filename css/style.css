@@ -1,3 +1,14 @@
+/*COLORS
+PRUSSIAN BLUE : #0B3C5D
+SKY BLUE : #328CC1
+GOLD LEAF : #D9B310;
+IVORY BLACK : #1D2731;
+Midnight Blue : #16253D
+Dusk : #002C54
+Golden : #EFB509
+Bronze : #CD7213
+*/
+
 .html{
   background: #111;
 
@@ -172,13 +183,12 @@ h1{
 }
 
 
-
 .reviews button{
   width: 30em;
   margin: 0em;
   margin-bottom: 1em;
   border-style: none;
-  background-color: #D9B310;
+  background-color: #EFB509;
 }
 
 .reviews textarea{
@@ -193,7 +203,7 @@ h1{
 }
 
 .reviews li{
-  background-color: #414F63;
+  background-color: #16253D;
   list-style-type: none;
 
   border-top: 5px solid #CCC;
@@ -217,16 +227,16 @@ h1{
   border-radius: 0.5em;
   border-bottom-right-radius: 0.0em;
   border-top-left-radius: 0.0em;
-  background-color: #FF9400;
+  background-color: #EFB509;
 
-  border-color: #995900;
+  border-color: #CD7213;
   border-bottom-style: solid;
   color: #000;
 }
 
 .reviews li h5{
-  background-color: #FF9400;
-  border-color: #995900;
+  background-color: ##EFB509;
+  border-color: #CD7213;
 }
 
 .reviews h4 a, .reviews h5 a{
@@ -336,11 +346,11 @@ h1{
        width: 300px;
 }
 #mapSearch:focus {
-       border-color: #4d90fe;
+       border-color: #002C54;
 }
 
 .image-slide{
-  background-color: #414F63;
+  background-color: #16253D;
 }
 
 #searchArea{
@@ -660,7 +670,7 @@ h1{
 }
 
 .userRestaurants li a:first-child{
-  background: #a28506;
+  background: #CD7213;
 
 }
 
@@ -750,8 +760,8 @@ h1{
 }
 
 .schedules li h3{
-  color: #FF9400;
-  border-bottom: 2px solid #FF9400;
+  color: #CD7213;
+  border-bottom: 2px solid #CD7213;
 }
 
 .restaurantInfo #restaurant_types{
@@ -789,13 +799,12 @@ h1{
   margin: 1em;
 }
 
-
 .restaurantInfo #restaurant_description h2{
-  color: #FF9400;
+  color: #CD7213;
   margin-top: 0;
   text-align: center;
   background-color: #CCC;
-  border-bottom: 5px solid #FF9400;
+  border-bottom: 5px solid #CD7213;
   background: #DDD;
 
 }
@@ -812,8 +821,8 @@ h1{
 .user_description h2{
   margin: 0;
   margin-bottom: 1em;
-  border-bottom: 5px solid #FF9400;
-  color: #FF9400;
+  border-bottom: 5px solid #CD7213;
+  color: #CD7213;
 }
 
 .user_description,
