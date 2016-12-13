@@ -1,0 +1,266 @@
+/*COLORS
+PRUSSIAN BLUE : #0B3C5D
+SKY BLUE : #328CC1
+GOLD LEAF : #D9B310;
+IVORY BLACK : #1D2731;
+*/
+
+/*****REGISTER FORM*****/
+#registerForm ,
+#contactForm,
+#userProfileForm,
+#restaurantForm,
+#schedules,
+#images {
+    max-width: 600px;
+    //padding: 5px 10px 15px 10px;
+    margin : auto;
+    margin-top : 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: #CCC;
+    border-radius: 5px;
+    border : 1px;
+    box-shadow: 0 0 2px #1D2731;
+    border-color: #1D2731;
+    border-style: solid;
+}
+
+#registerForm h2,
+#contactForm h2,
+#userProfileForm h2,
+#restaurantForm h2,
+#schedules h2,
+#images h2 {
+    border-bottom: 5px solid #FF9400;
+    padding: 10px 0px;
+    color : #FF9400;
+    margin: 0;
+    background-color: #EEE;
+}
+
+#registerForm label,
+#restaurantForm label,
+#schedules label,
+#images label {
+    margin: auto;
+    margin-top : 15px;
+    margin-bottom : 7px;
+    width : 30%;
+    padding : 0.1em;
+    background-color: #D9B310;
+    color : #1D2731;
+    border-radius: 3px;
+}
+
+#registerForm input:not(.special),
+#contactForm input:not(.special),
+#userProfileForm input:not(.special),
+#restaurantForm input:not(.special),
+#schedules input:not(.special) {
+    width : 50%;
+    text-align: center;
+    margin : 0.2em;
+}
+
+#registerForm input[type=submit],
+#contactForm input[type=submit],
+#userProfileForm input[type=submit],
+#restaurantForm input[type=submit],
+#schedules input[type=submit],
+#images input[type=submit] {
+    margin-top : 1em;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    background: #FF9400;
+    color: #fff;
+    border-radius: 3px;
+    text-shadow: 0 0 5px #222;
+}
+
+#registerForm input[type=submit]:hover,
+#contactForm input[type=submit]:hover,
+#userProfileForm input[type=submit]:hover,
+#restaurantForm input[type=submit]:hover,
+#schedules input[type=submit]:hover,
+#images input[type=submit]:hover {
+    box-shadow: 0 0 15px #222;
+    background: #DEB816;
+    color: #1D2731;
+    animation : zoomZoom;
+    animation-duration : 0.5;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#registerForm textarea,
+#contactForm textarea,
+#userProfileForm textarea,
+#restaurantForm textarea {
+    resize : none;
+    position: relative;
+    width : 90%;
+}
+
+#contactForm {
+    max-width: 80em;
+}
+
+#restaurantForm,
+#schedules,
+#images {
+    max-width: 800px;
+}
+
+nav #loginNav {
+    text-align: right;
+}
+
+#loginForm input:not(.special){
+    max-width: 35%;
+}
+
+nav ul li:last-child .special{
+    font-size: 0.9em;
+}
+
+nav ul li:last-child .special,
+.logoutBtn {
+    vertical-align: middle;
+    margin : auto;
+    border: none;
+    padding: 0.4em;
+    background: #D9B310;
+    color: #fff;
+    border-radius: 3px;
+    text-shadow: 0 0 5px #222;
+    cursor: pointer;
+}
+
+nav ul li:last-child .special:hover,
+.logoutBtn:hover{
+    animation : zoomLogin;
+    animation-duration : 0.2;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+#userProfileForm form:first-child {
+    padding-bottom: 1em;
+}
+
+
+@keyframes zoomZoom {
+    0% {
+        transform : scale(1);
+    }
+    100% {
+        transform : scale(1.1);
+    }
+}
+
+@keyframes zoomLogin {
+    0% {
+        transform : scale(1);
+    }
+    100% {
+        transform : scale(1.05);
+    }
+}
+
+a#loggedUser {
+    text-align: center;
+    vertical-align: middle;
+    padding : 0.1em;
+    margin : 0.1em;
+}
+
+#restaurantForm input[type="checkbox"] + label {
+    display:inline-block;
+    margin:1px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+#restaurantForm input[type="checkbox"] {
+    max-width : 10px;
+}
+
+#restaurantForm h3 {
+    margin: auto;
+    width : 50%;
+    padding : 0.1em;
+    background-color: #D9B310;
+    color : #1D2731;
+    border-radius: 2px;
+}
+
+#restaurantForm #checkBoxes {
+    border : 2px;
+    border-style: solid;
+    border-color: #1D2731;
+    border-radius : 5px;
+    margin : 0.5em;
+    padding-top: 1em;
+    padding-bottom : 1em;
+}
+
+#restaurantForm #checkBoxes label {
+    border : 1px;
+    border-style: solid;
+    border-color: #1D2731;
+    border-radius : 5px;
+    width : 10em;
+}
+
+#restaurantForm #checkBoxes .checkBoxDiv {
+    width : 40%;
+    display: inline-block;
+}
+
+#restaurantForm input[type="time"] {
+    width : 10%;
+}
+
+#mapaGoogle {
+    text-align: center;
+}
+
+#mapaGoogle #map {
+    align-content: center;
+    display: table;
+    margin: 0 auto;
+}
+
+#schedules input[type=submit],
+#images #special {
+    padding: 0.1em;
+}
+
+.contentSchedule {
+    list-style-type: none;
+    text-align: center;
+}
+
+#removeScheduleBtn {
+    display: inline;
+    margin :1em;
+    padding : 0.1em;
+
+}
+
+#containerI {
+    position: relative;
+}
+
+#images #special {
+    margin : 0;
+    position: absolute;
+}
+
+/*COLORS
+PRUSSIAN BLUE : #0B3C5D
+SKY BLUE : #328CC1
+GOLD LEAF : #D9B310;
+IVORY BLACK : #1D2731;
+*/

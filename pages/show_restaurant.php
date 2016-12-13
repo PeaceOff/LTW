@@ -32,6 +32,14 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvl
       <?php echo "<span>" . $result['name'] . "</span>" ?>
     </h1>
   </div>
+
+  <div class="page">
+    <h2 class="average">
+      <?php echo getAVG($id) ?>
+    </h2>
+    <i class="fa fa-star" aria-hidden="true"></i>
+  </div>
+
   <div class="page">
     <div id="restaurant_types">
 
@@ -209,7 +217,7 @@ foreach ($reviews as $review) {?>
         <?php echo $review['nome'] ?>
         </a>
       </h4>
-      <h6> <?php echo $review['rating'] ."/5" ?> </h6>
+      <h6 class="average"> <?php echo $review['rating'] ?> </h6>
       <p> <?php echo $review['description']?> </p>
 <?php
   if(isset($_SESSION['username'])){

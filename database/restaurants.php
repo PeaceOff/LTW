@@ -17,6 +17,14 @@
     return $stmt->fetch();
 	}
 
+	function getAVG($restaurantID){
+		global $db;
+
+		$stmt = $db->prepare(' SELECT avg(rating) as rating FROM review WHERE restaurant_id = ? GROUP BY restaurant_id');
+		$stmt->execute(array($restaurantID));
+		return $stmt->fetch()['rating'];
+	}
+
 	function getRestaurantBySearch($search,$typeId,$sugestion) {
     global $db;
 
