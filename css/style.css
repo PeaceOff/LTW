@@ -33,6 +33,12 @@ body {
 
 }
 
+#navWrapper {
+    width : 100%;
+    height : 3em;
+}
+
+
 #nav_bar {
 	border: 0;
 	border-radius: 0px;
