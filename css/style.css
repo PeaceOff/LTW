@@ -684,6 +684,7 @@ h6.average{
 .reviews button{
   border: 0px solid #222;
   background-color: inherit;
+  padding: 0;
   border-radius: 10px;
   width: 4em;
   height: 2em;
