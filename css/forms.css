@@ -3,6 +3,10 @@ PRUSSIAN BLUE : #0B3C5D
 SKY BLUE : #328CC1
 GOLD LEAF : #D9B310;
 IVORY BLACK : #1D2731;
+Midnight Blue : #16253D
+Dusk : #002C54
+Golden : #EFB509
+Bronze : #CD7213
 */
 
 /*****REGISTER FORM*****/
@@ -18,7 +22,7 @@ IVORY BLACK : #1D2731;
     margin-top : 25px;
     margin-bottom: 10px;
     text-align: center;
-    background-color: #0B3C5D;
+    background-color: #16253D;
     border-radius: 5px;
     border : 1px;
     box-shadow: 0 0 2px #1D2731;
@@ -37,8 +41,8 @@ IVORY BLACK : #1D2731;
     border-color: #1D2731;
     border-radius: 10px;
     padding: 10px 0px;
-    box-shadow: 0 0 10px #328CC1;
-    background-color: #D9B310;
+    box-shadow: 0 0 10px #002C54;
+    background-color: #EFB509;
     color : #1D2731;
 }
 
@@ -51,7 +55,7 @@ IVORY BLACK : #1D2731;
     margin-bottom : 7px;
     width : 30%;
     padding : 0.1em;
-    background-color: #D9B310;
+    background-color: #EFB509;
     color : #1D2731;
     border-radius: 3px;
 }
@@ -75,7 +79,7 @@ IVORY BLACK : #1D2731;
     margin-top : 1em;
     border: none;
     padding: 10px 15px 10px 15px;
-    background: #D9B310;
+    background: #EFB509;
     color: #fff;
     border-radius: 3px;
     text-shadow: 0 0 5px #222;
@@ -88,7 +92,7 @@ IVORY BLACK : #1D2731;
 #schedules input[type=submit]:hover,
 #images input[type=submit]:hover {
     box-shadow: 0 0 15px #222;
-    background: #DEB816;
+    background: #EFB509;
     color: #1D2731;
     animation : zoomZoom;
     animation-duration : 0.5;
@@ -133,7 +137,7 @@ nav ul li:last-child .special,
     margin : auto;
     border: none;
     padding: 0.4em;
-    background: #D9B310;
+    background: #EFB509;
     color: #fff;
     border-radius: 3px;
     text-shadow: 0 0 5px #222;
@@ -193,7 +197,7 @@ a#loggedUser {
     margin: auto;
     width : 50%;
     padding : 0.1em;
-    background-color: #D9B310;
+    background-color: #EFB509;
     color : #1D2731;
     border-radius: 2px;
 }
