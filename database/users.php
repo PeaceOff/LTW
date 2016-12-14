@@ -10,6 +10,7 @@
 
         global $db;
         $stmt = $db->prepare('SELECT * FROM user WHERE username = :user');
+        $user = trim($user);
         $user = strtolower($user);
         $stmt->bindParam(':user', $user, PDO::PARAM_STR);
         $stmt->execute();
@@ -24,6 +25,7 @@
     function isUser($user){
 
         global $db;
+        $user = trim($user);
         $user = strtolower($user);
         $stmt = $db->prepare('SELECT * FROM user WHERE username = :user');
         $stmt->bindParam(':user', $user, PDO::PARAM_STR);
@@ -36,6 +38,7 @@
     function getUserInfo($user) {
 
         global $db;
+        $user = trim($user);
         $user = strtolower($user);
         $stmt = $db->prepare('SELECT * FROM user WHERE username = :user');
         $stmt->bindParam(':user', $user, PDO::PARAM_STR);
@@ -52,6 +55,7 @@
         $pass = password_hash($props[1] , PASSWORD_DEFAULT);
         $stmt->bindParam(':password', $pass, PDO::PARAM_STR);
         $user = strtolower($props[0]);
+        $user = trim($user);
         $stmt->bindParam(':username', $user, PDO::PARAM_STR);
         $stmt->bindParam(':description', $props[3], PDO::PARAM_STR);
         $stmt->execute();
@@ -62,6 +66,7 @@
     function updateUser($id,$username,$newpass,$name,$description){
 
         global $db;
+        $username = trim($username);
         $username = strtolower($username);
         $stmt = $db->prepare('UPDATE user SET password = :pass, nome = :name, description = :description WHERE username = :user AND id = :id ;');
         if(!$stmt){
