@@ -18,8 +18,12 @@ if(!$result){
 }
 
 ?>
+
 <script src="../javascript/reply.js"> </script>
 <script src="../javascript/show_restaurant.js"> </script>
+<script type="text/javascript" src="../javascript/jquery.flexslider-min.js"></script>
+<link rel="stylesheet" href="../css/flexslider.css">
+
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd_TJ2rVJLyGH5vRRWATUOKvlrloJ9F8k&libraries=places&callback=initMap">
 </script>
