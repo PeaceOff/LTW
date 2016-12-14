@@ -4,6 +4,7 @@
     include_once '../database/users.php';
 
     $username = htmlentities($_POST['username'], ENT_QUOTES, "UTF-8");
+    $username = trim($username);
     $username = strtolower($username);
     $password = $_POST['password'];
 

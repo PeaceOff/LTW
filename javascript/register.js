@@ -13,6 +13,7 @@ $(document).ready( function() {
     $("form#registerForm input[name='username']").blur(function ( event ) {
         var user = $("form#registerForm input[name='username']").val();
         user = user.toLowerCase();
+        user = user.trim();
         $.ajax({
             type : "POST",
             url : "../database/action_user_exists.php",

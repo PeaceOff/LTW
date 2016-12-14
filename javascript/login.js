@@ -33,6 +33,9 @@ $(document).ready( function() {
     $( "form#loginForm input[name='username']" ).blur(function( event ) {
         var user = $("form#loginForm input[name='username']").val();
         user = user.toLowerCase();
+        console.log("!" + user + "!");
+        user = user.trim();
+        console.log("!" + user + "!");
         $.ajax({
             type : "POST",
             url : "../database/action_user_exists.php",
