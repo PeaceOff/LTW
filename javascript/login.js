@@ -4,6 +4,7 @@ $(document).ready( function() {
         var user = $("form#loginForm input[name='username']").val();
         var value = $("form#loginForm input[name='password']").val();
         var passou = false;
+        $( "form#loginForm input[name='password']" ).blur();
 
         $.ajax({
             type : "POST",
@@ -13,7 +14,6 @@ $(document).ready( function() {
             success : function(data){
                 var elem = $("form#loginForm input[name='password']")[0];
                 if(data == "true"){
-                    $( "form#loginForm input[name='password']" ).blur();
                     passou = true;
                 } else {
                     elem.setCustomValidity("Wrong Password!");
