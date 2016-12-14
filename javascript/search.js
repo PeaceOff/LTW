@@ -47,7 +47,7 @@ function updateResults(sugestion){
 
           }
           else{
-          restaurantList.append('<a href=' +  link + '>' + '<li> <p> Restaurant ' + restaurant.name
+          restaurantList.append('<a href=' +  link + '>' + '<li> <p> ' + restaurant.name
                                 +  '</p><img src="' + restaurant.picture_path + '"/>' + '</li> </a>');
 
         }
