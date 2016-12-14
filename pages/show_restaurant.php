@@ -207,10 +207,15 @@ if(count($pictures) > 0 ){ ?>
 <h2> Current Reviews: </h2>
 </div>
 
+<div class="noReviews">
+<?php if(count($reviews) == 0)
+    echo "<h3> There are no review's available for this restaurant at the moment</h3>";
+?>
+</div>
+
+
 <div class="page">
 <div class="reviews">
-
-
 
   <ul>
 <?php
